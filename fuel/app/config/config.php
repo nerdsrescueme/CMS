@@ -41,14 +41,14 @@ return array(
 	 *
 	 * Set this to false or remove if you using mod_rewrite.
 	 */
-	'index_file'  => 'index.php',
+	'index_file'  => false,
 
 	'profiling'  => false,
 
 	/**
 	 * Settings for Cache class
 	 */
-	'caching'         => false,
+	'caching'         => true,
 	'cache_dir'       => APPPATH.'cache/',
 	'cache_lifetime'  => 3600, // In Seconds
 
@@ -185,7 +185,7 @@ return array(
 		 * );
 		 */
 		'packages'  => array(
-			//'orm',
+			'orm',
 		),
 
 		/**
