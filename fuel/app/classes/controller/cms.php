@@ -54,18 +54,16 @@ class Controller_Cms extends Controller {
 		$body = Input::is_ajax() ? $this->template->content : $this->template;
 
 		if($this->user and $this->user->is_admin()) {
-			Asset::js(array(
-				'bootstrap-transition.js',
-				'bootstrap-modal.js',
-				'bootstrap-dropdown.js',
-				'cms.js',
-			), array(), 'admin');
-			Asset::css(array(
-				'cms.css', 
-				Uri::base(false).'assets/js/aloha/css/aloha.css'
-			), array(), 'admin');
-
-			$body = str_replace('</body>', View::forge('cms/admin').PHP_EOL.'</body>', $body);
+			$body = str_replace('</head>', View::forge('cms/admin').PHP_EOL.'</head>', $body);
+		} else {
+			$find = array(
+				'class="mercury-region"' => '',
+				'data-type="editable"' => '',
+				' mercury-region' => '',
+				'" >' => '">', // This cleans up tags, aesthetics only.
+				'"  >' => '">', // This cleans up tags, aesthetics only.
+			);
+			$body = str_replace(array_keys($find), array_values($find), $body);
 		}
 
 		$this->response->body = $body;
