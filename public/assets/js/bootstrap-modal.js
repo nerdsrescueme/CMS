@@ -198,7 +198,7 @@
         , option = $target.data('modal') ? 'toggle' : $.extend({}, $target.data(), $this.data())
 
       e.preventDefault()
-      $target.modal(option)
+      //$target.modal(option)
     })
   })
 

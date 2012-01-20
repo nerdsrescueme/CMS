@@ -11,3 +11,8 @@
 	background-image: none !important;
 	border: 0 !important;
 }
+
+.aloha-sidebar-handle
+{
+	top: 45px !important;
+}

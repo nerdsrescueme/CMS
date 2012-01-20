@@ -43,5 +43,5 @@
 </div>
 
 <script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/aloha/lib/aloha.js" data-aloha-plugins="common/format, common/list"></script>
+<script src="/assets/js/aloha/lib/aloha.js" data-aloha-plugins="common/format,common/list,common/link,common/undo,common/paste,common/block,common/contenthandler,common/abbr,extra/browser,common/commands,extra/flag-icons"></script>
 <?php echo Asset::render('admin') ?>

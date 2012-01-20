@@ -49,8 +49,7 @@ class Controller_Pages extends Controller_Admin
 			}
 		}
 
-		$this->template->title = "Pages";
-		$this->template->content = View::forge('pages/create');
+		return Response::forge(View::forge('pages/create'));
 
 	}
 
