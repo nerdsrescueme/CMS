@@ -41,7 +41,7 @@ init: function(uri) {
 			url: '/notes/note',
 			data: {uri: CMS.uri, content: $content.val()},
 			success: function(data) {
-				if(data.success) $('.mercury-notes-panel').append('<div><span class="mercury-note-delete" data-id="'+data.id+'"><a href="#">X</a></span><p>'+$content.val()+'</p><hr/></div>');
+				if(data.success) $('.mercury-notes-panel').append('<div><span class="mercury-note-delete" data-id="'+data.id+'"><a href="#">X</a></span><p>Just Now: '+$content.val()+'</p><hr/></div>');
 				$content.val('');
 				$none.remove();
 			},
