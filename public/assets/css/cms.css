@@ -1,0 +1,55 @@
+.mercury-notes-panel form
+{
+	width: 100%;
+}
+
+.mercury-notes-panel input
+{
+	width: 100% !important;
+	height: 22px;
+	font-size: 11px !important;
+	border: 1px solid rgb(65,65,65) !important;
+	border-radius: 5px;
+	background: rgb(45,45,45);
+	color: rgb(150,150,150);
+}
+
+.mercury-notes-panel div
+{
+	font-size: 11px;
+	line-height: 15px;
+	color: rgb(165,165,165);
+}
+
+.mercury-notes-panel hr
+{
+	height: 1px;
+	border: 0;
+	border-bottom: 1px dotted rgb(80,80,80);
+}
+
+.mercury-note-delete
+{
+	float: right;
+	border: 1px solid rgb(125,125,125);
+	border-radius: 3px;
+	font-size: 8px;
+	line-height: 8px;
+}
+
+.mercury-note-delete:hover
+{
+	background: rgb(25,25,25);
+	border-color: rgb(155,155,155);
+	box-shadow: 0 0 2px 0 rgb(180,180,180);
+}
+
+.mercury-note-delete a,
+.mercury-note-delete a:visited,
+.mercury-note-delete a:active
+{
+	display: inline-block;
+	padding: 3px;
+	color: rgb(155,155,155);
+	text-decoration: none;
+}

@@ -1,18 +1,12 @@
 <?php
 
-class Controller_Cms/pallette extends Controller_Template
-{
+class Controller_Cms_Pallettes extends Controller {
 
-	public function action_backcolor()
-	{
-		$this->template->title = 'Cms/pallettes &raquo; Backcolor';
-		$this->template->content = View::forge('cms/pallettes/backcolor');
+	public function action_backcolor() {
+		return Response::forge(View::forge('cms/pallettes/backcolor'));
 	}
 
-	public function action_forecolor()
-	{
-		$this->template->title = 'Cms/pallettes &raquo; Forecolor';
-		$this->template->content = View::forge('cms/pallettes/forecolor');
+	public function action_forecolor() {
+		return Response::forge(View::forge('cms/pallettes/forecolor'));
 	}
-
 }

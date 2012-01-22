@@ -52,8 +52,7 @@ class Model_Page extends Model
 
 	public static function find_current()
 	{
-		$uri = new \Uri(\Input::uri());
-		return static::find_by_uri($uri);
+		return static::find_by_uri(CMS::uri());
 	}
 
 	public static function validate($factory)

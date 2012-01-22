@@ -1,18 +1,12 @@
 <?php
 
-class Controller_Cms/select extends Controller_Template
-{
+class Controller_Cms_Selects extends Controller {
 
-	public function action_formatblock()
-	{
-		$this->template->title = 'Cms/selects &raquo; Formatblock';
-		$this->template->content = View::forge('cms/selects/formatblock');
+	public function action_formatblock() {
+		return Response::forge(View::forge('cms/selects/formatblock'));
 	}
 
-	public function action_style()
-	{
-		$this->template->title = 'Cms/selects &raquo; Style';
-		$this->template->content = View::forge('cms/selects/style');
+	public function action_style() {
+		return Response::forge(View::forge('cms/selects/style'));
 	}
-
 }

@@ -1,24 +1,19 @@
 <?php
 
-class Controller_Cms/panel extends Controller_Template
-{
+class Controller_Cms_Panels extends Controller {
 
-	public function action_history()
-	{
-		$this->template->title = 'Cms/panels &raquo; History';
-		$this->template->content = View::forge('cms/panels/history');
+	public function action_history() {
+		return Response::forge(View::forge('cms/panels/history'));
 	}
 
-	public function action_notes()
-	{
-		$this->template->title = 'Cms/panels &raquo; Notes';
-		$this->template->content = View::forge('cms/panels/notes');
+	public function action_notes() {
+		$data['uri']   = trim(parse_url(Input::referrer(), PHP_URL_PATH), '/');
+		$data['notes'] = Model_Note::find('all', array('where' => array('uri' => $data['uri'])));
+
+		return Response::forge(View::forge('cms/panels/notes', $data));
 	}
 
-	public function action_snippets()
-	{
-		$this->template->title = 'Cms/panels &raquo; Snippets';
-		$this->template->content = View::forge('cms/panels/snippets');
+	public function action_snippets() {
+		return Response::forge(View::forge('cms/panels/snippets'));
 	}
-
 }

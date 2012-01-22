@@ -1,12 +1,8 @@
 <?php
 
-class Controller_Cms/lightview extends Controller_Template
-{
+class Controller_Cms_Lightviews extends Controller {
 
-	public function action_about()
-	{
-		$this->template->title = 'Cms/lightviews &raquo; About';
-		$this->template->content = View::forge('cms/lightviews/about');
+	public function action_about() {
+		return Response::forge(View::forge('cms/lightviews/about'));
 	}
-
 }

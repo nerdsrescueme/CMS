@@ -13,7 +13,43 @@ if (top.Mercury) {
 
 var CMS = {
 
-	init: function() {
+uri: null,
+init: function(uri) {
 
-	}
+	this.uri = uri;
+
+	jQuery('.mercury-panel-pane').delegate('.mercury-note-delete', 'click', function(e) {
+		var $clicked = jQuery(e.currentTarget);
+	
+		jQuery.ajax({
+			type: 'DELETE',
+			url: '/notes/note/' + $clicked.data('id'),
+			success: function(data) {
+				if(data.success) $clicked.parent().fadeOut(500, function() { $(this).remove() });
+			},
+			error: function(data) {
+				alert('Unable to delete note at this time.');
+			}
+		});
+	});
+	
+	jQuery('.mercury-panel-pane').delegate('.mercury-note-form', 'submit', function(e) {
+		$content = $('.mercury-note-form input[name="content"]');
+		$none    = $('.mercury-notes-none');
+		jQuery.ajax({
+			type: 'POST',
+			url: '/notes/note',
+			data: {uri: CMS.uri, content: $content.val()},
+			success: function(data) {
+				if(data.success) $('.mercury-notes-panel').append('<div><span class="mercury-note-delete" data-id="'+data.id+'"><a href="#">X</a></span><p>'+$content.val()+'</p><hr/></div>');
+				$content.val('');
+				$none.remove();
+			},
+			error: function(data) {
+				alert('Unable to save note at this time.');
+			}
+		});
+		return false;
+	});
 }
+};

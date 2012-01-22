@@ -1,1 +1,5 @@
-<p>Style</p>
+<div class="mercury-select-options">
+  <div class="red" data-class="red">Red text</div>
+  <div class="large-bold" data-class="large-bold">Large bold text</div>
+  <div class="blue" data-class="blue">Blue background</div>
+</div>

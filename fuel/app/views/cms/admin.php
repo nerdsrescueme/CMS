@@ -9,7 +9,6 @@
 	<script type="text/javascript">
 	function mercuryLoaded() {
 		Mercury.saveUrl = '/pages';
-		console.log(window.Mercury);
-		CMS.init();
+		CMS.init('<?php echo CMS::uri() ?>');
 	}
 	</script>
