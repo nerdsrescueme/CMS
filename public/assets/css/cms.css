@@ -1,3 +1,24 @@
+#cms-control
+{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 0 20px 40px 0;
+	padding: 5px 10px;
+	background: rgba(0,0,0,0.4);
+	border-radius: 5px;
+
+	font: 11px 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#cms-control a,
+#cms-control a:active,
+#cms-control a:visited
+{
+	color: #fff;
+	text-decoration: none;
+}
+
 .mercury-notes-panel form
 {
 	width: 100%;

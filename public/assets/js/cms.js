@@ -14,9 +14,24 @@ if (top.Mercury) {
 var CMS = {
 
 uri: null,
+activate: null,
+open: false,
 init: function(uri) {
 
 	this.uri = uri;
+
+	jQuery(document.body).append('<div id="cms-control"><a href="#" data-cms="activate">Edit Page</a></div>')
+
+	this.activate = jQuery('#cms-control a[data-cms="activate"]').click(function(e) {
+		if (window.Mercury) {
+			CMS.open = !CMS.open
+			Mercury.trigger('toggle:interface')
+		} else {
+			alert('Sorry, but editing is not supported by your current browser.  Try Chrome, Firefox, or Safari.')
+		}
+
+		CMS.activate.text(CMS.open ? 'Hide Editor' : 'Show Editor')
+	});
 
 	jQuery('.mercury-panel-pane').delegate('.mercury-note-delete', 'click', function(e) {
 		var $clicked = jQuery(e.currentTarget);
@@ -25,10 +40,10 @@ init: function(uri) {
 			type: 'DELETE',
 			url: '/notes/note/' + $clicked.data('id'),
 			success: function(data) {
-				if(data.success) $clicked.parent().fadeOut(500, function() { $(this).remove() });
+				if(data.success) $clicked.parent().fadeOut(500, function() { $(this).remove() })
 			},
 			error: function(data) {
-				alert('Unable to delete note at this time.');
+				alert('Unable to delete note at this time.')
 			}
 		});
 	});
