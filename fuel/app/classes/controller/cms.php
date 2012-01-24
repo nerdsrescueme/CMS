@@ -2,7 +2,7 @@
 
 class TempUser
 {
-	public function is_admin() { return false; }
+	public function is_admin() { return true; }
 }
 
 class Controller_Cms extends Controller
@@ -26,7 +26,8 @@ class Controller_Cms extends Controller
 			$this->template->content = $this->theme->view('404');
 			return;
 		}
-		$this->template->content = 'Content for page ['.$page->title.'].';
+
+		$this->template->content = $this->theme->view($page->layout_id);
 	}
 
 	public function action_login()

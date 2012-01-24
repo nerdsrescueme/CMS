@@ -30,9 +30,9 @@ class Model_Page extends Model
 			'form' => array('type' => false),
 		),
 		'layout_id' => array(
-			'data_type' => 'int',
+			'data_type' => 'char',
 			'label' => 'Layout',
-			'validation' => array('required', 'valid_string' => 'numeric'),
+			'validation' => array('required', 'max_length' => 120),
 			'form' => array('data_type' => 'text'),
 		),
 		'created_at' => array('data_type' => 'int', 'label' => 'Created', 'form' => array('type' => false)),
