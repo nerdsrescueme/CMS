@@ -27,6 +27,8 @@ class Controller_Cms extends Controller
 			return;
 		}
 
+		$this->template->set_global('page', $page);
+
 		$this->template->content = $this->theme->view($page->layout_id);
 	}
 

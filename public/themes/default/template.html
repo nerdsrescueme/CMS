@@ -13,7 +13,7 @@
 <p>Success: <?php echo $message ?></p>
 <?php endif ?>
 
-<div class="container">
+<div class="container layout-<?php echo @$page->layout_id  ?: 'basic' ?>">
 
 <header id="header" class="row">
 	<div id="logo" class="span4"><a href="/">Nerd</a></div>

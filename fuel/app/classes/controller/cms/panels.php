@@ -8,6 +8,13 @@ class Controller_Cms_Panels extends Controller
 		return Response::forge(View::forge('cms/panels/history'));
 	}
 
+	public function action_meta()
+	{
+		$data['uri'] = trim(parse_url(Input::referrer(), PHP_URL_PATH), '/');
+
+		return Response::forge(View::forge('cms/panels/meta'));
+	}
+
 	public function action_notes()
 	{
 		$data['uri']   = trim(parse_url(Input::referrer(), PHP_URL_PATH), '/');
