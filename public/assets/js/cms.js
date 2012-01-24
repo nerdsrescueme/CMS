@@ -14,15 +14,25 @@ if (top.Mercury) {
 var CMS = {
 
 uri: null,
+control: null,
 activate: null,
+create: null,
 open: false,
 init: function(uri) {
 
 	this.uri = uri;
 
-	jQuery(document.body).append('<div id="cms-control"><a href="#" data-cms="activate">Edit Page</a></div>')
+	jQuery(document.body).append('<div id="cms-control"><a href="#" data-cms="activate">Run Console</a></div>')
 
-	this.activate = jQuery('#cms-control a[data-cms="activate"]').click(function(e) {
+	this.control = jQuery('#cms-control')
+		.mouseover(function(e) {
+			$(this).stop().fadeTo(200, 0.6)
+		})
+		.mouseout(function(e) {
+			$(this).stop().fadeTo(200, 0.2)
+		})
+
+	this.activate = jQuery('a[data-cms="activate"]', this.control).click(function(e) {
 		if (window.Mercury) {
 			CMS.open = !CMS.open
 			Mercury.trigger('toggle:interface')
@@ -30,7 +40,8 @@ init: function(uri) {
 			alert('Sorry, but editing is not supported by your current browser.  Try Chrome, Firefox, or Safari.')
 		}
 
-		CMS.activate.text(CMS.open ? 'Hide Editor' : 'Show Editor')
+		CMS.activate.text(CMS.open ? 'End Console' : 'Run Console')
+		return false;
 	});
 
 	jQuery('.mercury-panel-pane').delegate('.mercury-note-delete', 'click', function(e) {
