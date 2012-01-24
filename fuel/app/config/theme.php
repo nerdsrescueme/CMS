@@ -44,5 +44,5 @@ return array(
 	/**
 	 * File type of the theme info file.  Possible values: php, ini, json and yaml
 	 */
-	'info_file_type' => 'php',
+	'info_file_type' => 'json',
 );
