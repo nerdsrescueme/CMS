@@ -8,7 +8,7 @@ class Theme extends \Fuel\Core\Theme {
 	{
 		if($this->layouts === null)
 		{
-			$ignore = array('template', '404');
+			$ignore = array('template', '404', 'home');
 	
 			foreach(glob($this->active['path'].'*.html') as $file)
 			{
