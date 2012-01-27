@@ -17,7 +17,8 @@ class Model_Note extends Model
 		),
 	);
 
-	public static function validate($factory) {
+	public static function validate($factory)
+	{
 		$val = Validation::forge($factory);
 		$val->add_field('uri', 'Uri', 'max_length[255]');
 		$val->add_field('content', 'Content', 'required|max_length[255]');
