@@ -2,28 +2,41 @@
 
 class Controller_Notes extends Controller_Rest {
 
-	public function post_note() {
+	public function post_note()
+	{
 		$val = Model_Note::validate('create');
-		if ($val->run()) {
+
+		if ($val->run())
+		{
 			$note = Model_Note::forge(array(
 				'uri'     => Input::post('uri'),
 				'content' => Input::post('content'),
 			));
-			if ($note and $note->save()) {
+
+			if ($note and $note->save())
+			{
 				$this->response(array('success' => true, 'id' => $note->id));
-			} else {
+			}
+			else
+			{
 				$this->response(array('success' => false));
 			}
-		} else {
+		}
+		else
+		{
 			$this->response(array('success' => false));
 		}
 	}
 
-	public function delete_note($id = null) {
-		if ($note = Model_Note::find($id)) {
+	public function delete_note($id = null)
+	{
+		if ($note = Model_Note::find($id))
+		{
 			$note->delete();
 			$this->response(array('success' => true));
-		} else {
+		}
+		else
+		{
 			$this->response(array('success' => false));
 		}
 	}
