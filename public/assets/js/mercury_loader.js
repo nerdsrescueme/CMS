@@ -30,7 +30,7 @@
 // script.  These, or your own packages can be specified to the loader in query params (read below for details).
 if (!window.mercuryPackages) window.mercuryPackages = {
   development: {javascripts: 'mercury.js', stylesheets: 'mercury.css'},
-  bundled: {javascripts: 'js/mercury.min.js,js/mercury_dialogs.js', stylesheets: 'css/mercury.bundle.css,css/cms.css'}
+  bundled: {javascripts: 'js/mercury.js,js/mercury_dialogs.js', stylesheets: 'css/mercury.bundle.css,css/cms.css'}
 };
 
 
@@ -107,9 +107,9 @@ if (!window.mercuryPackages) window.mercuryPackages = {
       setTimeout(function() {
         // Once we're ready to load Mercury we clear the document contents, and add in the css and javascript tags.
         // Once the script has loaded we display the body again, and instantiate a new instance of Mercury.PageEditor.
-        document.body.innerHTML = '&nbsp;';
+        document.body.innerHTML = '<div style="height:0;overflow:hidden;">Mercury</div>';
         for (i = 0; i <= document.styleSheets.length - 1; i += 1) {
-          document.styleSheets[i].disabled = true
+          document.styleSheets[i].disabled = true;
         }
 
         // Load all the stylesheets.
@@ -130,6 +130,7 @@ if (!window.mercuryPackages) window.mercuryPackages = {
           var script = document.createElement('script');
           script.src = options.src + '/' + src;
           script.type = 'text/javascript';
+          script.charset = 'utf-8';
           head.appendChild(script);
           script.onload = function() {
             loaded += 1;
@@ -137,7 +138,7 @@ if (!window.mercuryPackages) window.mercuryPackages = {
               document.body.style.visibility = 'visible';
               document.body.style.display = 'block';
               // Instantiate the PageEditor, passing in the options that were provided to the loader.
-              new Mercury.PageEditor(null, {visible: true});
+              new Mercury.PageEditor(null, options);
               // If there's a mercuryLoaded function available, call it.   You can provide one before the loading script
               // and it will be called after everything is loaded, but before everything is initialized.  You can bind
               // to the mercury:ready event or use Mercury.bind('ready', function() {}).
@@ -147,7 +148,7 @@ if (!window.mercuryPackages) window.mercuryPackages = {
             } else {
               loadScript(javascripts[loaded]);
             }
-          }
+          };
         }
         loadScript(javascripts[loaded]);
       }, 1);

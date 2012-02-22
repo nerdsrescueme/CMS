@@ -4,13 +4,14 @@ return array(
 	array(
 		'app' => 
 		array(
-			'default' => 3,
+			'default' => 4,
 		),
 		'module' => 
 		array(
 		),
 		'package' => 
 		array(
+			'sentry' => 2,
 		),
 	),
 	'folder' => 'migrations/',
