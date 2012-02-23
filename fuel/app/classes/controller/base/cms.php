@@ -4,13 +4,15 @@ class Controller_Base_Cms extends Controller
 {
 	public $template;
 	public $site;
-	protected $logged_in = false;
 
 	public function before()
 	{
 		$this->site     = Model_Site::find_or_create_current();
 		$this->template = Theme::instance()->view('template');
 		$theme          = Theme::instance()->active();
+
+		// Add information to views
+		$this->template->set_global('site', $this->site);
 
 		// Setup assets
 		Asset::add_path('themes/'.$theme['name'].'/assets/');

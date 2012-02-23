@@ -4,7 +4,7 @@ class Controller_User extends Controller_Base_Cms
 {
 	public function action_check()
 	{
-		return Response::forge(Theme::instance()->view('user/check'));
+		$this->template->content = Theme::instance()->view('user/check');
 	}
 
 	public function action_profile($id)
@@ -21,7 +21,7 @@ class Controller_User extends Controller_Base_Cms
 			Response::redirect('/');
 		}
 
-		
+		$this->template->content = Theme::instance()->view('user/profile');
 	}
 
 	public function action_confirm($email = null, $hash = null)

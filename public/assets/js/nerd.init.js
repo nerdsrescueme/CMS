@@ -50,6 +50,10 @@ var Nerd = {
 			Nerd.Editor.edited(false);
 			alert('saving');
 		}
+	},
+	html: {
+		tags: ['i', 'em', 'b', 'strong', 'u'],
+		attributes: {}
 	}
 };
 

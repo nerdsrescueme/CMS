@@ -27,6 +27,35 @@
 //  jQuery Extensions (Can be extended to support more browsers?)
 // ------------------------------------------------------------------------
 
+	$.extend($, { sanitize: function(node) {
+		var tags  = Nerd.html.tags,
+		    attrs = Nerd.html.attributes;
+	
+		$(node).children().each(function(i, child) {
+		
+			$.sanitize(child);
+
+			var tag = child.localName.toLowerCase();
+			
+			if ($.inArray(tag, tags) < 0) {
+				$(child).contents().each(function(j, content) {
+					$(content).remove().insertBefore(child);
+				});
+				$(child).remove();
+			} else {
+				$.each(child.attributes, function() {
+					var attr = this.localName;
+					
+					if ($.inArray(attr, attrs[tag]) < 0) {
+						child.removeAttribute(attr);
+					}
+				});
+			}
+		});
+		
+		return $(node).html();
+	}});
+
 	$.extend($, { selection: function() {
 		return Frame.document.getSelection();
 	}});
@@ -121,13 +150,13 @@
 		    keys     = [1,13,37,38,39,40]; // Keys that change selection
 
 		// Add activation trigger
-		$('<div id="nerd-trigger">Open Editor</div>').appendTo('body').click(function (e) {
+		$('<div id="nerd-trigger"><i class="icon icon-white icon-edit"></i></div>').appendTo('body').click(function (e) {
 			if (Editor.is_activated) {
-				$(this).text('Open Editor');
+				$(this).html('<i class="icon icon-white icon-edit"></i>');
 				return Editor.deactivate()
 			}
 			
-			$(this).text('Close Editor');
+			$(this).html('<i class="icon icon-white icon-check"></i>');
 			return Editor.activate();
 		});
 
@@ -168,6 +197,17 @@
 		Frame.body      = body;
 		Frame.document  = document;
 		Frame.head      = head;
+
+		// Custom paste handling
+		$(Frame.document).bind('paste', function (e) {
+			e.preventDefault();
+
+			var clipboard = e.originalEvent.clipboardData,
+			    data = $('<div>').html(clipboard.getData('text/html')),
+			    data = $.sanitize(data);
+
+			Commands.exec('insertHTML', false, data);
+		});
 
 		// Keypress events
 		Nerd.regions.on('keydown mouseup', function(e) {
