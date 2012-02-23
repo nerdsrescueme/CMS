@@ -1,5 +1,5 @@
 
-	<script type="text/javascript"
+<!--	<script type="text/javascript"
 		src="/assets/js/cms.js?<?php echo filemtime(DOCROOT.'/assets/js/cms.js') ?>">
 	</script>
 	<script type="text/javascript"
@@ -11,4 +11,4 @@
 		Mercury.saveUrl = '/pages';
 		CMS.init('<?php echo CMS::uri() ?>');
 	}
-	</script>
+	</script>-->

@@ -23,7 +23,18 @@ class Controller_Cms extends Controller_Base_Cms
 		}
 
 		$this->template->set_global('page', $page);
-		$this->template->content = Theme::instance()->view($page->layout_id);
+		
+		// If the page cannot be located in the theme folder, use the
+		// CMS default view for that page.
+		try
+		{
+			$this->template->content = Theme::instance()->view($page->layout_id);
+		}
+		catch(ThemeException $e)
+		{
+			$this->template->content = View::forge($page->layout_id);
+		}
+
 	}
 
 }

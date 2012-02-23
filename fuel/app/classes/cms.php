@@ -5,6 +5,30 @@ class CMS {
 
 	protected static $uri;
 	
+	public static function user_logged_in()
+	{
+		return Sentry::check() ? Sentry::user() : false;
+	}
+	
+	public static function user_link($user)
+	{
+		if ($user)
+		{
+			return Html::anchor('/user/profile/' . $user->get('id'), $user->get('username'));
+		}
+	}
+	
+	public static function flash()
+	{
+		foreach (array('success', 'error', 'info', 'warning') as $type)
+		{
+			if ($msg = Session::get_flash($type))
+			{
+				return array('type' => $type, 'message' => $msg);
+			}
+		}
+	}
+	
 	public static function uri()
 	{
 		!static::$uri and static::$uri = new \Uri(\Input::uri());

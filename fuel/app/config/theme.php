@@ -29,7 +29,7 @@ return array(
 	/**
 	 * The extension for theme view files.
 	 */
-	'view_ext' => '.html',
+	'view_ext' => '.php',
 
 	/**
 	 * Whether to require a theme info file

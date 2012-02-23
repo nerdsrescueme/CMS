@@ -9,8 +9,22 @@
 </head>
 <body>
 
-<?php if($message = Session::get_flash('success')) : ?>
-<p>Success: <?php echo $message ?></p>
+<?php if ($m = CMS::flash()) : ?>
+	<div id="flash" class="<?php echo $m['type'] ?>">
+		<?php echo $m['message'] ?>
+	</div>
+<?php endif ?>
+
+<?php if ($user = CMS::user_logged_in()) : ?>
+	<p>
+		Logged in as:
+		<?php echo CMS::user_link($user) ?> - 
+		<a href="/user/logout">logout</a>
+	</p>
+<?php else : ?>
+	<p>
+		<a href="/user/login">Login</a>
+	</p>
 <?php endif ?>
 
 <div class="container layout-<?php echo @$page->layout_id  ?: 'basic' ?>">
@@ -27,18 +41,6 @@
 </header>
 
 <?php echo $content ?>
-
-<footer id="footer" class="row">
-	<div class="span4">
-		<p>Info here</p>
-	</div>
-	<div class="span4">
-		<p>Info here</p>
-	</div>
-	<div class="span4">
-		<p>Info here</p>
-	</div>
-</footer>
 
 </div> <!-- /Container -->
 

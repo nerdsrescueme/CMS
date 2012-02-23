@@ -4,7 +4,24 @@ class Controller_User extends Controller_Base_Cms
 {
 	public function action_check()
 	{
-		return Response::forge(View::forge('user/check'));
+		return Response::forge(Theme::instance()->view('user/check'));
+	}
+
+	public function action_profile($id)
+	{
+		$data = array();
+
+		try
+		{
+			$user = Sentry::user((int) $id);
+		}
+		catch(SentryAuthException $e)
+		{
+			Session::set_flash('success', 'The user profile you requested could not be found.');
+			Response::redirect('/');
+		}
+
+		
 	}
 
 	public function action_confirm($email = null, $hash = null)
@@ -30,13 +47,13 @@ class Controller_User extends Controller_Base_Cms
 			$data['errors'] = $e->getMessage();
 		}
 		
-		return Response::forge(View::forge('user/confirm', $data));
+		$this->template->content = Theme::instance()->view('user/confirm', $data);
 	}
 
 	public function action_login()
 	{
 		$data = array();
-		
+
 		if (Input::method() == 'POST')
 		{
 			try
@@ -59,7 +76,7 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		return Response::forge(View::forge('user/login', $data, false));
+		$this->template->content = Theme::instance()->view('user/login', $data, false);
 	}
 
 	public function action_logout()
@@ -114,6 +131,6 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		return Response::forge(View::forge('user/register', $data, false));
+		$this->template->content = Theme::instance()->view('user/register', $data, false);
 	}
 }
