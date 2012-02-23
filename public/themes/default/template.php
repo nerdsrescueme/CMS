@@ -10,7 +10,9 @@
 <body>
 
 <?php if ($m = CMS::flash()) : ?>
-	<div id="flash" class="<?php echo $m['type'] ?>">
+	<div id="flash" class="alert alert-<?php echo $m['type'] ?> fade in">
+		<a class="close" data-dismiss="alert">×</a>
+		<h4 class="alert-heading"><?php echo ucfirst($m['type']) ?>!</h4>
 		<?php echo $m['message'] ?>
 	</div>
 <?php endif ?>
@@ -30,7 +32,7 @@
 <div class="container layout-<?php echo @$page->layout_id  ?: 'basic' ?>">
 
 <header id="header" class="row">
-	<div id="logo" class="span4 mercury-region" data-type="editable"><a href="/">Nerd</a></div>
+	<div id="logo" class="span4" data-editable="global"><a href="/">Nerd</a></div>
 	<nav id="nav" class="span8">
 		<ol>
 			<li><a href="#">Contact Us</a></li>
@@ -43,6 +45,10 @@
 <?php echo $content ?>
 
 </div> <!-- /Container -->
+
+<?php echo Asset::js('jquery.js') ?>
+<?php echo Asset::js('bootstrap.js') ?>
+<?php echo Asset::js('application.js') ?>
 
 </body>
 </html>

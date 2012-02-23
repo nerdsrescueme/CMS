@@ -20,7 +20,7 @@ class CMS {
 	
 	public static function flash()
 	{
-		foreach (array('success', 'error', 'info', 'warning') as $type)
+		foreach (array('success', 'error', 'info') as $type)
 		{
 			if ($msg = Session::get_flash($type))
 			{

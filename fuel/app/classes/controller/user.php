@@ -110,7 +110,7 @@ class Controller_User extends Controller_Base_Cms
 					if ($user)
 					{
 						// Send an email with confirmation information
-						Session::set_flash('success', Uri::create('/cms/confirm/'.$user['hash'].'/'.$user['hash']));
+						Session::set_flash('success', Uri::create('/user/confirm/'.$user['hash'].'/'.$user['hash']));
 						
 						// Send them to their email to confirm their account.
 						return Response::redirect('user/check');

@@ -20,19 +20,13 @@ class Controller_Base_Cms extends Controller
 
 	public function after($response)
 	{
-		// CMS pages return a response, display it directly.
-		if ($response instanceof Response)
-		{
-			return $response;
-		}
-
 		// If AJAX, return the content without the layout
 		$body = Input::is_ajax() ? $this->template->content : $this->template;
 
 		// If the user is an admin...
 		if (Sentry::check() and Sentry::user()->is_admin())
 		{
-			$body = str_replace('</head>', View::forge('cms/admin').PHP_EOL.'</head>', $body);
+			$body = str_replace('</body>', '</body>'.View::forge('cms/admin'), $body);
 		}
 		else
 		{
