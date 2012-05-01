@@ -4,22 +4,22 @@
 // ------------------------------------------------------------------------
 
 	String.prototype.despace = function() {
-		return this.split(' ').join('');
+		return this.split(' ').join('')
 	}
 
 	String.prototype.untitleize = function() {
-		return this.charAt(0).toLowerCase() + this.slice(1);
+		return this.charAt(0).toLowerCase() + this.slice(1)
 	}
 
 	String.prototype.titleize = function() {
-		return this.charAt(0).toUpperCase() + this.slice(1);
+		return this.charAt(0).toUpperCase() + this.slice(1)
 	}
 
 	Array.prototype.contains = function(obj) {
-		var i = this.length;
-		while(i--) {
-			if(this[i] === obj) return true;
-		}
+		var i = this.length
+		while(i--)
+			if(this[i] === obj) return true
+
 		return false;
 	}
 
@@ -28,27 +28,25 @@
 // ------------------------------------------------------------------------
 
 	$.extend($, { sanitize: function(node) {
-		var tags  = Nerd.html.tags,
-		    attrs = Nerd.html.attributes;
+		var tags  = Nerd.html.tags
+		,   attrs = Nerd.html.attributes
 	
 		$(node).children().each(function(i, child) {
-		
-			$.sanitize(child);
 
-			var tag = child.localName.toLowerCase();
+			$.sanitize(child)
+
+			var tag = child.localName.toLowerCase()
 			
 			if ($.inArray(tag, tags) < 0) {
 				$(child).contents().each(function(j, content) {
-					$(content).remove().insertBefore(child);
-				});
-				$(child).remove();
+					$(content).remove().insertBefore(child)
+				})
+				$(child).remove()
 			} else {
 				$.each(child.attributes, function() {
-					var attr = this.localName;
+					var attr = this.localName
 					
-					if ($.inArray(attr, attrs[tag]) < 0) {
-						child.removeAttribute(attr);
-					}
+					if ($.inArray(attr, attrs[tag]) < 0) child.removeAttribute(attr)
 				});
 			}
 		});
@@ -57,11 +55,11 @@
 	}});
 
 	$.extend($, { selection: function() {
-		return Frame.document.getSelection();
+		return Nerd.Frame.document.getSelection()
 	}});
 
 	$.extend($, { range: function() {
-		return $.selection().getRangeAt(0);
+		return $.selection().getRangeAt(0)
 	}});
 
 
@@ -69,26 +67,33 @@
 // ------------------------------------------------------------------------
 
 	$.extend(window.Nerd, {
-		regions: [],
-		Commands: {},
-		Frame: {},
-		Editor: {},
-		Modal: {}
+		regions: []
+	,	Commands: {}
+	,	Frame: {}
+	,	Editor: {}
+	,	Modal: {}
+	,	Panel: {}
+	,	Pallette: {}
 	});
 
-	var Editor   = Nerd.Editor,
-	    Frame    = Nerd.Frame,
-	    Commands = Nerd.Commands;
-	    Modal    = Nerd.Modal;
+	var Editor   = Nerd.Editor
+	,   Frame    = Nerd.Frame
+	,   Commands = Nerd.Commands
+	,   Modal    = Nerd.Modal
+	,   Panel    = Nerd.Panel
+	,   Pallette = Nerd.Pallette
 
+
+//  Nerd
+// ------------------------------------------------------------------------
 
 	Nerd.trigger = function(action, opts) {
 		try {
-			this[action](opts);
+			this[action](opts)
 		}
 		catch(err) {
-			var pieces = action.split(':');
-			this[pieces[0].titleize()][pieces[1]](opts);
+			var pieces = action.split(':')
+			this[pieces[0].titleize()][pieces[1]](opts)
 		}
 	}
 
@@ -96,24 +101,28 @@
 //  Editor
 // ------------------------------------------------------------------------
 
-	Editor.has_changes = false;
-	Editor.is_activated = false;
+	Editor.has_changes = Editor.is_activated = false
 
 	Editor.activate = function() {
 		this.style = $('<style>')
 		    .text('[contenteditable="true"] { box-shadow: 0 0 8px lightblue; }')
-		    .appendTo(Frame.head);
-		Editor.toolbar.slideDown();
-		Nerd.regions.attr('contentEditable', 'true');
-		Editor.is_activated = true;
+		    .appendTo(Frame.head)
+		Nerd.frame.animate({ height: Nerd.frame.height() - Editor.toolbar.height()})
+		Editor.toolbar.slideDown()
+		Nerd.regions.attr('contentEditable', 'true')
+		Editor.is_activated = true
 	}
 
 	Editor.deactivate = function() {
-		this.style.remove();
-		Editor.toolbar.slideDown();
-		Nerd.regions.attr('contentEditable', 'false');
-		this.hide();
-		Editor.is_activated = false;
+		Nerd.frame.height('100%')
+		this.style.remove()
+		Editor.toolbar.slideDown()
+		Nerd.regions.attr('contentEditable', 'false')
+		Panel.hide()
+		Modal.hide()
+		Pallette.hide()
+		Editor.hide()
+		Editor.is_activated = false
 	}
 
 	Editor.hide = function() {
@@ -124,41 +133,31 @@
 		Editor.toolbar.slideDown()
 	}
 
-	Editor.edit_state = false;
+	Editor.edit_state = false
 
 	Editor.edited = function(edited) {
-		if (typeof(edited) != 'undefined') {
-			Editor.edit_state = edited
-		}
-		return Editor.edit_state;
+		if (typeof(edited) != 'undefined') Editor.edit_state = edited
+		return Editor.edit_state
 	}
 
 	Editor.initialize = function() {
 
-		var data     = $('body').html(),
-		    hdata    = $('head').html(),
-		    body     = $('body').html('<div id="nerd-toolbar"><div id="nerd-buttons">'),
-		    toolbar  = $('#nerd-toolbar'),
-		    buttons  = $('#nerd-buttons'),
-		    btnhtml  = '',
-		    frame    = $('<iframe src="about:blank" id="nerd-frame">').appendTo(body),
-		    body     = frame.contents().find('body').html(data),
-		    head     = frame.contents().find('head').html(hdata),
-		    document = frame[0].contentDocument,
-		    btns     = Nerd.buttons,
-		    btnlen   = btns.length,
-		    keys     = [1,13,37,38,39,40]; // Keys that change selection
+		var hdata    = $('head').html()
+		,   toolbar  = $('#nerd-toolbar').detach()
+		,   trigger  = $('#nerd-trigger').detach()
+		,   data     = $('body').html()
+		,   body     = $('body').html('').prepend(toolbar)
+		,   buttons  = $('#nerd-buttons')
+		,   frame    = $('<iframe src="about:blank" id="nerd-frame">').appendTo(body)
+		,   body     = frame.contents().find('body').html(data)
+		,   head     = frame.contents().find('head').html(hdata)
+		,   document = frame[0].contentDocument
+		,   keys     = [1,13,37,38,39,40]
 
 		// Add activation trigger
-		$('<div id="nerd-trigger"><i class="icon icon-white icon-edit"></i></div>').appendTo('body').click(function (e) {
-			if (Editor.is_activated) {
-				$(this).html('<i class="icon icon-white icon-edit"></i>');
-				return Editor.deactivate()
-			}
-			
-			$(this).html('<i class="icon icon-white icon-check"></i>');
-			return Editor.activate();
-		});
+		trigger.appendTo('body').click(function (e) {
+			return Editor.is_activated ? Editor.deactivate() : Editor.activate()
+		})
 
 		// Make all links target top window
 		$('a', body).attr('target', '_top').click(function (e) {
@@ -168,67 +167,70 @@
 			}
 		});
 
-		// Make Toolbar
-		toolbar.on('click', '[data-function]', function(e) {
-			return false;
-		});
+		// Toolbar button handling
+		toolbar.on('click', '[data-function]', function(evt) {		
+			evt.preventDefault()
+			
+			var that = $(this)
+			,   func = that.data('function')
 
-		// Make Buttons
-		for (var i=0; i < btnlen; i++) {
-			btnhtml += (btns[i].length === 0)
-			  ? '<span> </span>'
-			  : '<a href="#" title="' + btns[i][0] + '" class="icon-' + btns[i][2] + ' icon-white" data-function="' + btns[i][1].despace().untitleize() + '"></a>';
-		}
-		buttons.append(btnhtml).on('click', '[data-function]', function(e) {
-			e.preventDefault();
-			Commands[($(this).data('function'))]();
-			Editor.focused && Editor.focused.focus();
+			// If we're already in, don't reload
+			if (that.hasClass('active')) return
+
+			$('#nerd-tools .active').removeClass('active')
+			that.addClass('active')
+
+			switch(func) {
+				case 'command' :
+					Commands[(that.data('command'))]()
+					break
+				case 'modal' :
+					Modal.load(that.attr('href'))
+					break
+				case 'panel' :
+					Panel.load(that.attr('href'))
+				case 'pallette' :
+					Pallette.load(that.attr('href'))
+			}
 		});
 
 		// Button tooltips
-		$('[title]', buttons).tooltip({ placement: 'bottom', delay: 500 });
+		$('[title]', toolbar).tooltip({ placement: 'bottom', delay: 25 })
 
 		// Expose local objects to global Nerd object
-		Nerd.regions    = body.find('[data-editable]');
-		Editor.buttons  = buttons;
-		Editor.document = document;
-		Editor.toolbar  = toolbar;
-		Frame.instance  = frame;
-		Frame.body      = body;
-		Frame.document  = document;
-		Frame.head      = head;
+		Nerd.regions    = body.find('[data-editable]')
+		Nerd.frame      = frame
+		Editor.toolbar  = toolbar
+		Frame.body      = body
+		Frame.document  = document
+		Frame.head      = head
 
 		// Custom paste handling
 		$(Frame.document).bind('paste', function (e) {
-			e.preventDefault();
+			var clipboard = e.originalEvent.clipboardData
+			,   data = $.sanitize($('<div>').html(clipboard.getData('text/html')))
 
-			var clipboard = e.originalEvent.clipboardData,
-			    data = $('<div>').html(clipboard.getData('text/html')),
-			    data = $.sanitize(data);
-
-			Commands.exec('insertHTML', false, data);
+			Commands.exec('insertHTML', false, data)
+			return false
 		});
 
 		// Keypress events
 		Nerd.regions.on('keydown mouseup', function(e) {
-			var key = e.which;
+			var key = e.which
 
-			Editor.edited(true);
+			Editor.edited(true)
 
 			// On Click
-			if(key === 1) {
-				Editor.focused = this;
-			}
+			if(key === 1) Editor.focused = this
+			if(keys.contains(key)) Editor.selection = $.selection()
+		})
 
-			if(keys.contains(key)) {
-				Editor.selection = $.selection();
-			}
-		});
-
-		Nerd.Editor   = this;
-		Nerd.Frame    = Frame;
-		Nerd.Commands = Commands;
-		Nerd.Modal    = Modal;
+		Nerd.Editor   = this
+		Nerd.Frame    = Frame
+		Nerd.Commands = Commands
+		Nerd.Modal    = Modal.initialize()
+		Nerd.Panel    = Panel.initialize()
+		Nerd.Pallette = Pallette.initialize()
 
 		//this.activate();
 	}
@@ -237,15 +239,97 @@
 //  Modal Dialog
 // ------------------------------------------------------------------------
 	Modal.initialize = function() {
-		return Nerd.Frame.body.find('#nerd-modal').modal();
+		this.instance = Nerd.Frame.body.find('#nerd-modal')
+			.detach()
+			.appendTo('body')
+			.modal({ show: false })
+		return this.instance
 	}
 
 	Modal.show = function() {
-		Nerd.Frame.body.find('#nerd-modal').modal('show');
+		this.instance.modal('show');
 	}
 
 	Modal.hide = function() {
-		Nerd.Frame.body.find('#nerd-modal').modal('hide');
+		this.instance.modal('hide');
+	}
+
+	Modal.reposition = function() {
+		this.instance.css({
+			marginLeft: (this.instance.width() / 2) * -1
+		,	marginTop:  (this.instance.height() /2) * -1
+		})
+		return this
+	}
+
+	Modal.load = function(url) {
+		$.get(url, function(data) {
+			Modal.instance.html(data)
+		})
+		.success(function() {
+			Modal.reposition().show()
+		})
+		.error(function() {
+			alert('Request unable to be honored')
+		})
+		.complete(function() {})
+	}
+
+
+//  Panel Dialog
+// ------------------------------------------------------------------------
+	Panel.initialize = function() {
+		this.instance = Nerd.Frame.body.find('#nerd-panel')
+			.detach()
+			.appendTo('body')
+			.modal({ backdrop: false, show: false })
+		this.content  = this.instance.find('.content')
+		return this.instance
+	}
+
+	Panel.show = function() {
+		this.instance.modal('show')
+	}
+	
+	Panel.hide = function() {
+		this.instance.modal('hide')
+	}
+
+	Panel.reposition = function() {
+		this.instance
+			.height(Nerd.frame.height() * .9)
+		return this
+	}
+
+	Panel.load = function(url) {
+		$.get(url, function(data) {
+			Panel.content.html(data)
+		})
+		.success(function() {
+			Panel.reposition().show()
+		})
+		.error(function() {
+			alert('Request unable to be honored')
+		})
+		.complete(function() {})
+	}
+
+
+//  Palletes
+// ------------------------------------------------------------------------
+	Pallette.initialize = function() {
+		return Nerd.Frame.body.find('#nerd-pallette')
+			.detach()
+			.appendTo('body')
+	}
+
+	Pallette.show = function() {
+	}
+	
+	Pallette.hide = function() {}
+	
+	Pallette.load = function() {
+		this.show()
 	}
 
 
@@ -254,138 +338,136 @@
 
 	Commands = {
 		exec: function(command, ui, value) {
-			Frame.document.execCommand(command, ui, value);
-			Commands.normalize();
-		},
-		normalize: function() {
-			Editor.focused && Editor.focused.normalize();
-		},
-		wrap: function(node) {
-			var range     = $.range(),
-			    parent    = range.commonAncestorContainer,
-			    container = range.commonAncestorContainer.parentNode;
+			Frame.document.execCommand(command, ui, value)
+			Commands.normalize()
+		}
+	,	normalize: function() {
+			Editor.focused && Editor.focused.normalize()
+		}
+	,	wrap: function(node) {
+			var range     = $.range()
+			,   parent    = range.commonAncestorContainer
+			,   container = range.commonAncestorContainer.parentNode
 
 			// Do nothing if we are already within a <nodeName> tag
-			if(container.nodeName === node.nodeName) return;
+			if(container.nodeName === node.nodeName) return
 
 			// Delete any <nodeName> tags within selection
 			$(container).find(node.nodeName).each(function() {
-				var that = $(this);
-				that.replaceWith(that.html());
-			});
+				that.replaceWith($(this).html())
+			})
 
-			range.surroundContents(node);
-
-			Commands.normalize();
-		},
-		anchor: function() {
-			var anchor = prompt('What do we call it?');
-			if (anchor === null) return;
-			Commands.exec('createbookmark', false, anchor);
-		},
-		block: function() {
-			var block = prompt('What kind of block?');
-			if (block === null) return;
-			Commands.exec('formatblock', false, block);
-		},
-		bold: function() {
-			var node = Frame.document.createElement('strong');
-			Commands.wrap(node);
-		},
-		clear: function() {
-			Commands.exec('delete');
-		},
-		clearanchor: function() {
-			Commands.exec('unbookmark');
-		},
-		clearformat: function() {
-			Commands.exec('removeformat');
-		},
-		clearlink: function() {
-			Commands.exec('unlink');
-		},
-		copy: function() {
-			Commands.exec('copy');
-		},
-		cut: function() {
-			Commands.exec('cut');
-		},
-		hr: function() {
-			Commands.exec('inserthorizontalrule');
-		},
-		image: function() {
-			var image = prompt('Where is the image?');
-			if (image === null) return;
-			Commands.exec('insertimage');
-		},
-		indent: function() {
-			Commands.exec('indent');
-		},
-		italic: function() {
-			var node = Frame.document.createElement('em');
-			Commands.wrap(node);
-		},
-		justifyleft: function() {
-			Commands.exec('justifyleft');
-		},
-		justifycenter: function() {
-			Commands.exec('justifycenter');
-		},
-		justifyright: function() {
-			Commands.exec('justifyright');
-		},
-		link: function() {
-			var link = prompt('Where do we point the link to?');
-			if (link === null) return;
-			Commands.exec('createlink', false, link);
-		},
-		ol: function() {
-			Commands.exec('insertorderedlist');
-		},
-		outdent: function() {
-			Commands.exec('outdent');
-		},
-		paste: function() {
-			Commands.exec('paste');
-		},
-		print: function() {
-			Editor.deactivate();
-			Commands.exec('print');
-			setTimeout(Editor.activate, 1500);
-		},
-		source: function() {
-			alert('Show HTML Source');
-		},
-		sub: function() {
-			var node = Frame.document.createElement('sub');
-			Commands.wrap(node);
-		},
-		sup: function() {
-			var node = Frame.document.createElement('sup');
-			Commands.wrap(node);
-		},
-		strike: function() {
-			var node = Frame.document.createElement('del');
-			Commands.wrap(node);
-		},
-		ul: function() {
-			Commands.exec('insertunorderedlist');
-		},
-		underline: function() {
-			var node = Frame.document.createElement('u');
-			Commands.wrap(node);
-		},
-		undo: function() {
-			Commands.exec('undo');
+			range.surroundContents(node)
+			Commands.normalize()
+		}
+	,	anchor: function() {
+			var anchor = prompt('What do we call it?')
+			if (anchor === null) return
+			Commands.exec('createbookmark', false, anchor)
+		}
+	,	block: function() {
+			var block = prompt('What kind of block?')
+			if (block === null) return
+			Commands.exec('formatblock', false, block)
+		}
+	,	bold: function() {
+			var node = Frame.document.createElement('strong')
+			Commands.wrap(node)
+		}
+	,	clear: function() {
+			Commands.exec('delete')
+		}
+	,	clearanchor: function() {
+			Commands.exec('unbookmark')
+		}
+	,	clearformat: function() {
+			Commands.exec('removeformat')
+		}
+	,	clearlink: function() {
+			Commands.exec('unlink')
+		}
+	,	copy: function() {
+			Commands.exec('copy')
+		}
+	,	cut: function() {
+			Commands.exec('cut')
+		}
+	,	hr: function() {
+			Commands.exec('inserthorizontalrule')
+		}
+	,	image: function() {
+			var image = prompt('Where is the image?')
+			if (image === null) return
+			Commands.exec('insertimage')
+		}
+	,	indent: function() {
+			Commands.exec('indent')
+		}
+	,	italic: function() {
+			var node = Frame.document.createElement('em')
+			Commands.wrap(node)
+		}
+	,	justifyleft: function() {
+			Commands.exec('justifyleft')
+		}
+	,	justifycenter: function() {
+			Commands.exec('justifycenter')
+		}
+	,	justifyright: function() {
+			Commands.exec('justifyright')
+		}
+	,	link: function() {
+			var link = prompt('Where do we point the link to?')
+			if (link === null) return
+			Commands.exec('createlink', false, link)
+		}
+	,	ol: function() {
+			Commands.exec('insertorderedlist')
+		}
+	,	outdent: function() {
+			Commands.exec('outdent')
+		}
+	,	paste: function() {
+			Commands.exec('paste')
+		}
+	,	print: function() {
+			Editor.deactivate()
+			Commands.exec('print')
+			setTimeout(Editor.activate, 1500)
+		}
+	,	source: function() {
+			alert('Show HTML Source')
+		}
+	,	sub: function() {
+			var node = Frame.document.createElement('sub')
+			Commands.wrap(node)
+		}
+	,	sup: function() {
+			var node = Frame.document.createElement('sup')
+			Commands.wrap(node)
+		}
+	,	strike: function() {
+			var node = Frame.document.createElement('del')
+			Commands.wrap(node)
+		}
+	,	ul: function() {
+			Commands.exec('insertunorderedlist')
+		}
+	,	underline: function() {
+			var node = Frame.document.createElement('u')
+			Commands.wrap(node)
+		}
+	,	undo: function() {
+			Commands.exec('undo')
 		}
 	}
 
 	// Attach custom handlers to Commands object, will overwrite...
-	var handlers = Nerd.handlers;
+	var handlers = Nerd.handlers
 	for (var handler in handlers) {
-		Commands[handler] = handlers[handler];
+		Commands[handler] = handlers[handler]
 	}
 
-	return Nerd;
+	return Nerd
 
 })(window, $); // end Nerd

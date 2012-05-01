@@ -13,6 +13,7 @@ class Controller_Base_Cms extends Controller
 
 		// Add information to views
 		$this->template->set_global('site', $this->site);
+		$this->template->set_global('layout', false);
 
 		// Setup assets
 		Asset::add_path('themes/'.$theme['name'].'/assets/');

@@ -1,0 +1,401 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background:#4f7ab1 url('../img/backgrounds/lightblue.jpg') center repeat fixed;
+}
+
+p {
+	font-family:Shanti,'Helvetica Neue',Helvetica, Arial,sans-serif;
+	color:#969696
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+h2,h3,h4,h5,h6 {
+	font-weight:400
+}
+
+h1 {
+	font-weight:700
+}
+
+h2 {
+	font-size:20px;
+	border-bottom:1px solid lightgray;
+	margin-bottom:12px
+}
+
+h3.exciting {
+	font-size: 36px;
+	line-height: 42px;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid lightgray
+}
+
+h4.underlined {
+	color: #08c;
+
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted lightgray
+}
+
+
+#container {
+	background:#fbfbfb;
+	border-left:18px solid #fbfbfb;
+	border-right:18px solid #fbfbfb;
+	        box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
+	   -moz-box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
+}
+
+#info {
+	margin-top:12px;
+	margin-bottom:12px;
+	border-bottom:1px solid lightgray
+}
+
+#info p {
+	font-style:italic
+}
+
+#header {
+	height:140px
+}
+
+#logo {
+	margin-top: 14px;
+	height: 49px;
+	background: url('../img/tbp-logo.png') no-repeat 15px;
+	overflow: hidden;
+	cursor: pointer
+}
+#logo a {
+	position: absolute;
+	left: -9999px;
+}
+
+
+#main-nav {
+	margin-top:20px
+}
+
+/* Dropdown functions */
+#main-nav li { float:left; position:relative }
+#main-nav ul ul { position:absolute; left: -9999px }
+#main-nav li:hover ul { left:0; z-index:99999 }
+
+#main-nav ul {
+	list-style:none;
+	float:right
+}
+
+#main-nav ul ul {
+	width:180px;
+	padding:10px 0;
+	background:#fff;
+	border:1px solid lightgray;
+	border-radius:0 10px;
+
+	        box-shadow:0 5px 5px 1px rgba(0,0,0,0.4);
+	   -moz-box-shadow:0 5px 5px 1px rgba(0,0,0,0.4);
+	-webkit-box-shadow:0 5px 5px 1px rgba(0,0,0,0.4);
+}
+
+#main-nav ul ul li {
+	width:100%;
+	padding: 2px 0;
+}
+
+#main-nav a {
+	margin-left: 35px;
+	font-size: 13px;
+	display:inline-block;
+	text-transform:uppercase;
+	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+#main-nav a small {
+	display:block;
+	font-size: 11px;
+	text-transform:lowercase;
+}
+
+#main-nav ul ul a {
+	margin:0;
+	padding-left: 10px;
+	text-transform: none;
+}
+
+#tagline {
+	margin-bottom:18px
+}
+#tagline.home,
+#tagline.media {
+	margin-bottom:32px
+}
+
+#tagline-content {
+	margin-top:0;
+	background:#4f7ab1 url('../img/backgrounds/lightblue.jpg') center repeat fixed;
+	border-radius:0 10px 0 10px;
+	text-shadow:rgba(0,0,0,0.4) 1px 1px 1px;
+
+	        box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+	   -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+}
+
+#tagline.home #tagline-content,
+#tagline.media #tagline-content {
+	border-radius:0 0 0 10px
+}
+
+#tagline h1 {
+	display:inline-block;
+	font-weight:500;
+	font-size:20px;
+	margin:13px 20px;
+	color:#fff
+}
+
+#tagline p {
+	display:inline;
+	margin-left:-10px;
+	font-size: 14px;
+	color:#fff;
+	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+#slider,
+#slider img {
+	height: 305px;
+
+	     border-radius: 0 10px 0 0;
+	-moz-border-radius: 0 10px 0 0
+	
+}
+
+#breadcrumbs {
+	margin-bottom:28px
+}
+
+#breadcrumbs div {
+	padding:5px 0;
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray
+}
+
+#breadcrumbs p:before {
+	content:"You are here: "
+}
+
+#breadcrumbs p {
+	margin:0;
+	color:#969696;
+}
+
+#breadcrumbs a {
+	margin: 0 5px;
+}
+
+#features,
+#recent {
+	margin-bottom: 20px
+}
+
+#features div div {
+	height: 120px;
+	overflow: hidden
+}
+
+#features img.left {
+	margin: -8px 0 -8px -8px !important;
+	opacity: 0.6
+}
+#features div div:hover img.left {
+	opacity: 0.9
+}
+
+#tweets {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#tweets li {
+	padding: 10px 25px 10px 0;
+	margin: 0;
+	color:#969696;
+	border-bottom: 1px dotted lightgray
+}
+
+#tweets time {
+	float: left;
+	width: 105px;
+	display: inline-block;
+	margin: 0 10px 8px 0;
+}
+
+#sidebar {}
+
+#sidebar .snippet {
+	margin-bottom: 24px
+}
+
+#sidebar .navigation ol {
+	margin:5px 0 0 0;
+	padding:0;
+	list-style: none;
+}
+#sidebar .navigation li {
+	border-bottom: 1px solid lightgray
+}
+#sidebar .navigation li.active {
+	margin-left:-1px
+}
+#sidebar .navigation a {
+	padding:6px 0;
+	display:inline-block;
+	width: 100%;
+}
+
+#footer {
+	background:rgb(20,20,20);
+	margin:24px -18px -18px;
+	padding: 24px 0;
+}
+
+#footer-text {
+	text-align: right
+}
+
+#welcome {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height: 150px;
+	margin: -75px 0 0 -50%;
+	text-align: center;
+	line-height: 75px;
+	color: white;
+	font-size: 48px;
+	text-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+
+p.meta {
+	text-align:right;
+	font-size:10px;
+	text-transform:uppercase;
+	color:white;
+	background: gray;
+	margin-top: 24px;
+	padding: 5px 10px;
+	
+	border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+p.drop-cap:first-letter {
+	float: left;
+	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 32px;
+	padding: 7px 5px;
+	margin: 0 5px 0 0;
+	border: 1px solid lightblue;
+	border-radius: 2px;
+	-moz-border-radius:2px
+}
+img.left {
+	float: left;
+	margin: 0 10px 10px 0
+}
+img.centered {
+	margin-bottom: 12px
+}
+img.right {
+	float: right;
+	margin: 0 0 10px 10px
+}
+img.bordered {
+	border: 5px solid white;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.3)
+}
+img.bordered:hover {
+	        box-shadow: 0 0 4px 0 blue;
+	   -moz-box-shadow: 0 0 4px 0 blue;
+	-webkit-box-shadow: 0 0 4px 0 blue;
+
+}
+
+.centered-content {
+	text-align: center
+}
+
+p.meta a {
+	color:lightgray;
+}
+
+.bump-right {
+	margin-left:15px
+}
+.bump-left {
+	margin-right: 15px
+}
+
+.bottom-border {
+	height:1px;
+	overflow:hidden;
+	border-bottom:1px solid lightgray
+}
+
+
+
+
+
+body.landing #tagline-content,
+body.landing {
+	background:#5a724e url('../img/backgrounds/green.jpg') center repeat fixed;
+}
+
+body.landing-noheader #container {
+	border-top: 15px solid;
+	margin-top: 15px;
+	border-radius: 0 10px 0 10px;
+	background-color: white;
+	border-color: white;
+}
+
+body.landing-noheader #info,
+body.landing-noheader #header,
+body.landing-noheader #footer {
+	display: none
+}
+
+/** Twitter Bootstrap alterations **/
+
+#testimonials blockquote {
+	display: block;
+	width: 90%;
+	text-align: right;
+	font: 18px/26px Times;
+}
+#testimonials p {
+	margin-top: -10px;
+	padding-right: 25px;
+	font-size: 10px;
+	text-align: right;
+}
+
+::selection, ::-moz-selection, ::-webkit-selection {
+	background:orange;
+	color:white
+}
