@@ -1,11 +1,9 @@
-<h2>Viewing #<?php echo $page->id; ?></h2>
-
 <p>
-	<strong>Title:</strong>
+	<strong>Page Title:</strong>
 	<?php echo $page->title; ?></p>
 <p>
-	<strong>Url:</strong>
-	<?php echo $page->uri; ?></p>
+	<strong>Uri:</strong>
+	/<?php echo $page->uri; ?></p>
 <p>
 	<strong>Description:</strong>
 	<?php echo $page->description; ?></p>

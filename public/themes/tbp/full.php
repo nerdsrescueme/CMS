@@ -1,6 +1,3 @@
-<div>
-	<p>This is the full page layout.</p>
-</div>
 <div class="row">
 	<div class="span16">
 	<div id="main" data-editable="local">

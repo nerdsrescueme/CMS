@@ -11,10 +11,22 @@ class Model_Page extends Model
 			'validation' => array('required', 'min_length' => 4, 'max_length' => 120),
 			'form' => array('data_type' => 'text'),
 		),
+		'subtitle' => array(
+			'data_type' => 'char',
+			'label' => 'Subtitle',
+			'validation' => array('max_length' => 120),
+			'form' => array('data_type' => 'text'),
+		),
 		'uri' => array(
 			'data_type' => 'char',
 			'label' => 'URI',
 			'validation' => array('required', 'min_length' => 3, 'max_length' => 255),
+			'form' => array('data_type' => 'text'),
+		),
+		'keywords' => array(
+			'data_type' => 'char',
+			'label' => 'Keywords',
+			'validation' => array('max_length' => 255),
 			'form' => array('data_type' => 'text'),
 		),
 		'description' => array(
@@ -59,10 +71,12 @@ class Model_Page extends Model
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('title', 'Title', 'required|min_length[4]|max_length[120]');
+		$val->add_field('subtitle', 'Subtitle', 'max_length[120]');
 		$val->add_field('uri', 'URI', 'required|min_length[3]|max_length[255]');
-		$val->add_field('description', 'Description');
+		$val->add_field('keywords', 'Keywords', 'max_length[255]');
+		$val->add_field('description', 'Description', 'required');
 		$val->add_field('site_id', 'Site Id', 'required|valid_string[numeric]');
-		$val->add_field('layout_id', 'Layout Id', 'required|valid_string[numeric]');
+		$val->add_field('layout_id', 'Layout Id', 'required');
 
 		return $val;
 	}

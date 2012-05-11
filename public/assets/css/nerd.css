@@ -96,7 +96,35 @@
 	box-shadow: 0 0 10px rgba(0,0,0,.6)
 }
 
+iframe.modal {
+	width: 960px;
+	height: 450px;
+	padding: 20px;
+	left: center;
+	margin-left: -480px;
 
+	border: 0;
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgba(0,0,0,.6)
+}
+
+#nerd-notes {}
+
+#nerd-notes div {
+	margin: 0;
+	padding: 0 0 0 8px;
+}
+
+#nerd-notes span {
+	float: right;
+	margin-right: 8px;
+}
+
+#nerd-notes hr {
+	height: 1px;
+	border: 0;
+	background-color: rgba(255,255,255,0.5);
+}
 
 /*!
  * Bootstrap v2.0.0

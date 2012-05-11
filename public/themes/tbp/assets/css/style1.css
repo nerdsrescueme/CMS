@@ -174,6 +174,10 @@ h4.underlined {
 	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif
 }
 
+#login {
+	margin: 25px 10px 0 0;
+}
+
 #slider,
 #slider img {
 	height: 305px;

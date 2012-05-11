@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Team Builders Plus, Concept 1</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="<?php echo $page->description ?>">
+	<meta name="keywords" content="<?php echo $page->keywords ?>">
 
 	<link rel="stylesheet" href="/themes/tbp/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/tbp/assets/css/style1.css?v=1" media="screen">
@@ -74,8 +74,8 @@
 		<?php endif ?> 
 		</p>
 
-		<h1>Home Page</h1>
-		<p>The homepage has a special marketing masthead</p>
+		<h1><?php echo $page->title ?></h1>
+		<p><?php echo $page->subtitle ?></p>
 	</div>
 </section>
 

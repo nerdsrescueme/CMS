@@ -175,10 +175,10 @@
 			,   func = that.data('function')
 
 			// If we're already in, don't reload
-			if (that.hasClass('active')) return
+			//if (that.hasClass('active')) return
 
-			$('#nerd-tools .active').removeClass('active')
-			that.addClass('active')
+			//$('#nerd-tools .active').removeClass('active')
+			//that.addClass('active')
 
 			switch(func) {
 				case 'command' :
@@ -398,7 +398,7 @@
 	,	image: function() {
 			var image = prompt('Where is the image?')
 			if (image === null) return
-			Commands.exec('insertimage')
+			Commands.exec('insertimage', false, image)
 		}
 	,	indent: function() {
 			Commands.exec('indent')

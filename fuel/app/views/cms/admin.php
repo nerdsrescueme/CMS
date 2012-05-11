@@ -6,6 +6,9 @@
 	if (typeof(jQuery) == 'undefined')
 		document.write("<scr" + "ipt type=\"text/javascript\" src=\"<?php echo Asset::find_file('jquery.js', 'js') ?>?<?php echo filemtime(DOCROOT.'/assets/js/jquery.js') ?>\"></scr" + "ipt>");
 
+	var CMS_BASE = '<?php echo Uri::base(false) ?>';
+	var CMS_URI  = '<?php echo trim($_SERVER['REQUEST_URI'], '/') ?>';
+
 </script>
 
 <?php
@@ -18,10 +21,10 @@
 <div id="nerd-toolbar">
 	<div id="nerd-tools">
 		<a href="/cms/modals/pages" data-function="modal">Pages</a>
+		<a href="/cms/modals/finder" data-function="modal">Finder</a>
 		<a href="/cms/panels/media" data-function="pallette">Media</a>
-		<a href="/cms/panels/snippets" data-function="panel">Snippets</a>
+		<!--<a href="/cms/panels/snippets" data-function="panel">Snippets</a>-->
 		<a href="/cms/panels/notes" data-function="panel">Notes</a>
-		<a href="/cms/modals/uploader" data-function="modal">Files</a>
 	</div>
     <div id="nerd-buttons">
 		<a href="#" class="icon-file icon-white" data-function="command" data-command="save" title="Save"></a>

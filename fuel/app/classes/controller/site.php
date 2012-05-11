@@ -1,6 +1,6 @@
 <?php
-class Controller_Site extends Controller_Template  {
-
+class Controller_Site extends Controller_Base_Cms
+{
 	public function action_index() {
 		$data['sites'] = Model_Site::find('all');
 		$this->template->title = "Sites";

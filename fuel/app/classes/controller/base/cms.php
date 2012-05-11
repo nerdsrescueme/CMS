@@ -14,6 +14,7 @@ class Controller_Base_Cms extends Controller
 		// Add information to views
 		$this->template->set_global('site', $this->site);
 		$this->template->set_global('layout', false);
+		$this->template->set_global('page', Model_Page::forge()); // Blank page object for pages with no data
 
 		// Setup assets
 		Asset::add_path('themes/'.$theme['name'].'/assets/');

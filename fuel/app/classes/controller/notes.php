@@ -1,7 +1,7 @@
 <?php
 
-class Controller_Notes extends Controller_Rest {
-
+class Controller_Notes extends Controller_Rest
+{
 	public function post_note()
 	{
 		$val = Model_Note::validate('create');
@@ -9,7 +9,7 @@ class Controller_Notes extends Controller_Rest {
 		if ($val->run())
 		{
 			$note = Model_Note::forge(array(
-				'uri'     => Input::post('uri'),
+				'uri'     => trim(Input::post('uri'), '/'),
 				'content' => Input::post('content'),
 			));
 
@@ -40,6 +40,4 @@ class Controller_Notes extends Controller_Rest {
 			$this->response(array('success' => false));
 		}
 	}
-
-
 }
