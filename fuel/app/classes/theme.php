@@ -2,24 +2,36 @@
 
 class Theme extends \Fuel\Core\Theme {
 
-	protected $layouts;
+	protected $layouts = array();
 
-	public function layouts()
+	public function layouts($assoc = false)
 	{
-		if($this->layouts === null)
+		if(empty($this->layouts))
 		{
 			$ignore = array('template', '404', 'home');
-	
-			foreach(glob($this->active['path'].'*.html') as $file)
+
+			foreach(glob($this->active['path'].'*.php') as $file)
 			{
 				$file = str_replace($this->active['path'], '', $file);
-				$file = str_replace('.html', '', $file);
-	
+				$file = str_replace('.php', '', $file);
+
 				if(!in_array($file, $ignore))
 				{
 					$this->layouts []= $file;
 				}
 			}
+		}
+
+		if($assoc)
+		{
+			$return = array();
+
+			foreach($this->layouts as $layout)
+			{
+				$return[$layout] = $layout;
+			}
+
+			return $return;
 		}
 
 		return $this->layouts;

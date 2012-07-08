@@ -8,6 +8,7 @@
 
 	var CMS_BASE = '<?php echo Uri::base(false) ?>';
 	var CMS_URI  = '<?php echo trim($_SERVER['REQUEST_URI'], '/') ?>';
+	var CMS_PAGE = '<?php echo $page->id ?>';
 
 </script>
 

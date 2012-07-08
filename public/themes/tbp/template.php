@@ -17,8 +17,8 @@
 
 <header id="header" class="row">
 	<div id="info" class="span12">
-		<p class="pull-left" data-editable="global">We have some an important message! <a href="#">Read more</a> about it!</p>
-		<p id="social" class="pull-right" data-editable="global">
+		<p id="top-message" class="pull-left" data-editable="global"><!-- start top-message -->Header message<a href="#">Read more</a>.<!-- end top-message --></p>
+		<p id="social" class="pull-right">
 			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_16.png"></a>
 			<a href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_16.png"></a>
 			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_16.png"></a>
@@ -32,17 +32,36 @@
 	<div id="logo" class="span3"><a href="#">Team Builders Plus</a></div>
 	<nav id="main-nav" class="span9">
 		<ul>
+			<li><a href="/">Home</a></li>
 			<li>
-				<a href="#nowhere">About<small>who we are</small></a>
+				<a href="/about">About<small><abbr title="Team Builders Plus">TBP</abbr></small></a>
 				<ul>
-					<li><a href="#">Item One</a></li>
-					<li><a href="#">Item Two</a></li>
+					<li><a href="/about/press-releases">Press Releases</a></li>
+					<li><a href="/about/staff">Staff</a></li>
+					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
 				</ul>
 			</li>
-			<li><a href="#nowhere">Services<small>what we do</small></a></li>
-			<li><a href="#nowhere">Cities<small>in your area</small></a></li>
-			<li><a href="#nowhere">Blog<small>read on</small></a></li>
-			<li><a href="#nowhere">Contact<small>get in touch</small></a></li>
+			<li><a href="/leadership">Leadership<small>Development</small></a></li>
+			<li>
+				<a href="#nowhere">Team<small>Building</small></a>
+				<ul>
+					<li><a href="/team-building/all-programs">All Programs</a></li>
+					<li><a href="/team-building/fun-events">Fun Events</a></li>
+					<li><a href="/team-building/large-group">Large Group</a></li>
+					<li><a href="/team-building/philanthropic">Philanthropic</a></li>
+					<li><a href="/team-building/senior-teams">Senior Teams</a></li>
+					<li><a href="/team-building/treasure-hunts">Treasure Hunts</a></li>
+					<li><a href="/team-building/team-development">Team Development</a></li>
+				</ul>
+			</li>
+			<li><a href="/taking-flight">Book<small>Taking Flight</small></a></li>
+			<li>
+				<a href="/blog">Blog<small>read on</small></a>
+				<ul>
+					<li><a href="/blog/team-building">Team Building</a></li>
+					<li><a href="/blog/leadership">Leadership</a></li>
+				</ul>
+			</li>
 		</ul>
 	</nav>
 	<div class="span12" class="bottom-border"> </div><!-- Nasty hack -->
@@ -84,12 +103,12 @@
 <footer id="footer">
 	<div class="row">
 		<div class="span4">
-		<div class="bump-right" data-editable="global">
+		<div id="footer-1" class="bump-right" data-editable="global"><!-- start footer-1 -->
 			<h4 class="underlined">Featured Program</h4>
 			<p>That great America on the other side of the sphere, Australia, was given to the enlightened world by the whaleman. After its first blunder-born discovery by a Dutchman, all other ships long shunned those shores as pestiferously barbarous; but the whale-ship touched there. The whale-ship is the true mother of that now mighty colony.</p>
+		<!-- end footer-1 --></div>
 		</div>
-		</div>
-		<div class="span4" data-editable="global">
+		<div id="footer-2" class="span4" data-editable="global"><!-- start footer-2 -->
 			<h4 class="underlined">From the Blog</h4>
 			<ol>
 				<li><a href="#">Post One Here</a> &mdash; 20 minutes ago</li>
@@ -98,13 +117,13 @@
 				<li><a href="#">Keep Going for this one</a> &mdash; 8 days ago</li>
 				<li><a href="#">And Once More!</a> &mdash; 10 days ago</li>
 			</ol>
-		</div>
-		<div class="span4" data-editable="global">
-		<div class="bump-left">
+		<!-- end footer-2 --></div>
+		<div class="span4">
+		<div id="footer-3" class="bump-left" data-editable="global"><!-- start footer-3 -->
 			<h4 class="underlined">Our Newsletter</h4>
 			<p>Sign up to receive our monthly newsletter.</p>
 			<p>{A sign up form goes here}</p>
-		</div>
+		<!-- end footer-3 --></div>
 		</div>
 	</div>
 	<div class="row"> </div>
@@ -125,7 +144,6 @@ $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 });
 	$('#social a[title]').tooltip({ placement: 'bottom' });
 	$('#testimonials').carousel({ interval: 6000 });
-	$('#logo').click(function(){window.location = 'index.html'});
 })
 </script>
 

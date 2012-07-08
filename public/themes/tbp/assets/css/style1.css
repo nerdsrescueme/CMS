@@ -73,9 +73,8 @@ h4.underlined {
 #logo {
 	margin-top: 14px;
 	height: 49px;
-	background: url('../img/tbp-logo.png') no-repeat 15px;
+	background: url('../img/tbp-logo.jpg') no-repeat 15px;
 	overflow: hidden;
-	cursor: pointer
 }
 #logo a {
 	position: absolute;

@@ -1,4 +1,5 @@
 <?php echo Form::open(array('class' => 'form-horizontal')); ?>
+<?php echo Form::hidden('site_id', Input::post('site_id', isset($page) ? $page->site_id : '1'), array('class' => 'span6')); ?>
 
 	<fieldset>
 		<div class="control-group">
@@ -34,15 +35,9 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Site id', 'site_id', array('class' => 'control-label')); ?> 
-			<div class="controls">
-				<?php echo Form::input('site_id', Input::post('site_id', isset($page) ? $page->site_id : ''), array('class' => 'span6')); ?> 
-			</div>
-		</div>
-		<div class="control-group">
 			<?php echo Form::label('Layout id', 'layout_id', array('class' => 'control-label')); ?> 
 			<div class="controls">
-				<?php echo Form::input('layout_id', Input::post('layout_id', isset($page) ? $page->layout_id : ''), array('class' => 'span6')); ?> 
+				<?php echo Form::select('layout_id', 'none', Theme::instance()->layouts(true)) ?> 
 			</div>
 		</div>
 		<div class="controls">

@@ -97,6 +97,29 @@
 		}
 	}
 
+	Nerd.save = function() {
+		var save = { globals: {}, locals: {}}
+		
+		Nerd.regions.each(function() {
+			var savable = $(this)
+			,   current = save.locals
+			
+			if(savable.data('editable') == 'global') current = save.globals
+			
+			current[savable.attr('id')] = savable.html()
+		})
+		
+		console.log(save)
+		
+		$.ajax({
+			type: 'POST'
+		,	url: CMS_BASE + '/cms/save'
+		,	data: { page: CMS_PAGE, data: save }
+		,	complete: function(response) { console.log(response.responseText) }
+		,	dataType: 'json'
+		});
+	}
+
 
 //  Editor
 // ------------------------------------------------------------------------
@@ -114,6 +137,9 @@
 	}
 
 	Editor.deactivate = function() {
+		
+		Nerd.save()
+		
 		Nerd.frame.height('100%')
 		this.style.remove()
 		Editor.toolbar.slideDown()

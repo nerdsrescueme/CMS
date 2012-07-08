@@ -24,8 +24,15 @@ class Controller_Base_Cms extends Controller
 
 	public function after($response)
 	{
-		// If AJAX, return the content without the layout
-		$body = Input::is_ajax() ? $this->template->content : $this->template;
+		if (is_string($response))
+		{
+			$body = $response;
+		}
+		else
+		{
+			// If AJAX, return the content without the layout
+			$body = Input::is_ajax() ? $this->template->content : $this->template;
+		}
 
 		// If the user is an admin...
 		if (Sentry::check() and Sentry::user()->is_admin())

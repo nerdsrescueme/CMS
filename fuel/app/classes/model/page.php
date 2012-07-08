@@ -3,6 +3,8 @@ use Orm\Model;
 //insert into pages (uri,title,description,site_id,layout_id,created_at,updated_at) values ('test', 'Test Page', 'Description of test page', 1, 1, UNIX_TIMESTAMP(), UNIX_TIMESTAMP());
 class Model_Page extends Model
 {
+	protected static $_has_many = array('htmls');
+
 	protected static $_properties = array(
 		'id',
 		'title' => array(

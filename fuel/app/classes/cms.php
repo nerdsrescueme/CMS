@@ -5,6 +5,45 @@ class CMS {
 
 	protected static $uri;
 	
+	public static function relative_date($secs)
+	{
+		$secs = time() - $secs;
+
+		$second = 1;
+		$minute = 60;
+		$hour   = 60*60;
+		$day    = 60*60*24;
+		$week   = 60*60*24*7;
+		$month  = 60*60*24*7*30;
+		$year   = 60*60*24*7*30*365;
+	 
+		if ($secs <= 0) { $output = "now";
+		}elseif ($secs > $second && $secs < $minute) { $output = round($secs/$second)." second";
+		}elseif ($secs >= $minute && $secs < $hour) { $output = round($secs/$minute)." minute";
+		}elseif ($secs >= $hour && $secs < $day) { $output = round($secs/$hour)." hour";
+		}elseif ($secs >= $day && $secs < $week) { $output = round($secs/$day)." day";
+		}elseif ($secs >= $week && $secs < $month) { $output = round($secs/$week)." week";
+		}elseif ($secs >= $month && $secs < $year) { $output = round($secs/$month)." month";
+		}elseif ($secs >= $year && $secs < $year*10) { $output = round($secs/$year)." year";
+		}else{ $output = " more than a decade ago"; }
+	 
+		if ($output <> "now")
+		{
+			$output = (substr($output,0,2)=="1 ") ? $output." ago" : $output."s ago";
+		}
+
+		return $output;
+
+	}
+	
+	public static function twitter($username, $num_posts)
+	{
+		$json = file_get_contents("http://twitter.com/status/user_timeline/{$username}.json?count={$num_posts}", true);
+
+		return json_decode($json, true);
+	}
+	
+	
 	public static function user_logged_in()
 	{
 		return Sentry::check() ? Sentry::user() : false;
@@ -35,12 +74,16 @@ class CMS {
 		return static::$uri;
 	}
 
+	public static function inject_output($output)
+	{
+		// test
+	}
+
 	public static function clean_output($output)
 	{
 		$find = array(
-			'class="mercury-region"' => '',
-			'data-type="editable"' => '',
-			' mercury-region' => '',
+			'data-editable="global"' => '',
+			'data-editable="local"' => '',
 			'" >' => '">', // This cleans up tags, aesthetics only.
 			'"  >' => '">', // This cleans up tags, aesthetics only.
 		);
