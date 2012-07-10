@@ -6,7 +6,7 @@ class Controller_Pages extends Controller_Template
 
 	public function action_index()
 	{
-		$data['pages'] = Model_Page::find('all');
+		$data['pages'] = Model_Page::find('all', array('order_by' => 'title'));
 		$this->template->title = "Pages";
 		$this->template->content = View::forge('pages/index', $data);
 	}

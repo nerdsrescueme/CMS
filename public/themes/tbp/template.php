@@ -34,16 +34,16 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li>
-				<a href="/about">About<small><abbr title="Team Builders Plus">TBP</abbr></small></a>
+				<a href="/about">About Us<small></small></a>
 				<ul>
 					<li><a href="/about/press-releases">Press Releases</a></li>
 					<li><a href="/about/staff">Staff</a></li>
 					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
 				</ul>
 			</li>
-			<li><a href="/leadership">Leadership<small>Development</small></a></li>
+			<li><a href="/leadership-development">Leadership<small>Development</small></a></li>
 			<li>
-				<a href="#nowhere">Team<small>Building</small></a>
+				<a href="/team-building">Team<small>Building</small></a>
 				<ul>
 					<li><a href="/team-building/all-programs">All Programs</a></li>
 					<li><a href="/team-building/fun-events">Fun Events</a></li>
@@ -56,10 +56,10 @@
 			</li>
 			<li><a href="/taking-flight">Book<small>Taking Flight</small></a></li>
 			<li>
-				<a href="/blog">Blog<small>read on</small></a>
+				<a href="/blog">Blog</a>
 				<ul>
 					<li><a href="/blog/team-building">Team Building</a></li>
-					<li><a href="/blog/leadership">Leadership</a></li>
+					<li><a href="/blog/leadership">Leadership Development</a></li>
 				</ul>
 			</li>
 		</ul>

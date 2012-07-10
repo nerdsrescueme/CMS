@@ -33,17 +33,17 @@
 		<div id="testimonials" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
 				<blockquote>"Quote"</blockquote>
 				<p>&mdash; Name, <b>Company</b></p>
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
 				<blockquote>"Quote"</blockquote>
 				<p>&mdash; Name, <b>Company</b></p>
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
 				<blockquote>"Quote"</blockquote>
 				<p>&mdash; Name, <b>Company</b></p>
 			</div>

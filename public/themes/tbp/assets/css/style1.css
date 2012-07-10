@@ -7,7 +7,7 @@ body {
 	background:#4f7ab1 url('../img/backgrounds/lightblue.jpg') center repeat fixed;
 }
 
-p {
+p, ul {
 	font-family:Shanti,'Helvetica Neue',Helvetica, Arial,sans-serif;
 	color:#969696
 }
@@ -73,7 +73,7 @@ h4.underlined {
 #logo {
 	margin-top: 14px;
 	height: 49px;
-	background: url('../img/tbp-logo.jpg') no-repeat 15px;
+	background: url('../img/tbp-logo.png') no-repeat 15px 7px;
 	overflow: hidden;
 }
 #logo a {
@@ -294,6 +294,12 @@ h4.underlined {
 	text-shadow: 0 0 4px rgba(0,0,0,.4);
 }
 
+#main li {
+	padding-left: 15px;
+	list-style-position: inside;
+	list-style-type: square;
+}
+
 p.meta {
 	text-align:right;
 	font-size:10px;
@@ -317,6 +323,11 @@ p.drop-cap:first-letter {
 	border-radius: 2px;
 	-moz-border-radius:2px
 }
+
+p.first-paragraph {
+	color: rgb(60,60,60);
+}
+
 img.left {
 	float: left;
 	margin: 0 10px 10px 0
