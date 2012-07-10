@@ -72,10 +72,13 @@
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="/themes/tbp/assets/img/teamwork-figures.jpg">
+				<img src="http://placehold.it/940x305&amp;text=Marketing+Image">
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/slider2.jpg">
+				<img src="http://placehold.it/940x305&amp;text=Second+Image">
+			</div>
+			<div class="item">
+				<img src="http://placehold.it/940x305&amp;text=Third+Image">
 			</div>
 		</div>
 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -83,7 +86,7 @@
 	</div>
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
-		<p id="login" class="pull-right">
+		<!--<p id="login" class="pull-right">
 		<?php if ($user = CMS::user_logged_in()) : ?> 
 			Logged in as:
 			<?php echo CMS::user_link($user) ?> - 
@@ -91,7 +94,7 @@
 		<?php else : ?> 
 			<a href="/user/login">Login</a>
 		<?php endif ?> 
-		</p>
+		</p>-->
 
 		<h1><?php echo $page->title ?></h1>
 		<p><?php echo $page->subtitle ?></p>
@@ -104,8 +107,8 @@
 	<div class="row">
 		<div class="span4">
 		<div id="footer-1" class="bump-right" data-editable="global"><!-- start footer-1 -->
-			<h4 class="underlined">Featured Program</h4>
-			<p>That great America on the other side of the sphere, Australia, was given to the enlightened world by the whaleman. After its first blunder-born discovery by a Dutchman, all other ships long shunned those shores as pestiferously barbarous; but the whale-ship touched there. The whale-ship is the true mother of that now mighty colony.</p>
+			<h4 class="underlined">Featured Program: {Program}</h4>
+			<p>Enter a program description.</p>
 		<!-- end footer-1 --></div>
 		</div>
 		<div id="footer-2" class="span4" data-editable="global"><!-- start footer-2 -->
@@ -113,9 +116,6 @@
 			<ol>
 				<li><a href="#">Post One Here</a> &mdash; 20 minutes ago</li>
 				<li><a href="#">Second Posting</a> &mdash; 2 days ago</li>
-				<li><a href="#">Lets try again</a> &mdash; 4 days ago</li>
-				<li><a href="#">Keep Going for this one</a> &mdash; 8 days ago</li>
-				<li><a href="#">And Once More!</a> &mdash; 10 days ago</li>
 			</ol>
 		<!-- end footer-2 --></div>
 		<div class="span4">

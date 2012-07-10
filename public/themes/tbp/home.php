@@ -33,19 +33,19 @@
 		<div id="testimonials" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="/themes/tbp/assets/img/headshot1.jpg" class="bordered left">
-				<blockquote>"Team Builders Plus has been absolutely fantastic. There are so many good things to say I don't know where to start!"</blockquote>
-				<p>&mdash; Cindy Brady, <b>The Bunch</b></p>
+				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<blockquote>"Quote"</blockquote>
+				<p>&mdash; Name, <b>Company</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/headshot2.jpg" class="bordered left">
-				<blockquote>I have some wonderful things to say as well, but I can't really put them into words right now.</blockquote>
-				<p>&mdash; Andy Reed, <b>Philadelphia Eagles</b></p>
+				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<blockquote>"Quote"</blockquote>
+				<p>&mdash; Name, <b>Company</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/headshot3.jpg" class="bordered left">
-				<blockquote>I would like to take the opportunity to say that I really, really enjoy scrolling testimonials with headshots. Adds a personal touch.</blockquote>
-				<p>&mdash; Frank Bardon, <b>Nerds, Rescue Me!</b></p>
+				<img src="http://placehold.it/120x140&amp;text=Headshot" class="bordered left">
+				<blockquote>"Quote"</blockquote>
+				<p>&mdash; Name, <b>Company</b></p>
 			</div>
 		</div>
 	</div>

@@ -39,8 +39,15 @@ class CMS {
 	public static function twitter($username, $num_posts)
 	{
 		$json = file_get_contents("http://twitter.com/status/user_timeline/{$username}.json?count={$num_posts}", true);
-
-		return json_decode($json, true);
+		$json = json_decode($json, true);
+		
+		// Autodetect urls
+		foreach ($json as $i => $j)
+		{
+			$json[$i]['text'] = preg_replace("/(http[s]*:\/\/[\S]+)/", "<a href='\${1}'>\${1}</a>", $json[$i]['text']);
+		}
+		
+		return $json;
 	}
 	
 	
