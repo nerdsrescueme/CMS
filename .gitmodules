@@ -18,4 +18,4 @@
 	url = git://github.com/fuel/email.git
 [submodule "fuel/packages/sentry"]
 	path = fuel/packages/sentry
-	url = git://github.com/cartalyst/sentry.git
+	url = git://github.com/cartalyst/sentry-fuel.git
