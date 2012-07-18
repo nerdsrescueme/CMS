@@ -173,8 +173,13 @@ h4.underlined {
 	font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif
 }
 
-#login {
+#rfp {
 	margin: 25px 10px 0 0;
+}
+
+#rfp a {
+	color: #fae7cc;
+	margin-right: 10px;
 }
 
 #slider,

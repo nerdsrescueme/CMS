@@ -21,6 +21,7 @@
 <div id="disqus_thread" class="span8"></div>
 <script type="text/javascript">
     var disqus_shortname = 'teambuildersplus';
+    var disqus_developer = 1;
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

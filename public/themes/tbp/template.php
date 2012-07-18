@@ -22,10 +22,7 @@
 			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_16.png"></a>
 			<a href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_16.png"></a>
 			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_16.png"></a>
-			<a href="http://digg.com" title="Digg This"><img src="/themes/tbp/assets/img/icons-social/digg_16.png"></a>
 			<a href="http://google.com" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_16.png"></a>
-			<a href="http://stumbleupon.com" title="Stumble Upon This"><img src="/themes/tbp/assets/img/icons-social/stumbleupon_16.png"></a>
-			<a href="http://vimeo.com" title="See our Vimeo Channel"><img src="/themes/tbp/assets/img/icons-social/vimeo_16.png"></a>
 			<a href="http://youtube.com" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_16.png"></a>
 		</p>
 	</div>
@@ -59,7 +56,7 @@
 				<a href="/blog">Blog</a>
 				<ul>
 					<li><a href="/blog/team-building">Team Building</a></li>
-					<li><a href="/blog/leadership">Leadership Development</a></li>
+					<li><a href="/blog/leadership-development">Leadership Development</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -86,6 +83,9 @@
 	</div>
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
+	
+		<p id="rfp" class="pull-right"><a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank">Request a Proposal</a></p>
+	
 		<!--<p id="login" class="pull-right">
 		<?php if ($user = CMS::user_logged_in()) : ?> 
 			Logged in as:
@@ -144,6 +144,7 @@ $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 });
 	$('#social a[title]').tooltip({ placement: 'bottom' });
 	$('#testimonials').carousel({ interval: 6000 });
+	$('#rfp').hide().delay(200).fadeIn('slow');
 })
 </script>
 
