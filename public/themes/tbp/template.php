@@ -69,13 +69,13 @@
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="http://placehold.it/940x305&amp;text=Marketing+Image">
+				<img src="/themes/tbp/assets/img/marketing/Success.png">
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/940x305&amp;text=Second+Image">
+				<img src="/themes/tbp/assets/img/marketing/Leadership.png">
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/940x305&amp;text=Third+Image">
+				<img src="/themes/tbp/assets/img/marketing/Team.png">
 			</div>
 		</div>
 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
