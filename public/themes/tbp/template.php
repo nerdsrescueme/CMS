@@ -90,7 +90,7 @@
 	<div id="tagline-content" class="span12">
 	
 		<div id="rfp" class="pull-right">
-			<a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank" class="btn btn-warning" rel="tooltip" title="Want to know more?">Request a Proposal</a>
+			<a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank" class="btn btn-warning" rel="tooltip" title="Want to know more?"><i class="icon-comment icon-white"></i> Request a Proposal</a>
 		</div>
 	
 		<!--<p id="login" class="pull-right">
