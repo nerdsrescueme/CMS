@@ -19,11 +19,11 @@
 	<div id="info" class="span12">
 		<p id="top-message" class="pull-left" data-editable="global"><!-- start top-message -->Header message<a href="#">Read more</a>.<!-- end top-message --></p>
 		<p id="social" class="pull-right">
-			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_16.png"></a>
-			<a href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_16.png"></a>
-			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_16.png"></a>
-			<a href="http://google.com" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_16.png"></a>
-			<a href="http://youtube.com" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_16.png"></a>
+			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_32.png"></a>
+			<a href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_32.png"></a>
+			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_32.png"></a>
+			<a href="http://google.com" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_32.png"></a>
+			<a href="http://youtube.com" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_32.png"></a>
 		</p>
 	</div>
 	<div id="logo" class="span3"><a href="#">Team Builders Plus</a></div>
@@ -145,6 +145,14 @@ $(document).ready(function() {
 	$('#social a[title]').tooltip({ placement: 'bottom' });
 	$('#testimonials').carousel({ interval: 6000 });
 	$('#rfp').hide().delay(200).fadeIn('slow');
+	
+	$('#social img')
+	.mouseover(function(event) {
+		$(this).animate({width: '20px', height: '20px'})
+	})
+	.mouseout(function(event) {
+		$(this).animate({width: '18px', height: '18px'})
+	})
 })
 </script>
 
