@@ -97,8 +97,8 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 20px;
   color: #555555;
   background-color: #ffffff;
 }
@@ -246,8 +246,8 @@ a:hover {
 p {
   margin: 0 0 9px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 20px;
 }
 p small {
   font-size: 9px;
@@ -295,7 +295,7 @@ h3 small {
   font-size: 14px;
 }
 h4, h5, h6 {
-  line-height: 18px;
+  line-height: 20px;
 }
 h4 {
   font-size: 14px;
@@ -307,7 +307,7 @@ h5 {
   font-size: 12px;
 }
 h6 {
-  font-size: 11px;
+  font-size: 12px;
   color: #999999;
   text-transform: uppercase;
 }
@@ -328,7 +328,7 @@ ol {
   list-style: decimal;
 }
 li {
-  line-height: 18px;
+  line-height: 20px;
 }
 ul.unstyled {
   margin-left: 0;
@@ -338,7 +338,7 @@ dl {
   margin-bottom: 18px;
 }
 dt, dd {
-  line-height: 18px;
+  line-height: 20px;
 }
 dt {
   font-weight: bold;
@@ -380,7 +380,7 @@ blockquote p {
 }
 blockquote small {
   display: block;
-  line-height: 18px;
+  line-height: 20px;
   color: #999999;
 }
 blockquote small:before {
@@ -405,7 +405,7 @@ blockquote:after {
 address {
   display: block;
   margin-bottom: 18px;
-  line-height: 18px;
+  line-height: 20px;
   font-style: normal;
 }
 code, pre {
@@ -429,7 +429,7 @@ pre {
   padding: 8.5px;
   margin: 0 0 9px;
   font-size: 12px;
-  line-height: 18px;
+  line-height: 20px;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -479,9 +479,9 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 20px;
 }
 label {
   display: block;
@@ -926,7 +926,7 @@ table {
 }
 .table th, .table td {
   padding: 8px;
-  line-height: 18px;
+  line-height: 20px;
   text-align: left;
   border-top: 1px solid #ddd;
 }
@@ -1436,7 +1436,7 @@ i {
   padding: 3px 15px;
   clear: both;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 20px;
   color: #555555;
   white-space: nowrap;
 }
@@ -1545,9 +1545,9 @@ i {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .nav.list .nav-header {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   color: #999999;
   text-transform: uppercase;
 }
@@ -2200,7 +2200,7 @@ i {
   display: block;
   visibility: visible;
   padding: 5px;
-  font-size: 11px;
+  font-size: 12px;
   filter: alpha(opacity=0);
   -moz-opacity: 0;
   opacity: 0;
@@ -2416,7 +2416,7 @@ i {
 .btn {
   display: inline-block;
   padding: 5px 10px 6px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: normal;
   color: #333333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
