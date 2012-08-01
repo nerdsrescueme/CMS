@@ -2,22 +2,22 @@
 <section id="features" class="row">
 	<div class="span3"><div id="feature-1" data-editable="local"><!-- start feature-1 -->
 		<h4 class="underlined">TBP Overview</h4>
-		<img src="/themes/tbp/assets/img/icons-dark/cloud_flag.png" class="left">
+		<img src="/assets/img/uploads/icons-dark/cloud_flag.png" class="left">
 		<p>This is a little bit of information about Team Builders Plus. I'm seeing a small, brief overview. Perhaps your mission statement.</p>
 	<!-- end feature-1 --></div></div>
 	<div class="span3"><div id="feature-2" data-editable="local"><!-- start feature-2 -->
 		<h4 class="underlined">TBP In Your City</h4>
-		<img src="/themes/tbp/assets/img/icons-dark/city_map.png" class="left">
+		<img src="/assets/img/uploads/icons-dark/city_map.png" class="left">
 		<p>Space is reserved for a single item that carries the message you wish to convey on your home page. Perhaps a bit of local information?</p>
 	<!-- end feature-2 --></div></div>
 	<div class="span3"><div id="feature-3" data-editable="local"><!-- start feature-3 -->
 		<h4 class="underlined">Philly Networking Event</h4>
-		<img src="/themes/tbp/assets/img/icons-dark/system_connection.png" class="left">
+		<img src="/assets/img/uploads/icons-dark/system_connection.png" class="left">
 		<p>Reserved for another content area, perhaps with some images? Any bit of content can be used in here, but it should be regulated.</p>
 	<!-- end feature-3 --></div></div>
 	<div class="span3"><div id="feature-4" data-editable="local"><!-- start feature-4 -->
 		<h4 class="underlined">And Another</h4>
-		<img src="/themes/tbp/assets/img/icons-dark/simple_star.png" class="left">
+		<img src="/assets/img/uploads/icons-dark/simple_star.png" class="left">
 		<p>Block is here to make sure you have enough space to convey what you want to get across. I'm out of random sentences for the night.</p>
 	<!-- end feature-4 --></div></div>
 </section>
@@ -25,7 +25,7 @@
 <section id="recent" class="row">
 	<div id="event" class="span6" data-editable="global"><!-- start event -->
 		<h4 class="underlined">Latest Event: Bikes for the World</h4>
-		<img src="/themes/tbp/assets/img/team.jpg" class="bordered">
+		<img src="/assets/img/uploads/team.jpg" class="bordered">
 		<p>This area is reserved for a slightly longer description of a team building event you have hosted. It is dynamic and should contain links to areas within and outside <a href="#">read more</a></p>
 	<!-- end event --></div>
 	<div class="span6">
@@ -33,22 +33,22 @@
 		<div id="testimonials" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="/themes/tbp/assets/img/Logos/peco.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/peco.gif" class="bordered left">
 				<blockquote>"Team Builders Plus identified underlying issues and developed programs based on their findings. We got just what we needed and it really made a difference."</blockquote>
 				<p>&mdash; Ted Fiala, <b>PECO Energy</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/Logos/campbells.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/campbells.gif" class="bordered left">
 				<blockquote>"I enjoyed the exercises because they made the concepts more realistic and applicable."</blockquote>
 				<p>&mdash; Cheryl Davis, <b>Campbell Soup Company</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/Logos/campbells.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/campbells.gif" class="bordered left">
 				<blockquote>"The quality and the usefulness of the 360 reports and the fact that we had group data added greatly to the overall leadership experience for our most senior people."</blockquote>
 				<p>&mdash; Ian Cormack, <b>Campbell Soup Company</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/Logos/hp.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/hp.gif" class="bordered left">
 				<blockquote>"Everyone just loved the event. All feedback was very positive for our meeting but your team building even was the highlight of the meeting."</blockquote>
 				<p>&mdash; Kim Whittington, <b>Hewlett-Packard</b></p>
 			</div>
@@ -58,12 +58,12 @@
 				<p>&mdash; <b>Harvard Management</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/Logos/chase.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/chase.gif" class="bordered left">
 				<blockquote>"The facilitator was an absolute pleasure to work with during both the planning stage and the actual event. Everything went off without a hitch&hellip;"</blockquote>
 				<p>&mdash; Michael Sweeney, <b>Chase Home Lending</b></p>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/Logos/mars.gif" class="bordered left">
+				<img src="/assets/img/uploads/Logos/mars.gif" class="bordered left">
 				<blockquote>" The group was overwhelmingly happy with the results of our event and talked about it for the next day and a half.&hellip;"</blockquote>
 				<p>&mdash; Minerva Moriole, <b>Mars, Incorporated</b></p>
 			</div>
