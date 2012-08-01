@@ -424,3 +424,6 @@ body.landing-noheader #footer {
 	background:orange;
 	color:white
 }
+#slider.carousel {
+	margin-bottom: 0;
+}
