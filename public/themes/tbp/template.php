@@ -146,11 +146,11 @@
 <script src="/themes/tbp/assets/js/bootstrap-dropdown.js"></script>
 
 <script>
-
 $(document).ready(function() {
-	$('#slider').carousel({ interval: 9000 });
-	$('#social a[title]').tooltip({ placement: 'bottom' });
-	$('#testimonials').carousel({ interval: 6000 });
+	$('#slider').carousel({ interval: 9000 })
+	$('#social a[title]').tooltip({ placement: 'bottom' })
+	$('a[rel=tooltip]').tooltip({ placement: 'top' })
+	$('#testimonials').carousel({ interval: 6000 })
 	
 	$('#social img')
 		.mouseover(function(event) {
