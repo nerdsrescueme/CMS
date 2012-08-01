@@ -33,19 +33,39 @@
 		<div id="testimonials" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
-				<blockquote>"Quote"</blockquote>
-				<p>&mdash; Name, <b>Company</b></p>
+				<img src="/themes/tbp/assets/img/Logos/peco.gif" class="bordered left">
+				<blockquote>"Team Builders Plus identified underlying issues and developed programs based on their findings. We got just what we needed and it really made a difference."</blockquote>
+				<p>&mdash; Ted Fiala, <b>PECO Energy</b></p>
+			</div>
+			<div class="item">
+				<img src="/themes/tbp/assets/img/Logos/campbells.gif" class="bordered left">
+				<blockquote>"I enjoyed the exercises because they made the concepts more realistic and applicable."</blockquote>
+				<p>&mdash; Cheryl Davis, <b>Campbell Soup Company</b></p>
+			</div>
+			<div class="item">
+				<img src="/themes/tbp/assets/img/Logos/campbells.gif" class="bordered left">
+				<blockquote>"The quality and the usefulness of the 360 reports and the fact that we had group data added greatly to the overall leadership experience for our most senior people."</blockquote>
+				<p>&mdash; Ian Cormack, <b>Campbell Soup Company</b></p>
+			</div>
+			<div class="item">
+				<img src="/themes/tbp/assets/img/Logos/hp.gif" class="bordered left">
+				<blockquote>"Everyone just loved the event. All feedback was very positive for our meeting but your team building even was the highlight of the meeting."</blockquote>
+				<p>&mdash; Kim Whittington, <b>Hewlett-Packard</b></p>
 			</div>
 			<div class="item">
 				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
-				<blockquote>"Quote"</blockquote>
-				<p>&mdash; Name, <b>Company</b></p>
+				<blockquote>"Harvard Management Update rates Teambuildinginc.com as one of the 3 best sites for teams!"</blockquote>
+				<p>&mdash; <b>Harvard Management</b></p>
 			</div>
 			<div class="item">
-				<img src="http://placehold.it/120x140&amp;text=Logo" class="bordered left">
-				<blockquote>"Quote"</blockquote>
-				<p>&mdash; Name, <b>Company</b></p>
+				<img src="/themes/tbp/assets/img/Logos/chase.gif" class="bordered left">
+				<blockquote>"The facilitator was an absolute pleasure to work with during both the planning stage and the actual event. Everything went off without a hitch&hellip;"</blockquote>
+				<p>&mdash; Michael Sweeney, <b>Chase Home Lending</b></p>
+			</div>
+			<div class="item">
+				<img src="/themes/tbp/assets/img/Logos/mars.gif" class="bordered left">
+				<blockquote>" The group was overwhelmingly happy with the results of our event and talked about it for the next day and a half.&hellip;"</blockquote>
+				<p>&mdash; Minerva Moriole, <b>Mars, Incorporated</b></p>
 			</div>
 		</div>
 	</div>

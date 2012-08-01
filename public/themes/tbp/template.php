@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Team Builders Plus, Concept 1</title>
+	<title><?php echo $page->title ?> - <?php echo $page->subtitle ?></title>
 	<meta name="description" content="<?php echo $page->description ?>">
 	<meta name="keywords" content="<?php echo $page->keywords ?>">
 
@@ -38,7 +38,12 @@
 					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
 				</ul>
 			</li>
-			<li><a href="/leadership-development">Leadership<small>Development</small></a></li>
+			<li>
+				<a href="/leadership-development">Leadership<small>Development</small></a>
+				<ul>
+					<li><a href="http://www.360-degreefeedback.com/" target="_blank">360 Degree Feedback</a></li>
+				</ul>
+			</li>
 			<li>
 				<a href="/team-building">Team<small>Building</small></a>
 				<ul>
@@ -84,7 +89,9 @@
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
 	
-		<p id="rfp" class="pull-right"><a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank">Request a Proposal</a></p>
+		<div id="rfp" class="pull-right">
+			<a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank" class="btn btn-warning">Request a Proposal</a>
+		</div>
 	
 		<!--<p id="login" class="pull-right">
 		<?php if ($user = CMS::user_logged_in()) : ?> 
@@ -144,15 +151,14 @@ $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 });
 	$('#social a[title]').tooltip({ placement: 'bottom' });
 	$('#testimonials').carousel({ interval: 6000 });
-	$('#rfp').hide().delay(200).fadeIn('slow');
 	
 	$('#social img')
-	.mouseover(function(event) {
-		$(this).animate({width: '20px', height: '20px'})
-	})
-	.mouseout(function(event) {
-		$(this).animate({width: '18px', height: '18px'})
-	})
+		.mouseover(function(event) {
+			$(this).animate({width: '20px', height: '20px'})
+		})
+		.mouseout(function(event) {
+			$(this).animate({width: '18px', height: '18px'})
+		})
 })
 </script>
 
