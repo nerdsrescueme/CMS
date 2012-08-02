@@ -5,7 +5,7 @@
 	<p>Main headline</p>
 <!-- end description --></div>
 
-<div class="span4" id="main" data-editable="local"><!-- start left-column -->
+<div class="span4" id="left-column" data-editable="local"><!-- start left-column -->
 	<p>Left column content</p>
 <!-- end left-column --></div>
 
