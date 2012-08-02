@@ -339,6 +339,13 @@ p.first-paragraph {
 	color: rgb(60,60,60);
 }
 
+p.opener {
+	font-size: 18px;
+	line-height: 16px;
+	margin-bottom: 12px;
+	color: #999;
+}
+
 img.left {
 	float: left;
 	margin: 0 10px 10px 0
