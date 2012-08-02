@@ -341,9 +341,10 @@ p.first-paragraph {
 
 p.opener {
 	font-size: 18px;
-	line-height: 16px;
+	font-weight: normal;
+	line-height: 26px;
 	margin-bottom: 12px;
-	color: #999;
+	color: #666;
 }
 
 img.left {
