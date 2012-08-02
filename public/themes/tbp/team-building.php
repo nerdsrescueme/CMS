@@ -30,7 +30,7 @@
 			<td><i class="icon-ok"></i></td>
 		</tr>
 		<tr>
-			<td><a href="/team-building/cluequest">ClueQuest: The Indoor Treasure Hunt</a></td>
+			<td><a href="/team-building/cluequest-treasure-hunt">ClueQuest: The Indoor Treasure Hunt</a></td>
 			<td><i class="icon-ok"></i></td>
 			<td><i class="icon-ok"></i></td>
 			<td></td>
@@ -48,7 +48,7 @@
 			<td><i class="icon-ok"></i></td>
 		</tr>
 		<tr>
-			<td><a href="/team-building/geoquest">GeoQuest: The High-Tech Treasure Hunt</a></td>
+			<td><a href="/team-building/geoquest-treasure-hunt">GeoQuest: The High-Tech Treasure Hunt</a></td>
 			<td><i class="icon-ok"></i></td>
 			<td><i class="icon-ok"></i></td>
 			<td></td>
