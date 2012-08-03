@@ -67,7 +67,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="/blog">Blog</a>
+				<a href="/blog/team-building">Blog</a>
 				<ul>
 					<li><a href="/blog/team-building">Team Building</a></li>
 					<li><a href="/blog/leadership-development">Leadership Development</a></li>
