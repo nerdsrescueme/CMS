@@ -1,10 +1,10 @@
 <article id="content" class="row">
-<div class="span8" id="main" data-editable="local"><!-- start main -->
+<div class="span7" id="main" data-editable="local"><!-- start main -->
 	<h2>Blog Category Title</h2>
 	<p><a href="/blog/sample-blog-post">Sample Blog Post</a></p>
 <!-- end main --></div>
 
-<div id="sidebar" class="span3 offset1">
+<div id="sidebar" class="span4 offset1">
 	<div id="blog-image" class="snippet" data-editable="local"><!-- start blog-image -->
 		<img src="http://placehold.it/210x160" class="bordered">
 	<!-- end blog-image --></div>
