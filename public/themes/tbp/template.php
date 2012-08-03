@@ -56,7 +56,16 @@
 					<li><a href="/team-building/team-development">Team Development</a></li>
 				</ul>
 			</li>
-			<li><a href="/taking-flight">Book<small>Taking Flight</small></a></li>
+			<li>
+				<a href="/taking-flight">Book<small>Taking Flight</small></a>
+				<ul>
+					<li><a href="http://www.takingflightwithdisc.com/book" target="_blank">The Book</a></li>
+					<li><a href="http://www.takingflightwithdisc.com/speaking" target="_blank">Speaking/Keynote</a></li>
+					<li><a href="http://www.takingflightwithdisc.com/shop" target="_blank">Products</a></li>
+					<li><a href="http://www.takingflightwithdisc.com/blog" target="_blank">Blog</a></li>
+					<li><a href="http://www.takingflightwithdisc.com/resources" target="_blank">Resources</a></li>
+				</ul>
+			</li>
 			<li>
 				<a href="/blog">Blog</a>
 				<ul>

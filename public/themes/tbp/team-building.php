@@ -1,3 +1,4 @@
+<div id="table" data-editable="local"><!-- begin table -->
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -22,6 +23,15 @@
 		</tr>
 		<tr>
 			<td><a href="/team-building/breaking-down-silos">Breaking Down Silos</a></td>
+			<td></td>
+			<td><i class="icon-ok"></i></td>
+			<td></td>
+			<td><i class="icon-ok"></i></td>
+			<td></td>
+			<td><i class="icon-ok"></i></td>
+		</tr>
+		<tr>
+			<td><a href="/team-building/csi-negativezero">CSI: Negative Zero</a></td>
 			<td></td>
 			<td><i class="icon-ok"></i></td>
 			<td></td>
@@ -146,5 +156,5 @@
 			<td></td>
 		</tr>
 	</tbody>
-
 </table>
+<!-- end table --></div>
