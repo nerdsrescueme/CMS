@@ -7,6 +7,10 @@ return array(
 	'u/(:any)'    => 'user/$1',
 	'user/(:any)' => 'user/$1',
 
+	'cms-login'		=> 'user/login',
+	'cms-logout'	=> 'user/logout',
+
 	'n'            => 'notes/note',
 	'n/(:any)'     => 'notes/note/$1',
+	
 );

@@ -4,6 +4,7 @@ class Controller_Base_Cms extends Controller
 {
 	public $template;
 	public $site;
+	public $session;
 
 	public function before()
 	{
