@@ -2,11 +2,16 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><
+	<?php if ($layout and $layout == 'home') : ?>
+	<title>Team Building and Leadership Development by Team Builders Plus</title>
+	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through one-on-one performance coaching, leadership development and training programs.  ">
+	<meta content="keywords" content="team building, leadership development, team builders plus, marlton new jersey">
+	<?php else : ?>
 	<title><?php echo $page->title ?> - <?php echo $page->subtitle ?></title>
 	<meta name="description" content="<?php echo $page->description ?>">
 	<meta name="keywords" content="<?php echo $page->keywords ?>">
-
+	<?php endif ?>
 	<link rel="stylesheet" href="/themes/tbp/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/tbp/assets/css/style1.css?v=1" media="screen">
 </head>
@@ -146,7 +151,7 @@
 		<div class="span12">
 			<p style="text-align:center;margin-top:24px">
 				Website &copy; 2012 <acronym title="Team Builders Plus">TBP</acronym> &mdash;
-				112A Centre Blvd. Marlton, NJ 08053 | USA (888) 672-1120 | Int'l +1 (856) 596-4196
+				112A Centre Blvd. Marlton, NJ 08053 &mdash; USA (888) 672-1120 &mdash; Int'l +1 (856) 596-4196
 			</p>
 		</div>
 	</div>
