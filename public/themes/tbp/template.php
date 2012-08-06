@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<?php if ($layout and $layout == 'home') : ?>
 	<title>Team Building and Leadership Development by Team Builders Plus</title>
 	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through one-on-one performance coaching, leadership development and training programs.  ">
