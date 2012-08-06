@@ -63,7 +63,7 @@ class Controller_User extends Controller_Base_Cms
 				if ($login)
 				{
 					Session::set_flash('success', 'Welcome, you have successfully logged in.');
-					return Response::redirect($this->session->get('last_page', '/'));
+					return Response::redirect('/');
 				}
 				else
 				{
