@@ -142,7 +142,14 @@
 		<!-- end footer-3 --></div>
 		</div>
 	</div>
-	<div class="row"> </div>
+	<div class="row">
+		<div class="span12">
+			<p style="text-align:center;margin-top:24px">
+				Website &copy; 2012 <acronym title="Team Builders Plus">TBP</acronym> &mdash;
+				112A Centre Blvd. Marlton, NJ 08053 | USA (888) 672-1120 | Int'l +1 (856) 596-4196
+			</p>
+		</div>
+	</div>
 </footer>
 
 </div><!--!/#container -->
