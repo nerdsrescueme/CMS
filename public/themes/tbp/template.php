@@ -88,13 +88,13 @@
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="/themes/tbp/assets/img/marketing/Success.png">
+				<a href="/about"><img src="/themes/tbp/assets/img/marketing/Success.png"></a>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/marketing/Leadership.png">
+				<a href="/leadership-development"><img src="/themes/tbp/assets/img/marketing/Leadership.png"></a>
 			</div>
 			<div class="item">
-				<img src="/themes/tbp/assets/img/marketing/Team.png">
+				<a href="/team-building/all-programs"><img src="/themes/tbp/assets/img/marketing/Team.png"></a>
 			</div>
 		</div>
 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
