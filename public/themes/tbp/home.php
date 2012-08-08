@@ -5,6 +5,29 @@
 		<img src="/assets/img/uploads/team.jpg" class="bordered">
 		<p>This area is reserved for a slightly longer description of a team building event you have hosted. It is dynamic and should contain links to areas within and outside <a href="#">read more</a></p>
 	<!-- end event --></div>
+	<div id="why" class="span6" data-editable="local"><!-- start why -->
+		<h4 class="underlined">Why Choose TBP?</h4>
+		<div class="row">
+			<div class="span3">
+			<ul>
+				<li>Quality Service</li>
+				<li>Friendly People</li>
+				<li>Lorem Ipsum Dolor</li>
+				<li>Another Reason</li>
+			</ul>
+			</div>
+			<div class="span3">
+			<ul>
+				<li>Quality Service</li>
+				<li>Friendly People</li>
+				<li>Lorem Ipsum Dolor</li>
+			</ul>
+			</div>
+		</div>
+	<!-- end why --></div>
+</section>
+
+<section id="choose" class="row">
 	<div class="span6">
 		<h4 class="underlined">Testimonials</h4>
 		<div id="testimonials" class="carousel slide">
@@ -45,30 +68,8 @@
 				<p>&mdash; Minerva Moriole, <b>Mars, Incorporated</b></p>
 			</div>
 		</div>
-	</div>
-</section>
-
-<section id="choose" class="row">
-	<div id="why" class="span6" data-editable="local"><!-- start why -->
-		<h4 class="underlined">Why Choose TBP?</h4>
-		<div class="row">
-			<div class="span3">
-			<ul>
-				<li>Quality Service</li>
-				<li>Friendly People</li>
-				<li>Lorem Ipsum Dolor</li>
-				<li>Another Reason</li>
-			</ul>
-			</div>
-			<div class="span3">
-			<ul>
-				<li>Quality Service</li>
-				<li>Friendly People</li>
-				<li>Lorem Ipsum Dolor</li>
-			</ul>
-			</div>
 		</div>
-	<!-- end why --></div>
+	</div>
 	<div class="span6">
 		<h4 class="underlined"><a href="http://twitter.com/TeamBuildrsPlus">Recent Tweets</a></h4>
 		<ol id="tweets">
