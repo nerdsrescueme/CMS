@@ -29,7 +29,7 @@
 		<p>This area is reserved for a slightly longer description of a team building event you have hosted. It is dynamic and should contain links to areas within and outside <a href="#">read more</a></p>
 	<!-- end event --></div>
 	<div class="span6">
-		<h4 class="underlined"><a href="#">Testimonials</a></h4>
+		<h4 class="underlined">Testimonials</h4>
 		<div id="testimonials" class="carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
