@@ -9,7 +9,7 @@ body {
 
 p, ul {
 	font-family:Shanti,'Helvetica Neue',Helvetica, Arial,sans-serif;
-	color:#969696
+	color:#717171
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -210,7 +210,7 @@ h4.underlined {
 
 #breadcrumbs p {
 	margin:0;
-	color:#969696;
+	color:#717171;
 }
 
 #breadcrumbs a {
@@ -245,7 +245,7 @@ h4.underlined {
 #tweets li {
 	padding: 10px 25px 10px 0;
 	margin: 0;
-	color:#969696;
+	color:#717171;
 	border-bottom: 1px dotted lightgray
 }
 
