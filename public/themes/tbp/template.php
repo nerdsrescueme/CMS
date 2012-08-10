@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<?php if ($layout and $layout == 'home') : ?>
 	<title>Team Building and Leadership Development by Team Builders Plus</title>
-	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through one-on-one performance coaching, leadership development and training programs.  ">
+	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through team building programs, leadership development and one-on-one performance coaching.">
 	<meta content="keywords" content="team building, leadership development, team builders plus, marlton new jersey">
 	<?php else : ?>
 	<title><?php echo $page->title ?> - <?php echo $page->subtitle ?></title>
@@ -62,7 +62,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="http://www.takingflightwithdisc.com">Taking Flight<small>With <acronym title="Dominant, Interactive, Supportive, Conscientious">DISC</a></small></a>
+				<a href="http://www.takingflightwithdisc.com" target="_blank">Taking Flight<small>With <acronym title="Dominant, Interactive, Supportive, Conscientious">DISC</a></small></a>
 				<ul>
 					<li><a href="http://www.takingflightwithdisc.com/book" target="_blank">The Book</a></li>
 					<li><a href="http://www.takingflightwithdisc.com/speaking" target="_blank">Speaking/Keynote</a></li>
@@ -97,8 +97,6 @@
 				<a href="/team-building/all-programs"><img src="/assets/img/uploads/Marketing/Team.png"></a>
 			</div>
 		</div>
-		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
