@@ -40,6 +40,28 @@
 				<?php echo Form::select('layout_id', isset($page) ? $page->layout_id : 'none', Theme::instance()->layouts(true)) ?> 
 			</div>
 		</div>
+		
+		<div class="control-group">
+			<?php echo Form::label('Priority', 'priority', array('class' => 'control-label')); ?> 
+			<div class="controls">
+				<?php echo Form::select('priority', isset($page) ? $page->priority : 5, range(0,10)); ?> 
+			</div>
+		</div>
+		<div class="control-group">
+			<?php echo Form::label('Change Frequency', 'changes', array('class' => 'control-label')); ?> 
+			<div class="controls">
+				<?php echo Form::select('changes', isset($page) ? $page->changes : 4, array(
+					1 => 'Always', 2 => 'Hourly', 3 => 'Daily', 4 => 'Weekly', 5 => 'Monthly', 6 => 'Yearly', 7 => 'Never'
+				)); ?> 
+			</div>
+		</div>
+		<div class="control-group">
+			<?php echo Form::label('Hidden', 'hidden', array('class' => 'control-label')); ?> 
+			<div class="controls">
+				<?php echo Form::select('hidden', isset($page) ? $page->hidden : 0, array(1 => 'Yes', 2 => 'No')); ?> 
+			</div>
+		</div>
+		
 		<div class="controls">
 			<?php echo Form::submit('submit', 'Save', array('class' => 'btn btn-primary')); ?>
 			<?php echo Html::anchor('/pages', 'Cancel', array('class' => 'btn btn-danger')) ?> 

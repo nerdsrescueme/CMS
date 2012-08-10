@@ -49,6 +49,24 @@ class Model_Page extends Model
 			'validation' => array('required', 'max_length' => 120),
 			'form' => array('data_type' => 'text'),
 		),
+		'priority' => array(
+			'data_type' => 'int',
+			'label' => 'Priority',
+			'validation' => array('required', 'valid_string' => 'numeric'),
+			'form' => array('data_type' => 'text'),
+		),
+		'changes' => array(
+			'data_type' => 'int',
+			'label' => 'Change Frequency',
+			'validation' => array('required', 'valid_string' => 'numeric'),
+			'form' => array('data_type' => 'text'),
+		),
+		'hidden' => array(
+			'data_type' => 'int',
+			'label' => 'Hidden',
+			'validation' => array('required', 'valid_string' => 'numeric'),
+			'form' => array('data_type' => 'text'),
+		),
 		'created_at' => array('data_type' => 'int', 'label' => 'Created', 'form' => array('type' => false)),
 		'updated_at' => array('data_type' => 'int', 'label' => 'Updated', 'form' => array('type' => false)),
 	);
@@ -79,8 +97,50 @@ class Model_Page extends Model
 		$val->add_field('description', 'Description', 'required');
 		$val->add_field('site_id', 'Site Id', 'required|valid_string[numeric]');
 		$val->add_field('layout_id', 'Layout Id', 'required');
+		$val->add_field('priority', 'Priority', 'valid_string[numeric]');
+		$val->add_field('changes', 'Change Frequency', 'valid_string[numeric]');
+		$val->add_field('hidden', 'Hidden', 'valid_string[numeric]');
 
 		return $val;
 	}
 
+	public function sitemap_date()
+	{
+		return date('Y-m-d', $this->updated_at);
+	}
+
+	public function sitemap_priority()
+	{
+		return (float) $this->priority/10;
+	}
+
+	public function change_frequency()
+	{
+		switch ($this->changes)
+		{
+			case 1:
+				return 'always';
+				break;
+			case 2:
+				return 'hourly';
+				break;
+			case 3:
+				return 'daily';
+				break;
+			case 4:
+				return 'weekly';
+				break;
+			case 5:
+				return 'monthly';
+				break;
+			case 6:
+				return 'yearly';
+				break;
+			case 7:
+				return 'never';
+				break;
+			default:
+				return 'weekly';
+		}		
+	}
 }

@@ -13,7 +13,7 @@ class Controller_Pages extends Controller_Template
 
 	public function action_sitemap()
 	{
-		$pages = Model_Page::find('all', array('order_by' => 'uri'));
+		$pages = Model_Page::find('all', array('order_by' => 'uri', 'where' => array('hidden' => 0)));
 		$pages = $pages + array(Model_Page::forge(array(
 			'uri' => '/',
 			'updated_at' => time(),
@@ -21,7 +21,52 @@ class Controller_Pages extends Controller_Template
 			'changes' => 2,
 		)));
 		
-		die(var_dump($pages));
+		$xml = new \DOMDocument();
+		$xml->formatOutput = true;
+		
+		// Setup root element
+		$root = $xml->createElement("urlset");
+			$attr = $xml->createAttribute('xmlns');
+			$attr->value = 'http://www.sitemaps.org/schemas/sitemap/0.9';
+			$root->appendChild($attr);
+			$xml->appendChild($root);
+
+		foreach($pages as $page)
+		{
+			$url = $xml->createElement('url');
+				$root->appendChild($url);
+				
+			// Loc
+			$loc = $xml->createElement('loc');
+			$txt = $xml->createTextNode(Uri::create($page->uri));
+				$loc->appendChild($txt);
+				$url->appendChild($loc);
+
+			// Lastmod
+			$lastmod = $xml->createElement('lastmod');
+			$txt = $xml->createTextNode($page->sitemap_date());
+				$lastmod->appendChild($txt);
+				$url->appendChild($lastmod);
+
+			// Changefreq
+			$changefreq = $xml->createElement('changefreq');
+			$txt = $xml->createTextNode($page->change_frequency());
+				$changefreq->appendChild($txt);
+				$url->appendChild($changefreq);
+
+			// Priority
+			$priority = $xml->createElement('priority');
+			$txt = $xml->createTextNode($page->sitemap_priority());
+				$priority->appendChild($txt);
+				$url->appendChild($priority);
+			
+			unset($loc, $lastmod, $changefreq, $priority);
+		}
+
+		$response = Response::forge($xml->saveXml())
+			->set_header('Content-Type', 'text/xml')
+			->send(true);
+		exit;
 	}
 
 	public function action_view($id = null)
@@ -47,6 +92,9 @@ class Controller_Pages extends Controller_Template
 					'description' => Input::post('description'),
 					'site_id' => Input::post('site_id'),
 					'layout_id' => Input::post('layout_id'),
+					'priority' => Input::post('priority'),
+					'changes' => Input::post('changes'),
+					'hidden' => Input::post('hidden'),
 				));
 				
 				if ($page and $page->save())
@@ -83,6 +131,9 @@ class Controller_Pages extends Controller_Template
 			$page->description = Input::post('description');
 			$page->site_id     = Input::post('site_id');
 			$page->layout_id   = Input::post('layout_id');
+			$page->priority    = Input::post('priority');
+			$page->changes     = Input::post('changes');
+			$page->hidden      = Input::post('hidden');
 
 			if ($page->save())
 			{
@@ -103,6 +154,9 @@ class Controller_Pages extends Controller_Template
 				$page->description = $val->validated('description');
 				$page->site_id     = $val->validated('site_id');
 				$page->layout_id   = $val->validated('layout_id');
+				$page->priority    = Input::post('priority');
+				$page->changes     = Input::post('changes');
+				$page->hidden      = Input::post('hidden');
 				Session::set_flash('error', $val->show_errors());
 			}
 			
