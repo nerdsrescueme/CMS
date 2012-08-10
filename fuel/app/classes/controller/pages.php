@@ -11,6 +11,19 @@ class Controller_Pages extends Controller_Template
 		$this->template->content = View::forge('pages/index', $data);
 	}
 
+	public function action_sitemap()
+	{
+		$pages = Model_Page::find('all', array('order_by' => 'uri'));
+		$pages = $pages + array(Model_Page::forge(array(
+			'uri' => '/',
+			'updated_at' => time(),
+			'priority' => 1,
+			'changes' => 2,
+		)));
+		
+		die(var_dump($pages));
+	}
+
 	public function action_view($id = null)
 	{
 		$data['page'] = Model_Page::find($id);
