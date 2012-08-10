@@ -62,7 +62,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="/taking-flight">Book<small>Taking Flight</small></a>
+				<a href="http://www.takingflightwithdisc.com">Taking Flight<small>With <acronym title="Dominant, Interactive, Supportive, Conscientious">DISC</a></small></a>
 				<ul>
 					<li><a href="http://www.takingflightwithdisc.com/book" target="_blank">The Book</a></li>
 					<li><a href="http://www.takingflightwithdisc.com/speaking" target="_blank">Speaking/Keynote</a></li>
@@ -88,13 +88,13 @@
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<a href="/about"><img src="/themes/tbp/assets/img/marketing/Success.png"></a>
+				<a href="/about"><img src="/assets/img/uploads/Marketing/Success.png"></a>
 			</div>
 			<div class="item">
-				<a href="/leadership-development"><img src="/themes/tbp/assets/img/marketing/Leadership.png"></a>
+				<a href="/leadership-development"><img src="/assets/img/uploads/Marketing/Leadership.png"></a>
 			</div>
 			<div class="item">
-				<a href="/team-building/all-programs"><img src="/themes/tbp/assets/img/marketing/Team.png"></a>
+				<a href="/team-building/all-programs"><img src="/assets/img/uploads/Marketing/Team.png"></a>
 			</div>
 		</div>
 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
