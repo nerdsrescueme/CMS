@@ -42,7 +42,6 @@ function loadNerd() {
 }
 
 $(document).ready(function() {
-console.log($.browser)
 	if($.browser.webkit || $.browser.chrome) {
 		loadNerd();
 	} else {

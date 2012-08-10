@@ -58,7 +58,9 @@
 		<div class="control-group">
 			<?php echo Form::label('Hidden', 'hidden', array('class' => 'control-label')); ?> 
 			<div class="controls">
-				<?php echo Form::select('hidden', isset($page) ? $page->hidden : 0, array(1 => 'Yes', 2 => 'No')); ?> 
+				<?php echo Form::select('hidden', isset($page) ? $page->hidden : 2, array(
+					1 => 'Completely', 2 => 'No', 3 => 'From Sitemap')
+				); ?> 
 			</div>
 		</div>
 		

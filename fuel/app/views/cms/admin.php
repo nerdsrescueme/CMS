@@ -23,7 +23,7 @@
 	<div id="nerd-tools">
 		<a href="/cms/modals/pages" data-function="modal">Pages</a>
 		<a href="/cms/modals/finder" data-function="modal">Finder</a>
-		<a href="/cms/panels/media" data-function="pallette">Media</a>
+		<a href="/cms/panels/media" data-function="pallette">Media Inspector</a>
 		<!--<a href="/cms/panels/snippets" data-function="panel">Snippets</a>-->
 		<a href="/cms/panels/notes" data-function="panel">Notes</a>
 	</div>
@@ -77,5 +77,6 @@
 </div>
 
 <div id="nerd-pallette" class="hide fade">
+	<div class="close" data-dismiss="modal">x</div>
 	<div class="content">PALLETTE!!!!</div>
 </div>

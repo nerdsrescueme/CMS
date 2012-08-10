@@ -96,6 +96,17 @@
 	box-shadow: 0 0 10px rgba(0,0,0,.6)
 }
 
+#nerd-pallette {
+	background: rgba(0,0,0,.8);
+	position: absolute;
+	top: 80px;
+	right: 15px;
+	width: 290px;
+
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgba(0,0,0,.6)
+}
+
 iframe.modal {
 	width: 960px;
 	height: 450px;

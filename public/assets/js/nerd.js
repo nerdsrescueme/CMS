@@ -109,13 +109,16 @@
 			current[savable.attr('id')] = savable.html()
 		})
 		
-		console.log(save)
+		//console.log(save)
 		
 		$.ajax({
 			type: 'POST'
 		,	url: CMS_BASE + '/cms/save'
 		,	data: { page: CMS_PAGE, data: save }
-		,	complete: function(response) { console.log(response.responseText) }
+		,	complete: function(response) {
+				console.log(response.responseText)
+				Nerd.Editor.edited(false)
+			}
 		,	dataType: 'json'
 		});
 	}
@@ -128,7 +131,7 @@
 
 	Editor.activate = function() {
 		this.style = $('<style>')
-		    .text('[contenteditable="true"] { box-shadow: 0 0 8px lightblue; }')
+		    .text('[data-editable="local"] { box-shadow: 0 0 8px lightblue; } [data-editable="global"] { box-shadow: 0 0 8px lightgreen; }')
 		    .appendTo(Frame.head)
 		Nerd.frame.animate({ height: Nerd.frame.height() - Editor.toolbar.height()})
 		Editor.toolbar.slideDown()
@@ -185,13 +188,11 @@
 			return Editor.is_activated ? Editor.deactivate() : Editor.activate()
 		})
 
-		// Make all links target top window
-		$('a', body).attr('target', '_top').click(function (e) {
-			if (Editor.is_activated) return false;
-			if (Editor.edited()) {
-				return confirm('Are you sure you want to leave this page? You will lose any unsaved changes.');
-			}
-		});
+		// Disable links…
+		$('a', body).bind('click.linkinterceptor', function(event) {
+			if (Nerd.Editor.is_activated) return false;
+			$(this).attr('target', '_top');
+		})
 
 		// Toolbar button handling
 		toolbar.on('click', '[data-function]', function(evt) {		
@@ -199,12 +200,6 @@
 			
 			var that = $(this)
 			,   func = that.data('function')
-
-			// If we're already in, don't reload
-			//if (that.hasClass('active')) return
-
-			//$('#nerd-tools .active').removeClass('active')
-			//that.addClass('active')
 
 			switch(func) {
 				case 'command' :
@@ -215,6 +210,7 @@
 					break
 				case 'panel' :
 					Panel.load(that.attr('href'))
+					break
 				case 'pallette' :
 					Pallette.load(that.attr('href'))
 			}
@@ -241,7 +237,7 @@
 		});
 
 		// Keypress events
-		Nerd.regions.on('keydown mouseup', function(e) {
+		Nerd.regions.on('keyup mouseup', function(e) {
 			var key = e.which
 
 			Editor.edited(true)
@@ -337,25 +333,52 @@
 		.error(function() {
 			alert('Request unable to be honored')
 		})
-		.complete(function() {})
+		.complete(function() {
+		})
 	}
 
 
 //  Palletes
 // ------------------------------------------------------------------------
 	Pallette.initialize = function() {
-		return Nerd.Frame.body.find('#nerd-pallette')
+		this.instance = Nerd.Frame.body.find('#nerd-pallette')
 			.detach()
 			.appendTo('body')
+			.modal({ backdrop: false, show: false })
+		this.data    = {}
+		this.content = this.instance.find('.content')
+		return this.instance
 	}
 
 	Pallette.show = function() {
+		this.instance.modal('show')
 	}
 	
-	Pallette.hide = function() {}
+	Pallette.hide = function() {
+		this.instance.modal('hide')
+	}
 	
-	Pallette.load = function() {
-		this.show()
+	Pallette.load = function(url, id) {
+
+		// If content has been previously loaded, use that
+		if (this.data[id]) {
+			this.content.html(this.data[id])
+			this.show()
+			return
+		}
+
+		$.get(url, function(data) {
+			Pallette.data[id] = data
+			Pallette.content.html(data)
+		})
+		.success(function() {
+			Pallette.show()
+		})
+		.error(function() {
+			alert('Request unable to be honored')
+		})
+		.complete(function() {
+		})
 	}
 
 

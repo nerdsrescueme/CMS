@@ -9,6 +9,8 @@ class Add_hidden_to_pages
     \DBUtil::add_fields('pages', array(
 		'hidden' => array('constraint' => 1, 'type' => 'integer'),
     ));	
+    
+    \DB::update('pages')->value('hidden' => 2)->execute();
 	}
 
 	public function down()

@@ -13,13 +13,13 @@ class Controller_Pages extends Controller_Template
 
 	public function action_sitemap()
 	{
-		$pages = Model_Page::find('all', array('order_by' => 'uri', 'where' => array('hidden' => 0)));
-		$pages = $pages + array(Model_Page::forge(array(
+		$pages = Model_Page::find('all', array('order_by' => 'uri', 'where' => array('hidden' => 2)));
+		$pages = array(Model_Page::forge(array(
 			'uri' => '/',
 			'updated_at' => time(),
-			'priority' => 1,
-			'changes' => 2,
-		)));
+			'priority' => 10,
+			'changes' => 3, // Daily
+		))) + $pages;
 		
 		$xml = new \DOMDocument();
 		$xml->formatOutput = true;
@@ -63,7 +63,7 @@ class Controller_Pages extends Controller_Template
 			unset($loc, $lastmod, $changefreq, $priority);
 		}
 
-		$response = Response::forge($xml->saveXml())
+		Response::forge($xml->saveXml())
 			->set_header('Content-Type', 'text/xml')
 			->send(true);
 		exit;
