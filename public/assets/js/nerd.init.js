@@ -42,7 +42,8 @@ function loadNerd() {
 }
 
 $(document).ready(function() {
-	if($.browser.webkit) {
+console.log($.browser)
+	if($.browser.webkit || $.browser.chrome) {
 		loadNerd();
 	} else {
 		alert("The Nerd Editor only works on Chrome and Safari right now.");
