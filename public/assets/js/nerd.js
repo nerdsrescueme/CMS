@@ -116,7 +116,7 @@
 		,	url: CMS_BASE + '/cms/save'
 		,	data: { page: CMS_PAGE, data: save }
 		,	complete: function(response) {
-				console.log(response.responseText)
+				//console.log(response.responseText)
 				Nerd.Editor.edited(false)
 			}
 		,	dataType: 'json'
@@ -189,7 +189,7 @@
 		})
 
 		// Disable links…
-		$('a', body).bind('click.linkinterceptor', function(event) {
+		$('a', body).bind('click.links', function(event) {
 			if (Nerd.Editor.is_activated) return false;
 			$(this).attr('target', '_top');
 		})
@@ -213,6 +213,7 @@
 					break
 				case 'pallette' :
 					Pallette.load(that.attr('href'))
+					break
 			}
 		});
 
@@ -265,15 +266,18 @@
 			.detach()
 			.appendTo('body')
 			.modal({ show: false })
-		return this.instance
+		return this
 	}
 
 	Modal.show = function() {
-		this.instance.modal('show');
+		this.instance.modal('show')
+		this.instance.show()
+		return this
 	}
 
 	Modal.hide = function() {
-		this.instance.modal('hide');
+		this.instance.modal('hide')
+		return this
 	}
 
 	Modal.reposition = function() {

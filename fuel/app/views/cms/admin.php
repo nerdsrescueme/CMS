@@ -77,6 +77,5 @@
 </div>
 
 <div id="nerd-pallette" class="hide fade">
-	<div class="close" data-dismiss="modal">x</div>
 	<div class="content">PALLETTE!!!!</div>
 </div>
