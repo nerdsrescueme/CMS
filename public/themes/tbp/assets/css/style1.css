@@ -2,7 +2,9 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
-
+acronym {
+	text-transform: capitalize
+}
 body {
 	background:#4f7ab1 url('../img/backgrounds/lightblue.jpg') center repeat fixed;
 }
