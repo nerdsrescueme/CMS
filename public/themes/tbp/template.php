@@ -36,20 +36,6 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li>
-				<a href="/about">About Us<small></small></a>
-				<ul>
-					<li><a href="/about/press-releases">Press Releases</a></li>
-					<li><a href="/about/staff">Staff</a></li>
-					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="/leadership-development">Leadership<small>Development</small></a>
-				<ul>
-					<li><a href="http://www.360-degreefeedback.com/" target="_blank">360 Degree Feedback</a></li>
-				</ul>
-			</li>
-			<li>
 				<a href="/team-building">Team<small>Building</small></a>
 				<ul>
 					<li><a href="/team-building/all-programs">All Programs</a></li>
@@ -59,6 +45,12 @@
 					<li><a href="/team-building/senior-teams">Senior Teams</a></li>
 					<li><a href="/team-building/treasure-hunts">Treasure Hunts</a></li>
 					<li><a href="/team-building/team-development">Team Development</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/leadership-development">Leadership<small>Development</small></a>
+				<ul>
+					<li><a href="http://www.360-degreefeedback.com/" target="_blank">360 Degree Feedback</a></li>
 				</ul>
 			</li>
 			<li>
@@ -76,6 +68,14 @@
 				<ul>
 					<li><a href="/blog/team-building">Team Building</a></li>
 					<li><a href="/blog/leadership-development">Leadership Development</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/about">About Us<small></small></a>
+				<ul>
+					<li><a href="/about/press-releases">Press Releases</a></li>
+					<li><a href="/about/staff">Staff</a></li>
+					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
 				</ul>
 			</li>
 		</ul>
