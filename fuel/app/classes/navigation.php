@@ -71,9 +71,8 @@ class Navigation {
 		}
 		
 		$dom->appendChild($list);
-		
 		$dom->formatOutput = true;
 
-		return $dom->saveXML();
+		return str_replace('<?xml version="1.0"?>', '', $dom->saveXML());
 	}
 }
