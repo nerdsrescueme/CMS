@@ -33,52 +33,7 @@
 	</div>
 	<div id="logo" class="span3"><a href="#">Team Builders Plus</a></div>
 	<nav id="main-nav" class="span9">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li>
-				<a href="/team-building">Team<small>Building</small></a>
-				<ul>
-					<li><a href="/team-building/all-programs">All Programs</a></li>
-					<li><a href="/team-building/fun-events">Fun Events</a></li>
-					<li><a href="/team-building/large-group">Large Group</a></li>
-					<li><a href="/team-building/philanthropic">Philanthropic</a></li>
-					<li><a href="/team-building/senior-teams">Senior Teams</a></li>
-					<li><a href="/team-building/treasure-hunts">Treasure Hunts</a></li>
-					<li><a href="/team-building/team-development">Team Development</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="/leadership-development">Leadership<small>Development</small></a>
-				<ul>
-					<li><a href="http://www.360-degreefeedback.com/" target="_blank">360 Degree Feedback</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="http://www.takingflightwithdisc.com" target="_blank">Taking Flight<small>With <acronym title="Dominant, Interactive, Supportive, Conscientious">DISC</a></small></a>
-				<ul>
-					<li><a href="http://www.takingflightwithdisc.com/book" target="_blank">The Book</a></li>
-					<li><a href="http://www.takingflightwithdisc.com/speaking" target="_blank">Speaking/Keynote</a></li>
-					<li><a href="http://www.takingflightwithdisc.com/shop" target="_blank">Products</a></li>
-					<li><a href="http://www.takingflightwithdisc.com/blog" target="_blank">Blog</a></li>
-					<li><a href="http://www.takingflightwithdisc.com/resources" target="_blank">Resources</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="/blog/team-building">Blog</a>
-				<ul>
-					<li><a href="/blog/team-building">Team Building</a></li>
-					<li><a href="/blog/leadership-development">Leadership Development</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="/about">About Us<small></small></a>
-				<ul>
-					<li><a href="/about/press-releases">Press Releases</a></li>
-					<li><a href="/about/staff">Staff</a></li>
-					<li><a href="/about/mission-vision-values">Mission, Vision, Values</a></li>
-				</ul>
-			</li>
-		</ul>
+		<?php echo Navigation::build('Identifier') ?>
 	</nav>
 	<div class="span12" class="bottom-border"> </div><!-- Nasty hack -->
 </header>
