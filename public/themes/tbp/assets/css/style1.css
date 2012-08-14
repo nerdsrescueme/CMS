@@ -130,7 +130,6 @@ h4.underlined {
 #main-nav a small {
 	display:block;
 	font-size: 11px;
-	text-transform:lowercase;
 }
 
 #main-nav ul ul a {
