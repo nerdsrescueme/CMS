@@ -22,6 +22,7 @@
 <div id="nerd-toolbar">
 	<div id="nerd-tools">
 		<a href="/cms/modals/pages" data-function="modal">Pages</a>
+		<a href="/cms/modals/navigation" data-function="modal">Navigation</a>
 		<a href="/cms/modals/finder" data-function="modal">Finder</a>
 		<a href="/cms/panels/media" data-function="pallette">Media Inspector</a>
 		<!--<a href="/cms/panels/snippets" data-function="panel">Snippets</a>-->

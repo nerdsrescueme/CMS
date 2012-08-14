@@ -11,4 +11,9 @@ class Controller_Cms_Modals extends Controller
 	{
 		return Response::forge(View::forge('cms/modals/pages'));
 	}
+	
+	public function action_navigation()
+	{
+		return Response::forge(View::forge('cms/modals/navigation'));
+	}
 }

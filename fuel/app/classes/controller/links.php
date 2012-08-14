@@ -12,9 +12,24 @@ class Controller_Links extends Controller_Template
 
 	public function action_index()
 	{
-		$data['links'] = Model_Link::find('all');
+		$data['links'] = Model_Link::find('all', array('order_by' => 'position'));
 		$this->template->title = "Links";
 		$this->template->content = View::forge('links/index', $data);
+	}
+
+	public function action_sort($id = null)
+	{
+		$sorter = Input::post('data', array());
+		
+		foreach($sorter as $link_id => $position)
+		{
+			DB::update('links')
+				->set(array('position' => (int) $position))
+				->where('id', '=', (int) $link_id)
+				->execute();
+		}
+
+		die(json_encode('success!'));
 	}
 
 	public function action_view($id = null)

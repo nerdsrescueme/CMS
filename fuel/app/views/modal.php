@@ -3,7 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap-original.min.css'); ?>
+	<?php echo Asset::css('bootstrap-original.min.css'); ?> 
+	<?php echo Asset::js('jquery.js'); ?> 
+	<?php echo Asset::js('jqueryui.min.js'); ?> 
 </head>
 <body>
 	<div class="container">

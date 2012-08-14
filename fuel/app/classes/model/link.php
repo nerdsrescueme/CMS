@@ -50,6 +50,11 @@ class Model_Link extends Model
 				return null;
 		}
 	}
+	
+	public function named_target()
+	{
+		return static::$targets[$this->target];
+	}
 
 	public function to_link()
 	{
