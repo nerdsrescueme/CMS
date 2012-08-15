@@ -16,6 +16,7 @@
 
 	echo Asset::js('bootstrap.js');
 	echo Asset::js('nerd.init.js');
+	echo Asset::js('json.js');
 	
 ?>
 
@@ -45,7 +46,7 @@
 		<a href="#" class="icon-bookmark icon-white" data-function="command" data-command="anchor" title="Insert Bookmark"></a>
 		<a href="#" class="icon-share icon-white" data-function="command" data-command="link" title="Link"></a>
 		<a href="#" class="icon-share icon-white" data-function="command" data-command="clearlink" title="Unlink"></a>
-		<a href="#" class="icon-picture icon-white" data-function="command" data-command="image" title="Image"></a>
+		<a href="/cms/pallettes/image" class="icon-picture icon-white" data-function="pallette" title="Insert an image"></a>
 		<a href="#" class="icon-resize-horizontal icon-white" data-function="command" data-command="hr" title="Insert Horizontal Rule"></a>
 		<a href="#" class="icon-list icon-white" data-function="command" data-command="ol" title="Ordered List"></a>
 		<a href="#" class="icon-list icon-white" data-function="command" data-command="ul" title="Unordered List"></a>
@@ -68,15 +69,28 @@
 	<i class="icon icon-white icon-edit"></i>
 </div>
 
-<div id="nerd-modal" class="hide fade">
+<div id="nerd-modal" class="modal hide fade">
 	<div>TESTING!!!!</div>
 </div>
 
-<div id="nerd-panel" class="hide fade">
-	<div class="close" data-dismiss="modal">x</div>
+<div id="nerd-panel" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Panel</h3>
+	</div>
 	<div class="content">PANEL!!!!!</div>
 </div>
 
-<div id="nerd-pallette" class="hide fade">
-	<div class="content">PALLETTE!!!!</div>
+<div id="nerd-pallette" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Pallette</h3>
+	</div>
+	<div class="modal-body content">
+		<p>PALLETTE!!!!</p>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<button class="btn btn-danger" data-dismiss="modal">Close</button>
+	</div>
 </div>

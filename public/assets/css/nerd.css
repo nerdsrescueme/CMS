@@ -78,13 +78,7 @@
 	box-shadow: 0 0 4px rgba(0,0,0,.7);
 }
 
-#nerd-modal {
-	background: white;
-	position: absolute;
-}
-
 #nerd-panel {
-	background: rgba(0,0,0,.8);
 	position: absolute;
 	top: 80px;
 	right: 15px;
@@ -95,14 +89,17 @@
 }
 
 #nerd-pallette {
-	background: rgba(0,0,0,.8);
 	position: absolute;
 	top: 80px;
 	right: 15px;
-	width: 290px;
+	margin: 0;
 
 	border-radius: 6px;
 	box-shadow: 0 0 10px rgba(0,0,0,.6)
+}
+
+#nerd-pallette form {
+	margin: 0;
 }
 
 iframe.modal {

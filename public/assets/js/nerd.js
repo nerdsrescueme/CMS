@@ -212,6 +212,7 @@
 					Panel.load(that.attr('href'))
 					break
 				case 'pallette' :
+					Pallette.header(that.data('original-title'))
 					Pallette.load(that.attr('href'))
 					break
 			}
@@ -359,7 +360,40 @@
 	}
 	
 	Pallette.hide = function() {
+		this.unloadFormInterceptor()
 		this.instance.modal('hide')
+	}
+
+	Pallette.header = function(title) {
+		this.instance.find('h3').first().html(title)
+	}
+
+	Pallette.loadFormInterceptor = function() {
+		this.content.find('form').bind('submit.palletteForm', function(event) {
+			event.preventDefault()
+			
+			var fields = $(this).serializeArray()
+			,   field  = fields.pop()
+			,   data   = {}
+			
+			while (typeof field == 'object') {
+				data[field.name] = field.value
+				field = fields.pop()
+			}
+			
+			// Execute command submitted with form
+			Commands[data.command](data)
+			Pallette.hide()
+		})
+
+		this.instance.find('button[type="submit"]').bind('click.palletteBtn', function(event) {
+			Pallette.instance.find('form').trigger('submit')
+		})
+	}
+	
+	Pallette.unloadFormInterceptor = function() {
+		this.content.find('form').unbind('submit.palletteForm')
+		this.instance.find('button[type="submit"]').unbind('click.palletteBtn')
 	}
 	
 	Pallette.load = function(url, id) {
@@ -377,6 +411,7 @@
 		})
 		.success(function() {
 			Pallette.show()
+			Pallette.loadFormInterceptor()
 		})
 		.error(function() {
 			alert('Request unable to be honored')
@@ -413,6 +448,9 @@
 			range.surroundContents(node)
 			Commands.normalize()
 		}
+	,	insert: function(node) {
+			$.selection().getRangeAt(0).insertNode(node)
+		}
 	,	anchor: function() {
 			var anchor = prompt('What do we call it?')
 			if (anchor === null) return
@@ -448,10 +486,12 @@
 	,	hr: function() {
 			Commands.exec('inserthorizontalrule')
 		}
-	,	image: function() {
-			var image = prompt('Where is the image?')
-			if (image === null) return
-			Commands.exec('insertimage', false, image)
+	,	image: function(imgdata) {
+			var image = Frame.document.createElement('img')
+			    image.src = imgdata.src
+			    image.className = imgdata.class
+			Commands.insert(image)
+
 		}
 	,	indent: function() {
 			Commands.exec('indent')
