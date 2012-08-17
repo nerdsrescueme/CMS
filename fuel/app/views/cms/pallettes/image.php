@@ -12,4 +12,10 @@
 			<?php echo Form::input('class') ?>
 		</div>
 	</div>
+	<div class="control-group">
+		<label for="form_alt" class="control-label">Alternate text</label>
+		<div class="controls">
+			<?php echo Form::input('alt') ?>
+		</div>
+	</div>
 <?php echo Form::close() ?>

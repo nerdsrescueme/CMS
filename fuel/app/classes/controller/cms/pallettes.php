@@ -26,4 +26,9 @@ class Controller_Cms_Pallettes extends Controller
 	{
 		return Response::forge(View::forge('cms/pallettes/block'));
 	}
+	
+	public function action_source()
+	{
+		return Response::forge(View::forge('cms/pallettes/source'));
+	}
 }

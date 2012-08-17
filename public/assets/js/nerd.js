@@ -137,12 +137,24 @@
 		Editor.toolbar.slideDown()
 		Nerd.regions.attr('contentEditable', 'true')
 		Editor.is_activated = true
+		
+		Nerd.regions.on('click.region', '*', function(event) {
+			var $this = $(this)
+			  ,  tag = event.target.nodeName.toLowerCase()
+			  ,  allowed = Nerd.elements[tag]
+			  ,  attr = allowed.pop()
+
+			while (attr) {
+				console.log(attr)
+				attr = allowed.pop()
+			}
+
+			Editor.current = $(this)
+		})
 	}
 
 	Editor.deactivate = function() {
-		
 		Nerd.save()
-		
 		Nerd.frame.height('100%')
 		this.style.remove()
 		Editor.toolbar.slideDown()
@@ -152,6 +164,8 @@
 		Pallette.hide()
 		Editor.hide()
 		Editor.is_activated = false
+		
+		Nerd.regions.unbind('click.region')
 	}
 
 	Editor.hide = function() {
@@ -188,12 +202,6 @@
 			return Editor.is_activated ? Editor.deactivate() : Editor.activate()
 		})
 
-		// Disable links…
-		$('a', body).bind('click.links', function(event) {
-			if (Nerd.Editor.is_activated) return false;
-			$(this).attr('target', '_top');
-		})
-
 		// Toolbar button handling
 		toolbar.on('click', '[data-function]', function(evt) {		
 			evt.preventDefault()
@@ -217,6 +225,12 @@
 					break
 			}
 		});
+
+		// Takeover links, insuring they load from the _top document
+		body.on('click.links', 'a', function(event) {
+			if (Nerd.Editor.is_activated) return false
+			window.location.href = this.href
+		})
 
 		// Button tooltips
 		$('[title]', toolbar).tooltip({ placement: 'bottom', delay: 25 })
@@ -398,7 +412,7 @@
 		this.instance.find('button[type="submit"]').unbind('click')
 	}
 	
-	Pallette.load = function(url, id) {
+	Pallette.load = function(url, id, callback) {
 
 		// If content has been previously loaded, use that
 		if (this.data[id]) {
@@ -421,6 +435,7 @@
 			alert('Request unable to be honored')
 		})
 		.complete(function() {
+			callback()
 		})
 	}
 
@@ -477,7 +492,8 @@
 	,	image: function(imgdata) {
 			var image = Frame.document.createElement('img')
 			    image.src = imgdata.src
-			    image.className = imgdata.class
+			    if (imgdata.class.length > 0) image.className = imgdata.class
+			    if (imgdata.alt.length > 0) img.alt = imgdata.alt
 			Commands.insert(image)
 
 		}
@@ -511,8 +527,18 @@
 	,	outdent: function() {
 			Commands.exec('outdent')
 		}
-	,	source: function() {
-			alert('Show HTML Source')
+	,	source: function(data) {
+			if (data === undefined) {
+				var data = Editor.current.parent('[data-editable]').html()
+				Pallette.load('/cms/pallettes/source', 'source', function() {
+					Pallette.header('View HTML Source')
+					Pallette.instance.find('textarea').text(data)
+				})
+
+				return
+			}
+
+			Editor.current.parent('[data-editable]').html(data.source)
 		}
 	,	sub: function() {
 			var node = Frame.document.createElement('sub')

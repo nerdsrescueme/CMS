@@ -50,7 +50,7 @@
 		<a href="#" class="icon-align-center icon-white" data-function="command" data-command="justifycenter" title="Justify Center"></a>
 		<a href="#" class="icon-align-right icon-white" data-function="command" data-command="justifyright" title="Justify Right"></a>
 		<a href="/cms/pallettes/block" class="icon-list-alt icon-white" data-function="pallette" data-command="block" title="Format Block Element"></a>
-		<a href="#" class="icon-fire icon-white" data-function="command" data-command="source" title="View HTML Source"></a>
+		<a href="/cms/pallettes/source" class="icon-fire icon-white" data-function="command" data-command="source" title="HTML Source"></a>
 		<a href="#" class="icon-remove icon-white" data-function="command" data-command="clearformat" title="Clear Formatting"></a>
         
     </div>
@@ -58,6 +58,7 @@
 </html>
 
 </div>
+
 
 <div id="nerd-trigger">
 	<i class="icon icon-white icon-edit"></i>

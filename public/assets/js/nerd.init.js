@@ -14,6 +14,26 @@ var Nerd = {
 	html: {
 		tags: ['i', 'em', 'b', 'strong', 'u'],
 		attributes: {}
+	},
+	elements: {
+		p: ['class'],
+		h1: ['class'],
+		h2: ['class'],
+		h3: ['class'],
+		h4: ['class'],
+		h5: ['class'],
+		h6: ['class'],
+		div: ['class'],
+		blockquote: [],
+		pre: [],
+		code: [],
+		strong: [],
+		b: [],
+		em: [],
+		i: [],
+		a: ['href', 'rel', 'class'],
+		span: ['class', 'style'],
+		img: ['src', 'class', 'alt']
 	}
 };
 
