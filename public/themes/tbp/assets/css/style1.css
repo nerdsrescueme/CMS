@@ -11,7 +11,7 @@ body {
 
 p, ul {
 	font-family:Shanti,'Helvetica Neue',Helvetica, Arial,sans-serif;
-	color:#717171
+	color:#333;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -212,7 +212,7 @@ h4.underlined {
 
 #breadcrumbs p {
 	margin:0;
-	color:#717171;
+	color:#333;
 }
 
 #breadcrumbs a {
@@ -247,7 +247,7 @@ h4.underlined {
 #tweets li {
 	padding: 10px 25px 10px 0;
 	margin: 0;
-	color:#717171;
+	color:#333;
 	border-bottom: 1px dotted lightgray
 }
 
@@ -338,7 +338,7 @@ p.drop-cap:first-letter {
 }
 
 p.first-paragraph {
-	color: rgb(60,60,60);
+	color: #1c1c1c;
 }
 
 p.opener {
