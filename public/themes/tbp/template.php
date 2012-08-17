@@ -31,8 +31,8 @@
 			<a href="hhttp://www.youtube.com/user/TeamBuildersPlus" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_32.png"></a>
 		</p>
 	</div>
-	<div id="logo" class="span3"><a href="#">Team Builders Plus</a></div>
-	<nav id="main-nav" class="span9">
+	<div id="logo" class="span4"><a href="#">Team Builders Plus</a></div>
+	<nav id="main-nav" class="span8">
 		<?php echo Navigation::build('Identifier') ?>
 	</nav>
 	<div class="span12" class="bottom-border"> </div><!-- Nasty hack -->

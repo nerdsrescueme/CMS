@@ -213,7 +213,7 @@
 					break
 				case 'pallette' :
 					Pallette.header(that.data('original-title'))
-					Pallette.load(that.attr('href'))
+					Pallette.load(that.attr('href'), that.data('command'))
 					break
 			}
 		});
@@ -369,7 +369,7 @@
 	}
 
 	Pallette.loadFormInterceptor = function() {
-		this.content.find('form').bind('submit.palletteForm', function(event) {
+		this.content.find('form').bind('submit', function(event) {
 			event.preventDefault()
 			
 			var fields = $(this).serializeArray()
@@ -383,17 +383,19 @@
 			
 			// Execute command submitted with form
 			Commands[data.command](data)
+			Pallette.unloadFormInterceptor()
+			console.log('unloaded')
 			Pallette.hide()
 		})
 
-		this.instance.find('button[type="submit"]').bind('click.palletteBtn', function(event) {
+		this.instance.find('button[type="submit"]').bind('click', function(event) {
 			Pallette.instance.find('form').trigger('submit')
 		})
 	}
 	
 	Pallette.unloadFormInterceptor = function() {
-		this.content.find('form').unbind('submit.palletteForm')
-		this.instance.find('button[type="submit"]').unbind('click.palletteBtn')
+		this.content.find('form').unbind('submit')
+		this.instance.find('button[type="submit"]').unbind('click')
 	}
 	
 	Pallette.load = function(url, id) {
@@ -401,6 +403,7 @@
 		// If content has been previously loaded, use that
 		if (this.data[id]) {
 			this.content.html(this.data[id])
+			this.loadFormInterceptor()
 			this.show()
 			return
 		}
@@ -410,8 +413,9 @@
 			Pallette.content.html(data)
 		})
 		.success(function() {
-			Pallette.show()
+			console.log('again')
 			Pallette.loadFormInterceptor()
+			Pallette.show()
 		})
 		.error(function() {
 			alert('Request unable to be honored')
@@ -451,15 +455,8 @@
 	,	insert: function(node) {
 			$.selection().getRangeAt(0).insertNode(node)
 		}
-	,	anchor: function() {
-			var anchor = prompt('What do we call it?')
-			if (anchor === null) return
-			Commands.exec('createbookmark', false, anchor)
-		}
-	,	block: function() {
-			var block = prompt('What kind of block?')
-			if (block === null) return
-			Commands.exec('formatblock', false, block)
+	,	block: function(blockdata) {
+			Commands.exec('formatblock', false, blockdata.block)
 		}
 	,	bold: function() {
 			var node = Frame.document.createElement('strong')
@@ -468,20 +465,11 @@
 	,	clear: function() {
 			Commands.exec('delete')
 		}
-	,	clearanchor: function() {
-			Commands.exec('unbookmark')
-		}
 	,	clearformat: function() {
 			Commands.exec('removeformat')
 		}
 	,	clearlink: function() {
 			Commands.exec('unlink')
-		}
-	,	copy: function() {
-			Commands.exec('copy')
-		}
-	,	cut: function() {
-			Commands.exec('cut')
 		}
 	,	hr: function() {
 			Commands.exec('inserthorizontalrule')
@@ -509,24 +497,19 @@
 	,	justifyright: function() {
 			Commands.exec('justifyright')
 		}
-	,	link: function() {
-			var link = prompt('Where do we point the link to?')
-			if (link === null) return
-			Commands.exec('createlink', false, link)
+	,	link: function(adata) {
+			var a = Frame.document.createElement('a')
+			    a.href = adata.href
+			    if (adata.class.length > 0) a.className = adata.class
+			    if (adata.target != 0) a.target = adata.target
+			    if (adata.rel != 0) a.rel = adata.rel
+			Commands.wrap(a)
 		}
 	,	ol: function() {
 			Commands.exec('insertorderedlist')
 		}
 	,	outdent: function() {
 			Commands.exec('outdent')
-		}
-	,	paste: function() {
-			Commands.exec('paste')
-		}
-	,	print: function() {
-			Editor.deactivate()
-			Commands.exec('print')
-			setTimeout(Editor.activate, 1500)
 		}
 	,	source: function() {
 			alert('Show HTML Source')

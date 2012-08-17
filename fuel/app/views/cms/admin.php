@@ -25,26 +25,20 @@
 		<a href="/cms/modals/pages" data-function="modal">Pages</a>
 		<a href="/cms/modals/navigation" data-function="modal">Navigation</a>
 		<a href="/cms/modals/finder" data-function="modal">Finder</a>
-		<a href="/cms/panels/media" data-function="pallette">Media Inspector</a>
+		<a href="/cms/panels/media" data-function="pallette" title="Media Inspector">Media Inspector</a>
 		<!--<a href="/cms/panels/snippets" data-function="panel">Snippets</a>-->
 		<a href="/cms/panels/notes" data-function="panel">Notes</a>
 	</div>
     <div id="nerd-buttons">
-		<a href="#" class="icon-file icon-white" data-function="command" data-command="save" title="Save"></a>
-		<a href="#" class="icon-print icon-white" data-function="command" data-command="print" title="Print"></a>
 		<a href="#" class="icon-chevron-left icon-white" data-function="command" data-command="undo" title="Undo"></a>
 		<a href="#" class="icon-chevron-right icon-white" data-function="command" data-command="redo" title="Redo"></a>
-		<a href="#" class="icon-minus-sign icon-white" data-function="command" data-command="cut" title="Cut"></a>
-		<a href="#" class="icon-remove-sign icon-white" data-function="command" data-command="copy" title="Copy"></a>
-		<a href="#" class="icon-ok-sign icon-white" data-function="command" data-command="paste" title="Paste"></a>
 		<a href="#" class="icon-bold icon-white" data-function="command" data-command="bold" title="Bold"></a>
 		<a href="#" class="icon-italic icon-white" data-function="command" data-command="italic" title="Italic"></a>
 		<a href="#" class="icon-text-width icon-white" data-function="command" data-command="underline" title="Underline"></a>
 		<a href="#" class="icon-font icon-white" data-function="command" data-command="strike" title="Strike"></a>
 		<a href="#" class="icon-font icon-white" data-function="command" data-command="sup" title="Superscript"></a>
 		<a href="#" class="icon-font icon-white" data-function="command" data-command="sub" title="Subscript"></a>
-		<a href="#" class="icon-bookmark icon-white" data-function="command" data-command="anchor" title="Insert Bookmark"></a>
-		<a href="#" class="icon-share icon-white" data-function="command" data-command="link" title="Link"></a>
+		<a href="/cms/pallettes/a" class="icon-share icon-white" data-function="pallette" data-command="link" title="Insert a link"></a>
 		<a href="#" class="icon-share icon-white" data-function="command" data-command="clearlink" title="Unlink"></a>
 		<a href="/cms/pallettes/image" class="icon-picture icon-white" data-function="pallette" title="Insert an image"></a>
 		<a href="#" class="icon-resize-horizontal icon-white" data-function="command" data-command="hr" title="Insert Horizontal Rule"></a>
@@ -55,7 +49,7 @@
 		<a href="#" class="icon-align-left icon-white" data-function="command" data-command="justifyleft" title="Justify Left"></a>
 		<a href="#" class="icon-align-center icon-white" data-function="command" data-command="justifycenter" title="Justify Center"></a>
 		<a href="#" class="icon-align-right icon-white" data-function="command" data-command="justifyright" title="Justify Right"></a>
-		<a href="#" class="icon-list-alt icon-white" data-function="command" data-command="block" title="Format Block"></a>
+		<a href="/cms/pallettes/block" class="icon-list-alt icon-white" data-function="pallette" data-command="block" title="Format Block Element"></a>
 		<a href="#" class="icon-fire icon-white" data-function="command" data-command="source" title="View HTML Source"></a>
 		<a href="#" class="icon-remove icon-white" data-function="command" data-command="clearformat" title="Clear Formatting"></a>
         
