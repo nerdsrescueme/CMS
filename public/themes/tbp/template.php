@@ -14,6 +14,10 @@
 	<?php endif ?>
 	<link rel="stylesheet" href="/themes/tbp/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/tbp/assets/css/style1.css?v=1" media="screen">
+	
+	<!--[if lt IE 9]>
+		<script src="/themes/tbp/assets/js/html5shim.js"></script>
+	<![endif]-->
 </head>
 
 <body>
