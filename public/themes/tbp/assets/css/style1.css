@@ -289,6 +289,10 @@ h4.underlined {
 	background:rgb(20,20,20);
 	margin:24px -18px -18px;
 	padding: 24px 0;
+	color: rgb(180,180,180);
+}
+#footer p {
+	color: rgb(180,180,180);
 }
 
 #footer-text {
