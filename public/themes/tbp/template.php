@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<?php if ($layout and $layout == 'home') : ?>
 	<title>Team Building and Leadership Development by Team Builders Plus</title>
-	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through team building programs, leadership development and one-on-one performance coaching.">
+	<meta name="description" content="Discover a wide range of team building events and activities, DISC styles assessment & training, and leadership development programs.">
 	<meta content="keywords" content="team building, leadership development, team builders plus, marlton new jersey">
 	<?php else : ?>
 	<title><?php echo $page->title ?> - <?php echo $page->subtitle ?></title>
@@ -14,7 +14,15 @@
 	<?php endif ?>
 	<link rel="stylesheet" href="/themes/tbp/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/tbp/assets/css/style1.css?v=1" media="screen">
-	
+
+	<!-- Open Graph Meta -->
+	<meta property="og:title" content="Team Builders Plus">
+	<meta property="og:type" content="company">
+	<meta property="og:url" content="http://www.teambuildersplus.com">
+	<meta property="og:image" content="http://www.teambuildersplus.com/themes/tbp/assets/img/tbp-social-media.png">
+	<meta property="og:site_name" content="Team Builders Plus">
+	<meta property="fb:admins" content="1303954771">
+
 	<script src="/themes/tbp/assets/js/modernizr.js"></script>
 </head>
 

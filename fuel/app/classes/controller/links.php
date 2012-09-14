@@ -10,9 +10,11 @@ class Controller_Links extends Controller_Template
 		$this->template->set_global('groups', $groups);
 	}
 
-	public function action_index()
+	public function action_index($group = null)
 	{
-		$data['links'] = Model_Link::find('all', array('order_by' => 'position'));
+		$data['links'] = Model_Link::find('all', array('where' => array('link_group_id' => $group), 'order_by' => 'position'));
+		$data['group'] = $group ?: '';
+
 		$this->template->title = "Links";
 		$this->template->content = View::forge('links/index', $data);
 	}
@@ -32,16 +34,7 @@ class Controller_Links extends Controller_Template
 		die(json_encode('success!'));
 	}
 
-	public function action_view($id = null)
-	{
-		$data['link'] = Model_Link::find($id);
-
-		$this->template->title = "Link";
-		$this->template->content = View::forge('links/view', $data);
-
-	}
-
-	public function action_create($id = null)
+	public function action_create($group = null)
 	{
 		if (Input::method() == 'POST')
 		{
@@ -62,10 +55,8 @@ class Controller_Links extends Controller_Template
 				if ($link and $link->save())
 				{
 					Session::set_flash('success', 'Added link #'.$link->id.'.');
-
-					Response::redirect('links');
+					Response::redirect('links/index/'.$group);
 				}
-
 				else
 				{
 					Session::set_flash('error', 'Could not save link.');
@@ -76,6 +67,8 @@ class Controller_Links extends Controller_Template
 				Session::set_flash('error', $val->show_errors());
 			}
 		}
+
+		View::set_global('group', $group ?: '');
 
 		$this->template->title = "Links";
 		$this->template->content = View::forge('links/create');
@@ -100,16 +93,13 @@ class Controller_Links extends Controller_Template
 			if ($link->save())
 			{
 				Session::set_flash('success', 'Updated link #' . $id);
-
-				Response::redirect('links');
+				Response::redirect('links/index/'.$link->link_group_id);
 			}
-
 			else
 			{
 				Session::set_flash('error', 'Could not update link #' . $id);
 			}
 		}
-
 		else
 		{
 			if (Input::method() == 'POST')
@@ -128,17 +118,19 @@ class Controller_Links extends Controller_Template
 			$this->template->set_global('link', $link, false);
 		}
 
+		View::set_global('group', $link->link_group_id);
+
 		$this->template->title = "Links";
 		$this->template->content = View::forge('links/edit');
 
 	}
 
-	public function action_delete($id = null)
+	public function action_delete($id = null, $group = null)
 	{
 		if ($link = Model_Link::find($id))
 		{
+			$group = $link->link_group_id;
 			$link->delete();
-
 			Session::set_flash('success', 'Deleted link #'.$id);
 		}
 
@@ -147,7 +139,7 @@ class Controller_Links extends Controller_Template
 			Session::set_flash('error', 'Could not delete link #'.$id);
 		}
 
-		Response::redirect('links');
+		Response::redirect("links/index/$group");
 
 	}
 

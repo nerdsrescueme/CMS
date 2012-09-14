@@ -1,5 +1,7 @@
+<?php echo Html::anchor('link/groups', 'View Groups') ?> 
+
 <?php if ($links): ?>
-<table class="zebra-striped" data-interaction="sortable">
+<table class="table zebra-striped" data-interaction="sortable">
 	<thead>
 		<tr>
 			<th>Link Id</th>
@@ -21,7 +23,6 @@
 			<td><?php echo $link->url; ?></td>
 			<td><?php echo $link->named_target(); ?></td>
 			<td>
-				<!--<?php echo Html::anchor('links/view/'.$link->id, 'View'); ?> |-->
 				<?php echo Html::anchor('links/edit/'.$link->id, 'Edit'); ?> |
 				<?php echo Html::anchor('links/delete/'.$link->id, 'Delete', array('onclick' => "return confirm('Are you sure?')")); ?>
 
@@ -35,7 +36,7 @@
 <p>No Links.</p>
 <?php endif; ?>
 <p>
-	<?php echo Html::anchor('links/create', 'Add new Link', array('class' => 'btn success')); ?> 
+	<?php echo Html::anchor("links/create/$group", 'Add new Link', array('class' => 'btn success')); ?> 
 </p>
 
 <style type="text/css">

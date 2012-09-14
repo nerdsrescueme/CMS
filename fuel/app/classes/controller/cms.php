@@ -10,7 +10,7 @@ class Controller_Cms extends Controller_Base_Cms
 
 		$this->template->set_global('page', $page);
 		$this->template->set_global('layout', 'home');
-		$this->template->set('content', Theme::instance()->view('home')->render(), false);
+		$this->template->set('content', $this->theme->view('home')->render(), false);
 		
 		$content = $this->template->render();
 		$replacements = Model_Html::find_globals();
@@ -38,13 +38,13 @@ class Controller_Cms extends Controller_Base_Cms
 			$this->response->set_status(404);
 			$this->template->set_global('layout', '404');
 			$this->template->set_global('page', $page);
-			$this->template->content = Theme::instance()->view('404');
+			$this->template->content = $this->theme->view('404');
 			return;
 		}
 
 		$this->template->set_global('page', $page);
 		$this->template->set_global('layout', $page->layout_id);
-		$this->template->set('content', Theme::instance()->view($page->layout_id)->render(), false);
+		$this->template->set('content', $this->theme->view($page->layout_id)->render(), false);
 		
 		$content      = $this->template->render();
 		$replacements = array_merge($page->htmls, Model_Html::find_globals());

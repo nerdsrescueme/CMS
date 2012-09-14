@@ -4,7 +4,7 @@ return array(
 	/**
 	 * The active theme to use.  This can also be set in code using Theme::active('foo');
 	 */
-	'active' => 'tbp',
+	'active' => 'default',
 
 	/**
 	 * The fallback theme to use.  If a view is not found in the active theme, this theme

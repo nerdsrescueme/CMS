@@ -18,21 +18,28 @@ class Model_Site extends \Orm\Model
 		)
 	);
 
+	protected static $current;
+
 	public static function find_or_create_current()
 	{
-		$host = Input::server('http_host');
-
-		if($site = static::find_by_host($host))
+		if (static::$current === null)
 		{
-			return $site;
+			$host = Input::server('http_host');
+
+			if($site = static::find_by_host($host))
+			{
+				return $site;
+			}
+
+			$site = new static(array(
+				'host' => $host,
+				'theme' => 'default',
+			));
+
+			static::$current = $site->save() ? $site : false;
 		}
 
-		$site = new static(array(
-			'host' => $host,
-			'theme' => 'default',
-		));
-
-		return $site->save() ? $site : false;
+		return static::$current;
 	}
 }
 

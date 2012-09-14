@@ -84,7 +84,9 @@ class Model_Page extends Model
 
 	public static function find_current()
 	{
-		return static::find_by_uri(CMS::uri());
+		$query = static::find()->where('uri', CMS::uri())->where('site_id', Model_Site::find_or_create_current()->id);
+		
+		return $query->get_one();
 	}
 
 	public static function validate($factory)

@@ -37,11 +37,12 @@ class Model_Link_Group extends Model
 		return $val;
 	}
 	
-	public static function find_with_parent_links()
+	public static function find_with_parent_links($identifier)
 	{
 		return static::find()
 			->related('links')
 			->where('t1.parent_id', 0)
+			->where('t0.identifier', $identifier)
 			->order_by('t1.position')
 			->get_one();
 	}

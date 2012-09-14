@@ -4,8 +4,8 @@ class Navigation {
 
 	public static function build($identifier)
 	{
-		$group = Model_Link_Group::find_with_parent_links('first', array('identifier', $identifier));
-		
+		$group = Model_Link_Group::find_with_parent_links($identifier);
+
 		if (!$group)
 		{
 			throw new InvalidArgumentException('You have requested a navigation list that does not exist');
