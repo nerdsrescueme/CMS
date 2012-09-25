@@ -5,7 +5,7 @@ class Theme extends \Fuel\Core\Theme {
 	protected $layouts = array();
 
 	public function layouts($assoc = false)
-	{die(var_dump($this->active);
+	{die(var_dump($this->active));
 		if(empty($this->layouts))
 		{
 			$ignore = array('template', '404', 'home');
