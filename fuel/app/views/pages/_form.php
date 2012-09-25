@@ -37,7 +37,7 @@
 		<div class="control-group">
 			<?php echo Form::label('Layout id', 'layout_id', array('class' => 'control-label')); ?> 
 			<div class="controls">
-				<?php echo Form::select('layout_id', isset($page) ? $page->layout_id : 'none', Theme::instance()->layouts(true)) ?> 
+				<?php echo Form::select('layout_id', isset($page) ? $page->layout_id : 'none', Theme::forge()->active('tbp')->layouts(true)) ?> 
 			</div>
 		</div>
 		
