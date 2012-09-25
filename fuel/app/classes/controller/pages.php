@@ -1,8 +1,27 @@
 <?php
 
-class Controller_Pages extends Controller_Base_Cms
+class Controller_Pages extends Controller_Template
 {
 	public $template = 'modal';
+
+	public function before()
+	{
+		$site = Model_Site::find_or_create_current();
+		$config = array(
+			'active' => $site->theme,
+			'fallback' => 'default',
+			'paths' => array(DOCROOT.'themes'),
+			'assets_folder' => 'assets',
+			'view_ext' => '.php',
+			'require_info_file' => true,
+			'info_file_name' => 'theme.info',
+			'info_file_type' => 'json',
+		);
+
+		$theme = Theme::forge($config);
+		$theme->active($site->theme);
+		$this->template->set_global('theme', $theme);
+	}
 
 	public function action_index()
 	{
