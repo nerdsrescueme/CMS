@@ -23,6 +23,7 @@ class Controller_Base_Cms extends Controller
 		);
 
 		$this->theme    = Theme::forge($config);
+		$this->theme->active($this->site->theme);
 		$this->template = $this->theme->view('template');
 
 		// Add information to views
