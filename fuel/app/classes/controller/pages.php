@@ -6,6 +6,8 @@ class Controller_Pages extends Controller_Template
 
 	public function before()
 	{
+		parent::before();
+
 		$site = Model_Site::find_or_create_current();
 		$config = array(
 			'active' => $site->theme,
