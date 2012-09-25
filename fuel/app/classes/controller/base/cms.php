@@ -22,8 +22,8 @@ class Controller_Base_Cms extends Controller
 			'info_file_type' => 'json',
 		);
 
-		$this->theme    = Theme::forge($config)->active($this->site->theme);
-		//$this->theme->active($this->site->theme);
+		$this->theme    = Theme::forge($config);
+		$this->theme->active($this->site->theme);
 		$this->template = $this->theme->view('template');
 
 		// Add information to views
