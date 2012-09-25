@@ -8,7 +8,6 @@ class Theme extends \Fuel\Core\Theme {
 	{
 		if(empty($this->layouts))
 		{
-			die(var_dump($this));
 			$ignore = array('template', '404', 'home');
 
 			foreach(glob($this->active['path'].'*.php') as $file)
