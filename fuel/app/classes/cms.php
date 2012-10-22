@@ -38,10 +38,15 @@ class CMS {
 	
 	public static function twitter($username, $num_posts)
 	{
-		$json = file_get_contents("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={$username}&count={$num_posts}", true);
-		//$json = file_get_contents("http://twitter.com/status/user_timeline/.json?count=", true);
+		//$json = file_get_contents("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={$username}&count={$num_posts}", true);
+		$json = file_get_contents("http://twitter.com/status/user_timeline/{$username}.json?count={$num_posts}", true);
 		$json = json_decode($json, true);
-		
+
+		if (!is_array($json))
+		{
+			$json = array();
+		}
+
 		// Autodetect urls
 		foreach ($json as $i => $j)
 		{
