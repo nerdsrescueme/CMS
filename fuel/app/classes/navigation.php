@@ -8,7 +8,7 @@ class Navigation {
 
 		if (!$group)
 		{
-			throw new InvalidArgumentException('You have requested a navigation list that does not exist');
+			throw new InvalidArgumentException('The navigation list ['.$identifier.'] does not exist');
 		}
 
 		$dom        = new DOMDocument();
