@@ -27,14 +27,23 @@ class Controller_Pages extends Controller_Template
 
 	public function action_index()
 	{
-		$data['pages'] = Model_Page::find('all', array('order_by' => 'title'));
+		$data['pages'] = Model_Page::find('all', array(
+			'order_by' => 'title',
+			'where' => array('site_id' => Model_Site::find_or_create_current())
+		));
 		$this->template->title = "Pages";
 		$this->template->content = View::forge('pages/index', $data);
 	}
 
 	public function action_sitemap()
 	{
-		$pages = Model_Page::find('all', array('order_by' => 'uri', 'where' => array('hidden' => 2)));
+		$pages = Model_Page::find('all', array(
+			'order_by' => 'uri',
+			'where' => array(
+				array('site_id' => Model_Site::find_or_create_current()),
+				array('hidden' => 2)
+			)
+		));
 		$pages = array(Model_Page::forge(array(
 			'uri' => '/',
 			'updated_at' => time(),
