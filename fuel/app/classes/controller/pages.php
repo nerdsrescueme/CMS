@@ -29,7 +29,7 @@ class Controller_Pages extends Controller_Template
 	{
 		$data['pages'] = Model_Page::find('all', array(
 			'order_by' => 'title',
-			'where' => array('site_id' => Model_Site::find_or_create_current())
+			'where' => array('site_id' => Model_Site::find_or_create_current()->id)
 		));
 		$this->template->title = "Pages";
 		$this->template->content = View::forge('pages/index', $data);
@@ -40,7 +40,7 @@ class Controller_Pages extends Controller_Template
 		$pages = Model_Page::find('all', array(
 			'order_by' => 'uri',
 			'where' => array(
-				array('site_id' => Model_Site::find_or_create_current()),
+				array('site_id' => Model_Site::find_or_create_current()->id),
 				array('hidden' => 2)
 			)
 		));
@@ -120,7 +120,7 @@ class Controller_Pages extends Controller_Template
 					'uri' => Input::post('uri'),
 					'keywords' => Input::post('keywords'),
 					'description' => Input::post('description'),
-					'site_id' =>  Model_Site::find_or_create_current(),
+					'site_id' =>  Model_Site::find_or_create_current()->id,
 					'layout_id' => Input::post('layout_id'),
 					'priority' => Input::post('priority'),
 					'changes' => Input::post('changes'),
@@ -159,7 +159,7 @@ class Controller_Pages extends Controller_Template
 			$page->uri         = Input::post('uri');
 			$page->keywords    = Input::post('keywords');
 			$page->description = Input::post('description');
-			$page->site_id     = Model_Site::find_or_create_current();
+			$page->site_id     = Model_Site::find_or_create_current()->id;
 			$page->layout_id   = Input::post('layout_id');
 			$page->priority    = Input::post('priority');
 			$page->changes     = Input::post('changes');
