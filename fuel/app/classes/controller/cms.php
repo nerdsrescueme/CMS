@@ -67,6 +67,7 @@ class Controller_Cms extends Controller_Base_Cms
 		$globals = $data['globals'];
 		$locals  = $data['locals'];
 		$page    = (int) Input::post('page', 0);
+		$site    = (int) Model_Site::find_or_create_current();
 
 		foreach ($globals as $key => $value)
 		{
@@ -76,6 +77,7 @@ class Controller_Cms extends Controller_Base_Cms
 			$html->key     = $key;
 			$html->data    = $value;
 			$html->page_id = 0; // Globals have page value of 0
+			$html->site_id = $site;
 			$html->save();
 		}
 		
@@ -87,6 +89,7 @@ class Controller_Cms extends Controller_Base_Cms
 			$html->key     = $key;
 			$html->data    = $value;
 			$html->page_id = $page;
+			$html->site_id = $site;
 			$html->save();
 		}
 

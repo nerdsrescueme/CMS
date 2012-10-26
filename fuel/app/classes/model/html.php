@@ -43,8 +43,11 @@ class Model_Html extends Model
 	
 	public static function find_by_page_and_key($page, $key)
 	{
+		$site = Model_Site::find_or_create_current();
+
 		return static::find('first', array(
 			'where' => array(
+				array('site_id', $site),
 				array('page_id', $page),
 				array('key', $key)
 			)
@@ -53,8 +56,11 @@ class Model_Html extends Model
 	
 	public static function find_globals()
 	{
+		$site = Model_Site::find_or_create_current();
+
 		return static::find('all', array(
 			'where' => array(
+				array('site_id', $site),
 				array('page_id', 0)
 			)
 		));
