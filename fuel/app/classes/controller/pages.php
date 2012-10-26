@@ -120,7 +120,7 @@ class Controller_Pages extends Controller_Template
 					'uri' => Input::post('uri'),
 					'keywords' => Input::post('keywords'),
 					'description' => Input::post('description'),
-					'site_id' => Input::post('site_id'),
+					'site_id' =>  Model_Site::find_or_create_current(),
 					'layout_id' => Input::post('layout_id'),
 					'priority' => Input::post('priority'),
 					'changes' => Input::post('changes'),
@@ -159,7 +159,7 @@ class Controller_Pages extends Controller_Template
 			$page->uri         = Input::post('uri');
 			$page->keywords    = Input::post('keywords');
 			$page->description = Input::post('description');
-			$page->site_id     = Input::post('site_id');
+			$page->site_id     = Model_Site::find_or_create_current();
 			$page->layout_id   = Input::post('layout_id');
 			$page->priority    = Input::post('priority');
 			$page->changes     = Input::post('changes');
