@@ -53,7 +53,7 @@ class Model_Html extends Model
 
 		return static::find('first', array(
 			'where' => array(
-				array('site_id', $site),
+				array('site_id', $site->id),
 				array('page_id', $page),
 				array('key', $key)
 			)
@@ -66,7 +66,7 @@ class Model_Html extends Model
 
 		return static::find('all', array(
 			'where' => array(
-				array('site_id', $site),
+				array('site_id', $site->id),
 				array('page_id', 0)
 			)
 		));
