@@ -8,6 +8,12 @@ class Model_Html extends Model
 
 	protected static $_properties = array(
 		'id',
+		'site_id' => array(
+			'data_type' => 'int',
+			'label' => 'Site',
+			'validation' => array('required', 'valid_string' => 'numeric'),
+			'form' => array('type' => false),
+		),
 		'page_id' => array(
 			'data_type' => 'int',
 			'label' => 'Page',
