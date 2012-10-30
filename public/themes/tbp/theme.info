@@ -1,3 +1,5 @@
 {
-	"globals": ["logo"]
+	"globals": ["logo"],
+	"title": "Team Builders Plus",
+	"subtitle": "One Organization, One Team"
 }

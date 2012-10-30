@@ -1,3 +1,5 @@
 {
-	"globals": ["logo"]
+	"globals": ["logo"],
+	"title": "Take Flight Learning",
+	"subtitle": "Need a subtitle"
 }

@@ -5,8 +5,8 @@ class Controller_Cms extends Controller_Base_Cms
 	public function action_home()
 	{
 		$page = Model_Page::forge();
-		$page->title = 'Team Builders Plus';
-		$page->subtitle = 'One Organization, One Team';
+		$page->title = $this->theme->info('title');
+		$page->subtitle = $this->theme->info('subtitle');
 
 		$this->template->set_global('page', $page);
 		$this->template->set_global('layout', 'home');
