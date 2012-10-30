@@ -8,7 +8,7 @@
 	<div id="tf-image" class="navigation snippet" data-editable="local"><!-- start tf-image -->
 		<img src="http://placehold.it/320x180" class="bordered">
 	<!-- end tf-image --></div>
-	<div id="tf-styles" class="navigation snippet" data-editable="local"><!-- start tf-styles -->
+	<div id="tf-styles" class="navigation snippet" data-editable="global"><!-- start tf-styles -->
 	<h3>Similar Programs</h3>
 	<ol>
 		<li><a href="#">First</a></li>
