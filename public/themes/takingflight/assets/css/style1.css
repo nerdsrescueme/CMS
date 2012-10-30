@@ -359,7 +359,7 @@ p.drop-cap:first-letter {
 	font-size: 32px;
 	padding: 7px 5px;
 	margin: 0 5px 0 0;
-	border: 1px solid lightblue;
+	border: 1px solid green;
 	border-radius: 2px;
 	-moz-border-radius:2px
 }
