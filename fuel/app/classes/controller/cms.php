@@ -67,7 +67,7 @@ class Controller_Cms extends Controller_Base_Cms
 		$globals = $data['globals'];
 		$locals  = $data['locals'];
 		$page    = (int) Input::post('page', 0);
-		$site    = (int) Model_Site::find_or_create_current();
+		$site    = Model_Site::find_or_create_current();
 
 		foreach ($globals as $key => $value)
 		{
