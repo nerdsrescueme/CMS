@@ -116,7 +116,7 @@
 $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 })
 	$('#social a[title]').tooltip({ placement: 'bottom' })
-	$('img[rel=tooltip]').tooltip({ placement: 'top' })
+	//$('img[rel=tooltip]').tooltip({ placement: 'top' })
 	$('#testimonials').carousel({ interval: 7000 })
 	
 	$('#social img')
