@@ -5,7 +5,7 @@
 <!-- end main --></div>
 
 <div id="sidebar" class="span3 offset1">
-	<div id="tf-about-navigation" class="navigation snippet" data-editable="global"><!-- start tf-about-navigation -->
+	<div id="tf-about-navigation" class="navigation snippet" data-editable="local"><!-- start tf-about-navigation -->
 	<ol>
 		<li class="active"><a href="#">History</a></li>
 		<li><a href="#">Secondary</a></li>
