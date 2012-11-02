@@ -62,10 +62,13 @@ endif;
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<a href="#"><img src="/assets/img/uploads/Marketing/Success.png"></a>
+				<a href="#"><img src="/themes/takingflight/assets/img/marketing/book.png"></a>
 			</div>
 			<div class="item">
-				<a href="#"><img src="/assets/img/uploads/Marketing/Leadership.png"></a>
+				<a href="#"><img src="/themes/takingflight/assets/img/marketing/birds.png"></a>
+			</div>
+			<div class="item">
+				<a href="#"><img src="/themes/takingflight/assets/img/marketing/speaking.png"></a>
 			</div>
 		</div>
 	</div>
