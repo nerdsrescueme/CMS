@@ -73,9 +73,9 @@ h4.underlined {
 }
 
 #logo {
-	margin-top: 14px;
-	height: 49px;
-	background: url('../img/takingflight-logo=dark.png') no-repeat -4px 4px;
+	margin-top: 10px;
+	height: 52px;
+	background: url('../img/tfl-logo.jpg') no-repeat 0 -4px;
 	overflow: hidden;
 }
 #logo a {

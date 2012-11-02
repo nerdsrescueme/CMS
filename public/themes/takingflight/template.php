@@ -50,7 +50,7 @@ endif;
 			<a href="http://www.linkedin.com/groupRegistration?gid=3673115" title="Connect to us on LinkedIn"><img src="/themes/takingflight/assets/img/icons-social/linkedin_32.png"></a>
 		</p>
 	</div>
-	<div id="logo" class="span4"><a href="#">Team Builders Plus</a></div>
+	<div id="logo" class="span4"><a href="#">Take Flight Learning</a></div>
 	<nav id="main-nav" class="span8">
 		<?php echo Navigation::build('TakingFlight') ?>
 	</nav>
