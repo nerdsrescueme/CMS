@@ -119,6 +119,13 @@ endif;
 
 <script type="text/javascript">
 $(document).ready(function() {
+	$('#logo')
+		.click(function(){
+			window.location.href = '/'
+		})
+		.mouseover(function() {
+			$(this).css('cursor', 'pointer')
+		})
 	$('#slider').carousel({ interval: 9000 })
 	$('#social a[title]').tooltip({ placement: 'bottom' })
 	//$('img[rel=tooltip]').tooltip({ placement: 'top' })
