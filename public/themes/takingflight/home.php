@@ -2,7 +2,7 @@
 	<div id="tf-overview" data-editable="local" class="span12"><!-- start tf-overview --><h2>Welcome to Take Flight Learning</h2><p>On TakeFlightLearning.com you can order the book, download free training or classroom resources in conjunction with Taking Flight!: Master the DISC Styles to Transform your Career, Your Relationships…Your Life, learn about our Taking Flight! DISC trainers certification program,  find links to other DISC resources, and check out a wide range of articles on all things DISC.</p>
 <!-- end tf-overview --></div>
 </section>
-<hr>
+
 <section id="recent" class="row">
 	<div class="span6">
 		<h4 class="underlined">Testimonials</h4>
