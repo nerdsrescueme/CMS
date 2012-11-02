@@ -44,7 +44,8 @@ class CMS {
 		}
 		catch (\CacheNotFoundException $e)
 		{
-			$json = file_get_contents("https://twitter.com/status/user_timeline/{$username}.json?count={$num_posts}", true);
+			$json = file_get_contents("https://api.twitter.com/1/statuses/user_timeline.json?screen_name={$username}&count={$num_posts}", true);
+			//$json = file_get_contents("https://twitter.com/status/user_timeline/{$username}.json?count={$num_posts}", true);
 			Cache::set('twitter-'.$username, $json, 600);
 		}
 
