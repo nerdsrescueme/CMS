@@ -50,9 +50,9 @@ h4.underlined {
 
 
 #container {
-	background:#fbfbfb;
-	border-left:18px solid #fbfbfb;
-	border-right:18px solid #fbfbfb;
+	background:#fff;
+	border-left:18px solid #fff;
+	border-right:18px solid #fff;
 	        box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
 	   -moz-box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
 	-webkit-box-shadow:0 0 12px 4px rgba(0,0,0,0.2);
