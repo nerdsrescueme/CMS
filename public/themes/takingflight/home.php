@@ -10,8 +10,12 @@
 		<div id="testimonials" class="carousel slide">
 			<div class="carousel-inner">
 				<div class="item active">
-					<blockquote>"Testimonial."</blockquote>
-					<p>&mdash; Person Name</p>
+					<blockquote>"Taking Flight! is packed with life-changing insights about you and everyone you know. You'll never look at people quite the same way again"</blockquote>
+					<p>&mdash; Marshall Goldsmith, Author of MOJO and What Got You Here Won't Get You There</p>
+				</div>
+				<div class="item">
+					<blockquote>"Taking Flight! is an instant classic that will forever change how you see yourself and interact with others. The engaging fable that opens the book - and enlightening discussion that follows - should be read by anyone seeking growth and success."</blockquote>
+					<p>&mdash; Ken Blanchard, Coauthor of The One Minute Manager and Lead with LUV</p>
 				</div>
 			</div>
 		</div>
