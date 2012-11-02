@@ -9,12 +9,8 @@
 		<div id="testimonials" class="carousel slide">
 			<div class="carousel-inner">
 				<div class="item active">
-					<blockquote>"I enjoyed the exercises because they made the concepts more realistic and applicable."</blockquote>
-					<p>&mdash; Cheryl Davis, <b>Campbell Soup Company</b></p>
-				</div>
-				<div class="item">
-					<blockquote>"The quality and the usefulness of the 360 reports and the fact that we had group data added greatly to the overall leadership experience for our most senior people."</blockquote>
-					<p>&mdash; Ian Cormack, <b>Campbell Soup Company</b></p>
+					<blockquote>"Testimonial."</blockquote>
+					<p>&mdash; Person Name</p>
 				</div>
 			</div>
 		</div>
