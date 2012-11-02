@@ -35,7 +35,10 @@
 	<div id="info" class="span12">
 		<p id="tf-top-message" class="pull-left" data-editable="global"><!-- start tf-top-message -->Header message<a href="#">Read more</a>.<!-- end tf-top-message --></p>
 		<p id="social" class="pull-right">
-			<a href="http://twitter.com/TakeFlightLearning" title="Follow us on Twitter"><img src="/themes/takingflight/assets/img/icons-social/twitter_32.png"></a>
+			<a href="http://twitter.com/MerrickR" title="Follow Merrick on Twitter"><img src="/themes/takingflight/assets/img/icons-social/twitter_32.png"></a>
+			<a href="http://twitter.com/DanielSilvert" title="Follow Daniel on Twitter"><img src="/themes/takingflight/assets/img/icons-social/twitter_32.png"></a>
+			<a href="https://www.facebook.com/TakingFlightwithDISC?sk=wall" title="Like us on Facebook"><img src="/themes/takingflight/assets/img/icons-social/facebook_32.png"></a>
+			<a href="http://www.linkedin.com/groupRegistration?gid=3673115" title="Connect to us on LinkedIn"><img src="/themes/takingflight/assets/img/icons-social/linkedin_32.png"></a>
 		</p>
 	</div>
 	<div id="logo" class="span4"><a href="#">Team Builders Plus</a></div>

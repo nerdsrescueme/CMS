@@ -42,7 +42,7 @@
 	<div class="span6">
 		<h4 class="underlined"><a href="http://twitter.com/TeamBuildrsPlus">Recent Tweets</a></h4>
 		<ol id="tweets">
-		<?php $twitter = CMS::twitter('TakeFlightLearning', 3); ?> 
+		<?php $twitter = CMS::twitter('MerrickR', 3); ?> 
 		<?php foreach($twitter as $tweet) : ?> 
 			<li><a href="#"><time><?php echo CMS::relative_date(strtotime($tweet['created_at'])) ?></time></a> <?php echo $tweet['text'] ?></li>
 		<?php endforeach ?> 
