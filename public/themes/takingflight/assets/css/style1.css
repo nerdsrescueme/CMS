@@ -465,19 +465,4 @@ body.landing-noheader #footer {
 	margin-bottom: 0;
 }
 
-.tooltip.top .tooltip-arrow {
-  border-top: 5px solid #fff;
-}
-.tooltip.left .tooltip-arrow {
-  border-left: 5px solid #fff;
-}
-.tooltip.bottom .tooltip-arrow {
-  border-bottom: 5px solid #fff;
-}
-.tooltip.right .tooltip-arrow {
-  border-right: 5px solid #fff;
-}
-.tooltip-inner {
-  color: #000;
-  background-color: #fff;
-}
+
