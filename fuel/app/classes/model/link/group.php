@@ -43,7 +43,7 @@ class Model_Link_Group extends Model
 			->related('links')
 			->where('t1.parent_id', 0)
 			->where('t0.identifier', $identifier)
-			->order_by('t1.position')
+			->order_by('t1.position', 'asc')
 			->get_one();
 	}
 
