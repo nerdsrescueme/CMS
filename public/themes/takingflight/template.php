@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<?php if ($layout and $layout == 'home') : ?>
-	<title>Team Building and Leadership Development by Team Builders Plus</title>
+	<title>Take Flight Learning &mdash; Master the DISC behavior styles</title>
 	<meta name="description" content="Team Builders Plus links development experiences to real-world business issues through team building programs, leadership development and one-on-one performance coaching.">
 	<meta content="keywords" content="team building, leadership development, team builders plus, marlton new jersey">
 	<?php else : ?>
@@ -33,13 +33,9 @@
 
 <header id="header" class="row">
 	<div id="info" class="span12">
-		<p id="top-message" class="pull-left" data-editable="global"><!-- start top-message -->Header message<a href="#">Read more</a>.<!-- end top-message --></p>
+		<p id="tf-top-message" class="pull-left" data-editable="global"><!-- start tf-top-message -->Header message<a href="#">Read more</a>.<!-- end tf-top-message --></p>
 		<p id="social" class="pull-right">
-			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/takingflight/assets/img/icons-social/twitter_32.png"></a>
-			<a href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/takingflight/assets/img/icons-social/facebook_32.png"></a>
-			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/takingflight/assets/img/icons-social/linkedin_32.png"></a>
-			<a href="http://google.com" title="Google +1"><img src="/themes/takingflight/assets/img/icons-social/google_plus_32.png"></a>
-			<a href="hhttp://www.youtube.com/user/TeamBuildersPlus" title="Visit our YouTube Channel"><img src="/themes/takingflight/assets/img/icons-social/youtube_32.png"></a>
+			<a href="http://twitter.com/TakeFlightLearning" title="Follow us on Twitter"><img src="/themes/takingflight/assets/img/icons-social/twitter_32.png"></a>
 		</p>
 	</div>
 	<div id="logo" class="span4"><a href="#">Team Builders Plus</a></div>
@@ -54,22 +50,15 @@
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
-				<a href="/about"><img src="/assets/img/uploads/Marketing/Success.png"></a>
+				<a href="#"><img src="/assets/img/uploads/Marketing/Success.png"></a>
 			</div>
 			<div class="item">
-				<a href="/leadership-development"><img src="/assets/img/uploads/Marketing/Leadership.png"></a>
-			</div>
-			<div class="item">
-				<a href="/team-building/all-programs"><img src="/assets/img/uploads/Marketing/Team.png"></a>
+				<a href="#"><img src="/assets/img/uploads/Marketing/Leadership.png"></a>
 			</div>
 		</div>
 	</div>
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
-	
-		<div id="rfp" class="pull-right">
-			<a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank" class="btn btn-warning" rel="tooltip" title="Want to know more?"><i class="icon-comment icon-white"></i> Request a Proposal</a>
-		</div>
 	
 		<!--<p id="login" class="pull-right">
 		<?php if ($user = CMS::user_logged_in()) : ?> 
@@ -91,24 +80,24 @@
 <footer id="footer">
 	<div class="row">
 		<div class="span4">
-		<div id="footer-1" class="bump-right" data-editable="global"><!-- start footer-1 -->
+		<div id="tf-footer-1" class="bump-right" data-editable="global"><!-- start tf-footer-1 -->
 			<h4 class="underlined">Featured Program: {Program}</h4>
 			<p>Enter a program description.</p>
-		<!-- end footer-1 --></div>
+		<!-- end tf-footer-1 --></div>
 		</div>
-		<div id="footer-2" class="span4" data-editable="global"><!-- start footer-2 -->
+		<div id="tf-footer-2" class="span4" data-editable="global"><!-- start tf-footer-2 -->
 			<h4 class="underlined">From the Blog</h4>
 			<ol>
 				<li><a href="#">Post One Here</a> &mdash; 20 minutes ago</li>
 				<li><a href="#">Second Posting</a> &mdash; 2 days ago</li>
 			</ol>
-		<!-- end footer-2 --></div>
+		<!-- end tf-footer-2 --></div>
 		<div class="span4">
-		<div id="footer-3" class="bump-left" data-editable="global"><!-- start footer-3 -->
+		<div id="tf-footer-3" class="bump-left" data-editable="global"><!-- start tf-footer-3 -->
 			<h4 class="underlined">Our Newsletter</h4>
 			<p>Sign up to receive our monthly newsletter.</p>
 			<p>{A sign up form goes here}</p>
-		<!-- end footer-3 --></div>
+		<!-- end tf-footer-3 --></div>
 		</div>
 	</div>
 	<div class="row"> </div>
@@ -127,7 +116,7 @@
 $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 })
 	$('#social a[title]').tooltip({ placement: 'bottom' })
-	$('img[rel=tooltip]').tooltip({ placement: 'top' })
+	//$('img[rel=tooltip]').tooltip({ placement: 'top' })
 	$('#testimonials').carousel({ interval: 7000 })
 	
 	$('#social img')
