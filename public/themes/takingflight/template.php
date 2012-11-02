@@ -18,7 +18,17 @@
 	<script src="/themes/takingflight/assets/js/modernizr.js"></script>
 </head>
 
-<body class="">
+<?php
+
+if ($layout and $layout == 'landing') :
+	$class = 'landing landing-noheader';
+else :
+	$class = $layout;
+endif;
+
+?>
+
+<body class="<?php echo $class ?>">
 
 <div id="bird">
 <?php  echo Random::choose(

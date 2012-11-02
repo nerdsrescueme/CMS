@@ -1,6 +1,6 @@
 <section class="row">
 	<div class="span5 centered-content">
-		<img src="assets/img/taking-flight/book-large.jpg" alt="Taking Flight with DISC book cover">
+		<img src="/themes/takingflight/assets/img/book-large.jpg" alt="Taking Flight with DISC book cover">
 	</div>
 	<div id="tf-landing-copy" data-editable="local" class="span6"><!-- start tf-landing-copy -->
 		<h3 class="exciting">Thanks for visiting us from the <u>Taking Flight!</u> website.</h3>
