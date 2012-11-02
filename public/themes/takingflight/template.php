@@ -18,7 +18,7 @@
 	<script src="/themes/takingflight/assets/js/modernizr.js"></script>
 </head>
 
-<body>
+<body class="">
 
 <div id="bird">
 <?php  echo Random::choose(
@@ -62,19 +62,12 @@
 	</div>
 	<?php endif ?> 
 	<div id="tagline-content" class="span12">
-	
-		<!--<p id="login" class="pull-right">
-		<?php if ($user = CMS::user_logged_in()) : ?> 
-			Logged in as:
-			<?php echo CMS::user_link($user) ?> - 
-			<a href="/user/logout">logout</a>
-		<?php else : ?> 
-			<a href="/user/login">Login</a>
-		<?php endif ?> 
-		</p>-->
-
+		<?php if ($layout and $layout == 'home') : ?> 
+			<p>&nbsp;</p>
+		<?php else : ?>
 		<h1><?php echo $page->title ?></h1>
 		<p><?php echo $page->subtitle ?></p>
+		<?php endif ?>
 	</div>
 </section>
 
