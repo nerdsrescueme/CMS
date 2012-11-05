@@ -39,7 +39,21 @@ class Controller_Cms extends Controller_Base_Cms
 			$this->template->set_global('layout', '404');
 			$this->template->set_global('page', $page);
 			$this->template->content = $this->theme->view('404');
-			return;
+
+			$content      = $this->template->render();
+			$replacements = Model_Html::find_globals();
+
+			foreach($replacements as $block)
+			{
+				if (strpos($content, "<!-- start {$block->key} -->") === false) continue;
+			
+				$start   = substr($content, 0, strpos($content, "<!-- start {$block->key} -->"));
+				$end     = substr($content, strpos($content, "<!-- end {$block->key} -->") + strlen("<!-- end {$block->key} -->"));
+				$content = $start.$block->data.$end;
+			}
+
+			return $content;
+	
 		}
 
 		$this->template->set_global('page', $page);
