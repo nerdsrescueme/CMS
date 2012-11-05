@@ -70,6 +70,9 @@ endif;
 			<div class="item">
 				<a href="#"><img src="/themes/takingflight/assets/img/marketing/speaking.png"></a>
 			</div>
+			<div class="item">
+				<a href="#"><img src="/themes/takingflight/assets/img/marketing/click.png"></a>
+			</div>
 		</div>
 	</div>
 	<?php endif ?> 
