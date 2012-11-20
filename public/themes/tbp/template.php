@@ -14,6 +14,7 @@
 	<?php endif ?>
 	<link rel="stylesheet" href="/themes/tbp/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/tbp/assets/css/style1.css?v=1" media="screen">
+	<link rel="shortcut icon" href="/themes/tbp/assets/favicon.ico" type="image/x-icon" />
 
 	<!-- Open Graph Meta -->
 	<meta property="og:title" content="Team Builders Plus">
