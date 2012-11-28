@@ -5,6 +5,7 @@
 <!-- end main --></div>
 
 <div id="sidebar" class="span3 offset1">
+	<a href="http://www.takingflightwithdisc.com/takingflight" class="btn btn-warning" target="_blank">Buy Taking Flight! Now!</a>
 	<div id="tf-about-navigation" class="navigation snippet" data-editable="local"><!-- start tf-about-navigation -->
 	<ol>
 		<li class="active"><a href="#">History</a></li>
