@@ -4,6 +4,7 @@ return array(
 	'_root_'   => 'cms/home',  // The default route
 	'_404_'    => 'cms/catch',    // If the page is not found, use db lookup
 
+	'blog.rss' => 'pages/rss',
 	'sitemap.xml' => 'pages/sitemap',
 
 	'u/(:any)'    => 'user/$1',
