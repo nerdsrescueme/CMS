@@ -7,7 +7,7 @@
 <div id="sidebar" class="span3 offset1">
 	<p class="navigation">
 		<a href="http://www.takingflightwithdisc.com/takingflight" class="btn btn-warning" target="_blank">
-			Buy Taking Flight! with DISC
+			BUY THE BOOK NOW!
 		</a>
 	</p>
 	<div id="tf-about-navigation" class="navigation snippet" data-editable="local"><!-- start tf-about-navigation -->
