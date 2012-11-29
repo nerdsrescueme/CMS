@@ -41,11 +41,11 @@ class Controller_Pages extends Controller_Template
 		$pages = Model_Page::find('all', array(
 			'order_by' => 'created_at',
 			'where' => array(
-				array('site_id' => $id),
+				array('site_id' => $site),
 				array('uri', 'LIKE', '%blog/%')
 			)
 		));
-die(var_dump($pages));
+
 		$xml = new \DOMDocument();
 		$xml->formatOutput = true;
 
