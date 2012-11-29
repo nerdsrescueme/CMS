@@ -37,10 +37,11 @@ class Controller_Pages extends Controller_Template
 
 	public function action_rss()
 	{
+		$site = Model_Site::find_or_create_current()->id;
 		$pages = Model_Page::find('all', array(
 			'order_by' => 'created_at',
 			'where' => array(
-				array('side_id' => Model_Site::find_or_create_current()->id),
+				array('site_id' => $id),
 				array('uri', 'LIKE', '%blog/%')
 			)
 		));
