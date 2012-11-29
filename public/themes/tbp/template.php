@@ -127,7 +127,7 @@ $(document).ready(function() {
 	$('#slider').carousel({ interval: 9000 })
 	$('#social a[title]').tooltip({ placement: 'bottom' })
 	$('a[rel=tooltip]').tooltip({ placement: 'top' })
-	$('#testimonials').carousel({ interval: 7000 })
+	$('#testimonials').carousel({ interval: 6000 })
 	
 	$('#social img')
 		.mouseover(function(event) {
