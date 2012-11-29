@@ -45,7 +45,7 @@ class Controller_Pages extends Controller_Template
 				array('uri', 'LIKE', '%blog/%')
 			)
 		));
-
+die(var_dump($pages));
 		$xml = new \DOMDocument();
 		$xml->formatOutput = true;
 
