@@ -5,7 +5,7 @@
 <!-- end main --></div>
 
 <div id="sidebar" class="span3 offset1">
-	<p>
+	<p class="navigation">
 		<a href="http://www.takingflightwithdisc.com/takingflight" class="btn btn-warning" target="_blank">
 			<i class="icon icon-white icon-certificate"></i> Buy Taking Flight! Now!
 		</a>
