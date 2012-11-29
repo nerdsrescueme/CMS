@@ -66,7 +66,7 @@ class Controller_Pages extends Controller_Template
 			$item->appendChild($desc);
 
 			$url = 'http://'.Model_Site::find_or_create_current()->host.'/';
-			$link = $xml->createElement('link', $host.$page->uri);
+			$link = $xml->createElement('link', $url.$page->uri);
 			$item->appendChild($link);
 
 			$root->appendChild($item);
