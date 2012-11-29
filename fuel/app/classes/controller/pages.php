@@ -45,7 +45,36 @@ class Controller_Pages extends Controller_Template
 			)
 		));
 
-		die(var_dump($pages));
+		$xml = new \DOMDocument();
+		$xml->formatOutput = true;
+
+		$root = $xml->createElement('rss');
+			$version = $xml->createAttribute('version');
+			$version->value = "2.0";
+			$root->appendChild($version);
+			$xml->appendChild($root);
+
+		foreach($pages as $page)
+		{
+			$item = $xml->createElement('item');
+
+			$title = $xml->createElement('title', $page->title);
+			$item->appendChild($title);
+
+			$desc = $xml->createElement('description', $page->description);
+			$item->appendChild($desc);
+
+			$url = 'http://'.Model_Site::find_or_create_current()->host.'/';
+			$link = $xml->createElement('link', $host.$page->uri);
+			$item->appendChild($url);
+
+			$root->appendChild($item);
+		}
+
+		Response::forge($xml->saveXml())
+			->set_header('Content-Type', 'text/xml')
+			->send(true);
+		exit;
 	}
 
 	public function action_sitemap()
