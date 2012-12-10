@@ -3,6 +3,7 @@
 class Controller_Pages extends Controller_Template
 {
 	public $template = 'modal';
+	public $theme;
 
 	public function before()
 	{
@@ -23,6 +24,8 @@ class Controller_Pages extends Controller_Template
 		$theme = Theme::forge($config);
 		$theme->active($site->theme);
 		$this->template->set_global('theme', $theme);
+
+		$this->theme = $theme;
 	}
 
 	public function action_index()
@@ -53,7 +56,14 @@ class Controller_Pages extends Controller_Template
 			$version = $xml->createAttribute('version');
 			$version->value = "2.0";
 			$root->appendChild($version);
-			$xml->appendChild($root);
+		$channel = $xml->createElement('channel');
+			$title = $xml->createElement('title', $this->theme->info('title'));
+			$link  = $xml->createElement('link', 'http://'.$site->host);
+			$channel->appendChild($title);
+			$channel->appendChild($link);
+		
+		$root->appendchild($channel);
+		$xml->appendChild($root);
 
 		foreach($pages as $page)
 		{
@@ -69,7 +79,7 @@ class Controller_Pages extends Controller_Template
 			$link = $xml->createElement('link', $url.$page->uri);
 			$item->appendChild($link);
 
-			$root->appendChild($item);
+			$channel->appendChild($item);
 		}
 
 		Response::forge($xml->saveXml())
