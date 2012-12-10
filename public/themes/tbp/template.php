@@ -36,7 +36,7 @@
 		<p id="top-message" class="pull-left" data-editable="global"><!-- start top-message -->Header message<a href="#">Read more</a>.<!-- end top-message --></p>
 		<p id="social" class="pull-right">
 			<a target="_blank" href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_32.png"></a>
-			<a target="_blank" href="www.facebook.com/TeamBuildersPlus?ref=hl" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_32.png"></a>
+			<a target="_blank" href="http://www.facebook.com/TeamBuildersPlus?ref=hl" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_32.png"></a>
 			<a target="_blank" href="http://www.linkedin.com/groups/Lessons-from-Leaders-1889482/about?trk=anet_ug_grppro" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_32.png"></a>
 			<a target="_blank" href="https://plus.google.com/107788092826192612342/about?hl=en#107788092826192612342/about?hl=en" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_32.png"></a>
 			<a target="_blank" href="http://www.youtube.com/user/TeamBuildersPlus" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_32.png"></a>
