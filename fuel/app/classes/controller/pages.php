@@ -54,7 +54,7 @@ class Controller_Pages extends Controller_Template
 
 		$root = $xml->createElement('rss');
 			$version = $xml->createAttribute('version');
-			$version->value = "2.0";
+			$version->value = "0.91";
 			$root->appendChild($version);
 		$channel = $xml->createElement('channel');
 			$title = $xml->createElement('title', $this->theme->info('title'));
