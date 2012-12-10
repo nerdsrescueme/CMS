@@ -35,10 +35,11 @@
 	<div id="info" class="span12">
 		<p id="top-message" class="pull-left" data-editable="global"><!-- start top-message -->Header message<a href="#">Read more</a>.<!-- end top-message --></p>
 		<p id="social" class="pull-right">
-			<a href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_32.png"></a>
-			<a href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_32.png"></a>
-			<a href="http://google.com" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_32.png"></a>
-			<a href="hhttp://www.youtube.com/user/TeamBuildersPlus" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_32.png"></a>
+			<a target="_blank" href="http://twitter.com/TeamBuildrsPlus" title="Follow us on Twitter"><img src="/themes/tbp/assets/img/icons-social/twitter_32.png"></a>
+			<a target="_blank" href="http://facebook.com/TeamBuildersPlus" title="Fan us on Facebook"><img src="/themes/tbp/assets/img/icons-social/facebook_32.png"></a>
+			<a target="_blank" href="http://linkedin.com/TeamBuildersPlus" title="Connect with us on LinkedIn"><img src="/themes/tbp/assets/img/icons-social/linkedin_32.png"></a>
+			<a target="_blank" href="http://google.com" title="Google +1"><img src="/themes/tbp/assets/img/icons-social/google_plus_32.png"></a>
+			<a target="_blank" href="http://www.youtube.com/user/TeamBuildersPlus" title="Visit our YouTube Channel"><img src="/themes/tbp/assets/img/icons-social/youtube_32.png"></a>
 		</p>
 	</div>
 	<div id="logo" class="span4"><a href="#">Team Builders Plus</a></div>
