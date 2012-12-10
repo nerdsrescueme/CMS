@@ -58,7 +58,7 @@ class Controller_Pages extends Controller_Template
 			$root->appendChild($version);
 		$channel = $xml->createElement('channel');
 			$title = $xml->createElement('title', $this->theme->info('title'));
-			$link  = $xml->createElement('link', 'http://'.$site->host);
+			$link  = $xml->createElement('link', 'http://'.Model_Site::find_or_create_current()->host);
 			$channel->appendChild($title);
 			$channel->appendChild($link);
 		
