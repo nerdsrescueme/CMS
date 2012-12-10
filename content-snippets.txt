@@ -1,0 +1,29 @@
+TBP Backup Content
+
+Footer 1
+
+<h4 class="underlined">Contact Us</h4>
+<p>112A Centre Blvd<br>Marlton, NJ 08053<br>Int'l: 888.672.1120<br>USA: 856.596.4196<br><a href="/directions">Directions to our office</a></p>
+
+
+Footer 2
+
+<h4 class="underlined">Video</h4>
+<ol>
+	<li><a href="/team-work-in-reverse" target="_blank" rel="bookmark">Teamwork in Reverse</a></li>
+	<li><a href="https://www.youtube.com/watch?v=_3CnzxXDSQ0&amp;feature=plcp" target="_blank" rel="bookmark">Did you know Leadership</a></li>
+</ol>
+
+
+Footer 3
+
+<h4 class="underlined">Our Newsletter</h4>
+<p>Sign up to receive our monthly newsletter.</p>
+<form name="ccoptin" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post" class="form-inline">
+	<input type="text" name="ea" value="" class="input-medium" placeholder="Email Address">
+	<input type="submit" value="Signup" name="go" class="btn">
+	<input type="hidden" name="llr" value="rqnaptcab">
+	<input type="hidden" name="m" value="1102312388113">
+	<input type="hidden" name="p" value="oi">
+</form>
+
