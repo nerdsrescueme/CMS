@@ -117,7 +117,7 @@ endif;
 </div><!--!/#container -->
 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tinos:400,700|Shanti">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="/themes/takingflight/assets/js/bootstrap-transition.js"></script>
 <script src="/themes/takingflight/assets/js/bootstrap-tooltip.js"></script>
 <script src="/themes/takingflight/assets/js/bootstrap-carousel.js"></script>
