@@ -14,6 +14,7 @@
 	<?php endif ?>
 	<link rel="stylesheet" href="/themes/takingflight/assets/css/bootstrap.css?v=1" media="screen">
 	<link rel="stylesheet" href="/themes/takingflight/assets/css/style1.css?v=1" media="screen">
+	<link rel="shortcut icon" href="/themes/takingflight/assets/favicon.ico" type="image/x-icon" />
 
 	<script src="/themes/takingflight/assets/js/modernizr.js"></script>
 </head>
