@@ -27,7 +27,17 @@
 	<script src="/themes/tbp/assets/js/modernizr.js"></script>
 </head>
 
-<body>
+<?php
+
+if ($layout and $layout == 'landing') :
+	$class = 'landing landing-noheader';
+else :
+	$class = $layout;
+endif;
+
+?>
+
+<body class="<?php echo $class ?>">
 
 <div id="container" class="container">
 
