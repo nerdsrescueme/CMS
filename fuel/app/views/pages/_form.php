@@ -63,6 +63,12 @@
 				); ?> 
 			</div>
 		</div>
+		<div class="control-group">
+			<?php echo Form::label('Belongs to group id', 'group_id', array('class' => 'control-label')); ?>
+			<div class="controls">
+				<?php echo Form::input('group_id', Input::post('group_id', isset($page) ? $page->group_id : ''), array('class' => 'span1')); ?>
+			</div>
+		</div>
 		
 		<div class="controls">
 			<?php echo Form::submit('submit', 'Save', array('class' => 'btn btn-primary')); ?>

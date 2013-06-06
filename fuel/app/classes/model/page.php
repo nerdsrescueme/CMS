@@ -49,6 +49,12 @@ class Model_Page extends Model
 			'validation' => array('required', 'max_length' => 120),
 			'form' => array('data_type' => 'text'),
 		),
+		'group_id' => array(
+			'data_type' => 'int',
+			'label' => 'Group ID',
+			'validation' => array('valid_string' => 'numeric'),
+			'form' => array('data_type' => 'text'),
+		),
 		'priority' => array(
 			'data_type' => 'int',
 			'label' => 'Priority',
@@ -102,6 +108,7 @@ class Model_Page extends Model
 		$val->add_field('priority', 'Priority', 'valid_string[numeric]');
 		$val->add_field('changes', 'Change Frequency', 'valid_string[numeric]');
 		$val->add_field('hidden', 'Hidden', 'valid_string[numeric]');
+		$val->add_field('group_id', 'Group ID', 'valid_string[numeric]');
 
 		return $val;
 	}

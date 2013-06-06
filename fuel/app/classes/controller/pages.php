@@ -180,6 +180,7 @@ class Controller_Pages extends Controller_Template
 					'priority' => Input::post('priority'),
 					'changes' => Input::post('changes'),
 					'hidden' => Input::post('hidden'),
+					'group_id' => Input::post('group_id'),
 				));
 				
 				if ($page and $page->save())
@@ -219,6 +220,7 @@ class Controller_Pages extends Controller_Template
 			$page->priority    = Input::post('priority');
 			$page->changes     = Input::post('changes');
 			$page->hidden      = Input::post('hidden');
+			$page->group_id    = Input::post('group_id');
 
 			if ($page->save())
 			{
@@ -242,6 +244,7 @@ class Controller_Pages extends Controller_Template
 				$page->priority    = Input::post('priority');
 				$page->changes     = Input::post('changes');
 				$page->hidden      = Input::post('hidden');
+				$page->group_id    = Input::post('group_id');
 				Session::set_flash('error', $val->show_errors());
 			}
 			

@@ -60,6 +60,17 @@ class Controller_Cms extends Controller_Base_Cms
 		$this->template->set_global('layout', $page->layout_id);
 		$this->template->set('content', $this->theme->view($page->layout_id)->render(), false);
 		
+		if ($page->group_id != 0) {
+			if (!Sentry::group_exists((int) $page->group_id)) {
+				die('INTERNAL ERROR, PAGE BELONGS TO A NON-EXISTENT GROUP');
+			}
+
+			if (!Sentry::check() or !Sentry::group($page->group_id)) {
+				Session::set_flash('error', 'You are not permitted to view that page.');
+				Response::redirect('/');
+			}
+		}
+
 		$content      = $this->template->render();
 		$replacements = array_merge($page->htmls, Model_Html::find_globals());
 
