@@ -4,7 +4,7 @@ class Controller_User extends Controller_Base_Cms
 {
 	public function action_check()
 	{
-		$this->template->content = Theme::instance()->view('user/check');
+		$this->template->content = $this->theme->view('user/check');
 	}
 
 	public function action_profile($id)
@@ -21,7 +21,7 @@ class Controller_User extends Controller_Base_Cms
 			Response::redirect('/');
 		}
 
-		$this->template->content = Theme::instance()->view('user/profile');
+		$this->template->content = $this->theme->view('user/profile');
 	}
 
 	public function action_confirm($email = null, $hash = null)
@@ -47,7 +47,7 @@ class Controller_User extends Controller_Base_Cms
 			$data['errors'] = $e->getMessage();
 		}
 		
-		$this->template->content = Theme::instance()->view('user/confirm', $data);
+		$this->template->content = $this->theme->view('user/confirm', $data);
 	}
 
 	public function action_login()
@@ -63,6 +63,11 @@ class Controller_User extends Controller_Base_Cms
 				if ($login)
 				{
 					Session::set_flash('success', 'Welcome, you have successfully logged in.');
+
+					if (Sentry::group_exists(34) and Sentry::group(34)) {
+						return Response::redirect('/meeting-planners');
+					}
+
 					return Response::redirect('/');
 				}
 				else
@@ -76,7 +81,7 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		$this->template->content = Theme::instance()->view('user/login', $data, false);
+		$this->template->content = $this->theme->view('user/login', $data, false);
 	}
 
 	public function action_logout()
@@ -131,6 +136,6 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		$this->template->content = Theme::instance()->view('user/register', $data, false);
+		$this->template->content = $this->theme->view('user/register', $data, false);
 	}
 }
