@@ -8,12 +8,12 @@
 		<div id="tb-image" class="navigation snippet" data-editable="local"><!-- start tb-image -->
 			<img src="http://placehold.it/320x180" class="bordered">
 		<!-- end tb-image --></div>
-		<div id="tb-similar" class="navigation snippet" data-editable="global"><!-- start tb-similar -->
+		<div id="tb-landing-mkt" class="navigation snippet" data-editable="global"><!-- start tb-landing-mkt -->
 		<h3>Similar Programs</h3>
 		<ol>
 			<li><a href="#">First</a></li>
 			<li><a href="#">Second</a></li>
 		</ol>
-		<!-- end tb-similar --></div>
+		<!-- end tb-landing-mkt --></div>
 	</div>
 </article> 
