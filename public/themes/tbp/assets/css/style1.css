@@ -402,13 +402,6 @@ p.meta a {
 
 
 
-
-
-body.landing #tagline-content,
-body.landing {
-	background:#5a724e url('../img/backgrounds/green.jpg') center repeat fixed;
-}
-
 body.landing-noheader #container {
 	border-top: 15px solid;
 	margin-top: 15px;
