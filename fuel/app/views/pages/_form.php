@@ -3,76 +3,76 @@
 
 	<fieldset>
 		<div class="control-group">
-			<?php echo Form::label('Title', 'title', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Title', 'title', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::input('title', Input::post('title', isset($page) ? $page->title : ''), array('class' => 'span6')); ?> 
+				<?php echo Form::input('title', Input::post('title', isset($page) ? $page->title : ''), array('class' => 'span6')); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Subtitle', 'subtitle', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Subtitle', 'subtitle', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::input('subtitle', Input::post('subtitle', isset($page) ? $page->subtitle : ''), array('class' => 'span6')); ?> 
+				<?php echo Form::input('subtitle', Input::post('subtitle', isset($page) ? $page->subtitle : ''), array('class' => 'span6')); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Uri', 'uri', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Uri', 'uri', array('class' => 'control-label')); ?>
 			<div class="controls">
 				<div class="input-prepend">
-					<span class="add-on">/</span><?php echo Form::input('uri', Input::post('uri', isset($page) ? $page->uri : ''), array('class' => 'span6')); ?> 
+					<span class="add-on">/</span><?php echo Form::input('uri', Input::post('uri', isset($page) ? $page->uri : ''), array('class' => 'span6')); ?>
 				</div>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Keywords', 'keywords', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Keywords', 'keywords', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::input('keywords', Input::post('keywords', isset($page) ? $page->keywords : ''), array('class' => 'span6')); ?> 
+				<?php echo Form::input('keywords', Input::post('keywords', isset($page) ? $page->keywords : ''), array('class' => 'span6')); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Description', 'description', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Description', 'description', array('class' => 'control-label')); ?>
 			<div class="controls">
 				<?php echo Form::textarea('description', Input::post('description', isset($page) ? $page->description : ''), array('class' => 'span7', 'rows' => 8)); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Layout id', 'layout_id', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Layout id', 'layout_id', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::select('layout_id', isset($page) ? $page->layout_id : 'none', $theme->layouts(true)) ?> 
+				<?php echo Form::select('layout_id', isset($page) ? $page->layout_id : 'none', $theme->layouts(true)) ?>
 			</div>
 		</div>
-		
+
 		<div class="control-group">
-			<?php echo Form::label('Priority', 'priority', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Priority', 'priority', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::select('priority', isset($page) ? $page->priority : 5, range(0,10)); ?> 
+				<?php echo Form::select('priority', isset($page) ? $page->priority : 5, range(0,10)); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Change Frequency', 'changes', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Change Frequency', 'changes', array('class' => 'control-label')); ?>
 			<div class="controls">
 				<?php echo Form::select('changes', isset($page) ? $page->changes : 4, array(
 					1 => 'Always', 2 => 'Hourly', 3 => 'Daily', 4 => 'Weekly', 5 => 'Monthly', 6 => 'Yearly', 7 => 'Never'
-				)); ?> 
+				)); ?>
 			</div>
 		</div>
 		<div class="control-group">
-			<?php echo Form::label('Hidden', 'hidden', array('class' => 'control-label')); ?> 
+			<?php echo Form::label('Hidden', 'hidden', array('class' => 'control-label')); ?>
 			<div class="controls">
 				<?php echo Form::select('hidden', isset($page) ? $page->hidden : 2, array(
 					1 => 'Completely', 2 => 'No', 3 => 'From Sitemap')
-				); ?> 
+				); ?>
 			</div>
 		</div>
 		<div class="control-group">
 			<?php echo Form::label('Belongs to group id', 'group_id', array('class' => 'control-label')); ?>
 			<div class="controls">
-				<?php echo Form::input('group_id', Input::post('group_id', isset($page) ? $page->group_id : ''), array('class' => 'span1')); ?>
+				<?php echo Form::select('group_id', isset($page) ? $page->group_id : 0, Model_Group::get_groups()); ?>
 			</div>
 		</div>
-		
+
 		<div class="controls">
 			<?php echo Form::submit('submit', 'Save', array('class' => 'btn btn-primary')); ?>
-			<?php echo Html::anchor('/pages', 'Cancel', array('class' => 'btn btn-danger')) ?> 
+			<?php echo Html::anchor('/pages', 'Cancel', array('class' => 'btn btn-danger')) ?>
 		</div>
 	</fieldset>
 <?php echo Form::close(); ?>

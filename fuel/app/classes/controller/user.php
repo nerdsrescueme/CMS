@@ -47,6 +47,51 @@ class Controller_User extends Controller_Base_Cms
 		Response::redirect("user");
 	}
 
+	public function action_add_group()
+	{
+		$user_id = (int) Input::get("user_id");
+		$group_id = (int) Input::get("group_id");
+
+		if (!$user_id or !$group_id)
+		{
+			Response::redirect("user");
+		}
+
+		$group = Model_User_Group::forge(array(
+			'user_id' => $user_id,
+			'group_id' => $group_id,
+		));
+
+		if ($group and $group->save())
+		{
+			Session::set_flash('success', 'Added user to group');
+		}
+		else
+		{
+			die('not done');
+			Session::set_flash('error', 'Could not add user to group.');
+		}
+
+		Response::redirect('user');
+	}
+
+	public function action_remove_group($user_id, $group_id)
+	{
+		$group = Model_User_Group::find(array($user_id, $group_id));
+
+		if ($group)
+		{
+			$group->delete();
+			Session::set_flash('success', 'Removed group');
+		}
+		else
+		{
+			Session::set_flash('error', 'Could not remove group');
+		}
+
+		Response::redirect('user');
+	}
+
 	public function action_profile($id)
 	{
 		if (!Sentry::check())
