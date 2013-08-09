@@ -12,7 +12,7 @@ class Model_Group extends \Orm\Model
 	public static function get_groups()
 	{
 		$groups = static::find('all');
-		$out = [0 => ""];
+		$out = array(0 => "");
 
 		foreach ($groups as $group)
 		{

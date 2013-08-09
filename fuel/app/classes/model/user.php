@@ -14,7 +14,7 @@ class Model_User extends \Orm\Model
 	public function get_groups()
 	{
 		$user_groups = Model_User_Group::find('all', array('where' => array('user_id' => $this->id)));
-		$groups = [];
+		$groups = array();
 
 		foreach ($user_groups as $user_group)
 		{
@@ -27,7 +27,7 @@ class Model_User extends \Orm\Model
 	public function get_group_dropdown()
 	{
 		$groups = $this->get_groups();
-		$out = [];
+		$out = array();
 
 		foreach ($groups as $group)
 		{
