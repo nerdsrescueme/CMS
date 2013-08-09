@@ -145,7 +145,6 @@
 			  ,  attr = allowed.pop()
 
 			while (attr) {
-				console.log(attr)
 				attr = allowed.pop()
 			}
 
@@ -398,7 +397,6 @@
 			// Execute command submitted with form
 			Commands[data.command](data)
 			Pallette.unloadFormInterceptor()
-			console.log('unloaded')
 			Pallette.hide()
 		})
 
@@ -427,7 +425,6 @@
 			Pallette.content.html(data)
 		})
 		.success(function() {
-			console.log('again')
 			Pallette.loadFormInterceptor()
 			Pallette.show()
 		})
@@ -461,7 +458,7 @@
 
 			// Delete any <nodeName> tags within selection
 			$(container).find(node.nodeName).each(function() {
-				that.replaceWith($(this).html())
+				//that.replaceWith($(this).html())
 			})
 
 			range.surroundContents(node)
@@ -492,8 +489,9 @@
 	,	image: function(imgdata) {
 			var image = Frame.document.createElement('img')
 			    image.src = imgdata.src
+			    console.log(imgdata)
 			    if (imgdata.class.length > 0) image.className = imgdata.class
-			    if (imgdata.alt.length > 0) img.alt = imgdata.alt
+			    if (imgdata.alt.length > 0) image.alt = imgdata.alt
 			Commands.insert(image)
 
 		}
@@ -561,6 +559,17 @@
 		}
 	,	undo: function() {
 			Commands.exec('undo')
+		}
+	,	video: function(videodata) {
+			var iframe = Frame.document.createElement('iframe')
+				iframe.id = "player"
+				iframe.type = "text/html"
+				iframe.width = videodata.width
+				iframe.height = videodata.height
+			    iframe.src = "http://www.youtube.com/embed/" + videodata.ytid + "?autoplay=1&origin=" + window.location.href
+			    iframe.frameborder = 0
+
+			Commands.insert(iframe)
 		}
 	}
 

@@ -2,13 +2,58 @@
 
 class Controller_User extends Controller_Base_Cms
 {
+	public function action_index()
+	{
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
+		$data['users'] = Model_User::find('all');
+		$this->template->title = "Users";
+		$this->template->content = $this->theme->view('user/index', $data);
+	}
+
 	public function action_check()
 	{
 		$this->template->content = $this->theme->view('user/check');
 	}
 
+	public function action_activate($id)
+	{
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
+		$user = Model_User::find($id);
+		$user->activated = 1;
+		$user->save();
+
+		Response::redirect("user");
+	}
+
+	public function action_deactivate($id)
+	{
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
+		$user = Model_User::find($id);
+		$user->activated = 0;
+		$user->save();
+
+		Response::redirect("user");
+	}
+
 	public function action_profile($id)
 	{
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
 		$data = array();
 
 		try
@@ -24,32 +69,6 @@ class Controller_User extends Controller_Base_Cms
 		$this->template->content = $this->theme->view('user/profile');
 	}
 
-	public function action_confirm($email = null, $hash = null)
-	{
-		$data = array();
-
-		try
-		{
-			$activate = Sentry::activate_user($email, $hash);
-			
-			if($activate)
-			{
-				Session::set_flash('success', 'Your account has been activated, enjoy!');
-				return Response::redirect('user/login');
-			}
-			else
-			{
-				$data['errors'] = 'Unable to process this request';
-			}
-		}
-		catch (SentryAuthException $e)
-		{
-			$data['errors'] = $e->getMessage();
-		}
-		
-		$this->template->content = $this->theme->view('user/confirm', $data);
-	}
-
 	public function action_login()
 	{
 		$data = array();
@@ -59,12 +78,14 @@ class Controller_User extends Controller_Base_Cms
 			try
 			{
 				$login = Sentry::login(Input::post('email'), Input::post('password'), Input::post('remember'));
+				$theme = Model_Site::find_or_create_current()->get_theme();
 
 				if ($login)
 				{
 					Session::set_flash('success', 'Welcome, you have successfully logged in.');
 
-					if (Sentry::group_exists(34) and Sentry::group(34)) {
+					// Special login exception for TBP login redirect.
+					if ($theme = "tbp" and Sentry::group_exists(34) and Sentry::group(34)) {
 						return Response::redirect('/meeting-planners');
 					}
 
@@ -86,6 +107,11 @@ class Controller_User extends Controller_Base_Cms
 
 	public function action_logout()
 	{
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
 		Sentry::logout();
 		Session::set_flash('success', 'You have successfully logged out.');
 		Response::redirect('/');
@@ -106,19 +132,15 @@ class Controller_User extends Controller_Base_Cms
 			{
 				try
 				{
-					$user = Sentry::user()->register(array(
+					$user = Sentry::user()->create(array(
 						'email' => Input::post('email'),
 						'password' => Input::post('password'),
 						'username' => Input::post('username'),
 					));
-					
+
 					if ($user)
 					{
-						// Send an email with confirmation information
-						Session::set_flash('success', Uri::create('/user/confirm/'.$user['hash'].'/'.$user['hash']));
-						
-						// Send them to their email to confirm their account.
-						return Response::redirect('user/check');
+						return Response::redirect('user/login');
 					}
 					else
 					{

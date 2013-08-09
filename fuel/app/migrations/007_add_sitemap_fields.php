@@ -11,7 +11,7 @@ class Add_sitemap_fields
 		'changes'  => array('constraint' => 1, 'type' => 'integer'),
     ));
     
-    \DB::update('pages')->value('priority' => 5)->execute();
+    \DB::update('pages')->value('priority', 5)->execute();
     \DB::update('pages')->value('changes', 4)->execute();
 	}
 

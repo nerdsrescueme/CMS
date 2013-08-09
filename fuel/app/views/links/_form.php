@@ -15,8 +15,9 @@
 		</div>
 		<div class="clearfix">
 			<?php echo Form::label('Parent', 'parent_id'); ?>
+
 			<div class="input">
-				<?php echo Form::input('parent_id', Input::post('parent_id', isset($link) ? $link->parent_id : 0), array('class' => 'span6')); ?>
+				<?php echo Form::select('parent_id', isset($link) ? $link->parent_id : '', Model_Link::get_parents($group)); ?>
 			</div>
 		</div>
 		<div class="clearfix">

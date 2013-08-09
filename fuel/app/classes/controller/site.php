@@ -1,6 +1,16 @@
 <?php
 class Controller_Site extends Controller_Base_Cms
 {
+	public function before()
+	{
+		parent::before();
+
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+	}
+
 	public function action_index() {
 		$data['sites'] = Model_Site::find('all');
 		$this->template->title = "Sites";

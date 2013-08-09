@@ -1,11 +1,9 @@
-<?php echo Html::anchor('link/groups', 'View Groups') ?> 
+<?php echo Html::anchor('link/groups', 'View Groups') ?>
 
 <?php if ($links): ?>
 <table class="table zebra-striped" data-interaction="sortable">
 	<thead>
 		<tr>
-			<th>Link Id</th>
-			<th>Parent id</th>
 			<th>Title</th>
 			<th>Subtitle</th>
 			<th>Url</th>
@@ -16,9 +14,12 @@
 	<tbody>
 <?php foreach ($links as $link): ?>
 		<tr data-id="<?php echo $link->id ?>" data-parent="<?php echo $link->link_group_id ?>">
-			<td><?php echo $link->id ?></td>
-			<td><?php echo $link->parent_id; ?></td>
-			<td><?php echo $link->title; ?></td>
+			<td>
+				<?php if ($link->parent_id) : ?>
+					&ndash;
+				<?php endif; ?>
+				<?php echo $link->title; ?>
+			</td>
 			<td><?php echo $link->subtitle ?></td>
 			<td><?php echo $link->url; ?></td>
 			<td><?php echo $link->named_target(); ?></td>
@@ -36,7 +37,7 @@
 <p>No Links.</p>
 <?php endif; ?>
 <p>
-	<?php echo Html::anchor("links/create/$group", 'Add new Link', array('class' => 'btn success')); ?> 
+	<?php echo Html::anchor("links/create/$group", 'Add new Link', array('class' => 'btn success')); ?>
 </p>
 
 <style type="text/css">
@@ -45,7 +46,7 @@
 		cursor: move;
 		height: 14px;
 	}
-	
+
 	tr[data-id]:hover {
 		background-color: lightblue
 	}
@@ -59,7 +60,7 @@ $(document).ready(function() {
 		items: 'tbody tr[data-id]',
 		containment: 'parent',
 		axis: 'y',
-		
+
 		update: function(event, ui)
 		{
 			var items = $(event.target).find('tbody tr[data-id]')
@@ -69,7 +70,7 @@ $(document).ready(function() {
 			items.each(function(index, item) {
 				out.data[$(item).data('id')] = index + 1;
 			})
-			
+
 			$.ajax({
 				type: 'POST'
 			,	url: '/links/sort/' + id

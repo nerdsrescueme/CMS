@@ -3,9 +3,26 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap-original.min.css'); ?> 
-	<?php echo Asset::js('jquery.js'); ?> 
-	<?php echo Asset::js('jqueryui.min.js'); ?> 
+	<?php echo Asset::css('bootstrap-original.min.css'); ?>
+	<?php echo Asset::css('tablesorter/theme.bootstrap.css'); ?>
+	<?php echo Asset::js('jquery.js'); ?>
+	<?php echo Asset::js('jqueryui.min.js'); ?>
+	<?php echo Asset::js('tablesorter/jquery.tablesorter.min.js'); ?>
+	<?php echo Asset::js('tablesorter/jquery.tablesorter.widgets.min.js'); ?>
+	<?php echo Asset::js('tablesorter/widgets/widget-pager.js'); ?>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('.tablesorter').tablesorter({
+			theme: 'bootstrap',
+			widgets: ['zebra', 'filter', 'uitheme'],
+			headerTemplate : '{content} {icon}',
+			widgetOptions : {
+		      zebra : ["even", "odd"],
+	          filter_reset : ".reset"
+    		}
+		})
+	})
+	</script>
 </head>
 <body>
 	<div class="container">

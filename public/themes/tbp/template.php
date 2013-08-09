@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8">
@@ -60,7 +60,7 @@ endif;
 </header>
 
 <section id="tagline" class="row home">
-	<?php if ($layout and $layout == 'home') : ?> 
+	<?php if ($layout and $layout == 'home') : ?>
 	<div id="slider" class="span12 carousel slide">
 		<div class="carousel-inner">
 			<div class="item active">
@@ -74,29 +74,29 @@ endif;
 			</div>
 		</div>
 	</div>
-	<?php endif ?> 
+	<?php endif ?>
 	<div id="tagline-content" class="span12">
-	
+
 		<div id="rfp" class="pull-right">
 			<a href="http://teambuildersplus.wufoo.com/forms/request-for-proposal-team-builders-plus/" target="_blank" class="btn btn-warning" rel="tooltip" title="Want to know more?"><i class="icon-comment icon-white"></i> Request a Proposal</a>
 		</div>
-	
+
 		<!--<p id="login" class="pull-right">
-		<?php if ($user = CMS::user_logged_in()) : ?> 
+		<?php if ($user = CMS::user_logged_in()) : ?>
 			Logged in as:
-			<?php echo CMS::user_link($user) ?> - 
+			<?php echo CMS::user_link($user) ?> -
 			<a href="/user/logout">logout</a>
-		<?php else : ?> 
+		<?php else : ?>
 			<a href="/user/login">Login</a>
-		<?php endif ?> 
+		<?php endif ?>
 		</p>-->
 
-		<h1><?php echo $page->title ?></h1>
-		<p><?php echo $page->subtitle ?></p>
+		<h1><span id="tbp-page-title" data-editable="local"><!-- begin tbp-page-title --><?php echo $page->title ?><!-- end tbp-page-title --></span></h1>
+		<p><span id="tbp-page-subtitle" data-editable="local"><!-- begin tbp-page-subtitle --><?php echo $page->subtitle ?><!-- end tbp-page-subtitle --></span></p>
 	</div>
 </section>
 
-<?php echo $content ?> 
+<?php echo $content ?>
 
 <footer id="footer">
 	<div class="row">
@@ -139,7 +139,7 @@ $(document).ready(function() {
 	$('#social a[title]').tooltip({ placement: 'bottom' })
 	$('a[rel=tooltip]').tooltip({ placement: 'top' })
 	$('#testimonials').carousel({ interval: 6000 })
-	
+
 	$('#social img')
 		.mouseover(function(event) {
 			$(this).animate({width: '20px', height: '20px'})

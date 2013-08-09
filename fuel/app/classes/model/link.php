@@ -4,6 +4,7 @@ use Orm\Model;
 class Model_Link extends Model
 {
 	public static $targets = array(
+	    0 => 'None',
 		1 => 'Default',
 		2 => 'Blank',
 	);
@@ -50,7 +51,7 @@ class Model_Link extends Model
 				return null;
 		}
 	}
-	
+
 	public function named_target()
 	{
 		return static::$targets[$this->target];
@@ -61,8 +62,21 @@ class Model_Link extends Model
 		$class  = $this->class  ? " class=\"{$this->class}\"" : '';
 		$target = $this->converted_target() ? " class=\"{$this->converted_target()}\"" : '';
 		$url    = $this->url ?: '#';
-		
+
 		return "<li{$class}><a href=\"{$url}\"{$target}>{$this->title}</a></li>";
+	}
+
+	public static function get_parents($group)
+	{
+		$links = static::find('all', array('where' => array('link_group_id' => $group, 'parent_id' => 0), 'order_by' => 'position'));
+		$out = array(0 => '');
+
+		foreach ($links as $link)
+		{
+			$out[$link->id] = $link->title;
+		}
+
+		return $out;
 	}
 
 	public static function get_targets()

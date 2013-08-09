@@ -17,6 +17,11 @@ class Controller_Cms_Pallettes extends Controller
 		return Response::forge(View::forge('cms/pallettes/image'));
 	}
 
+	public function action_video()
+	{
+		return Response::forge(View::forge('cms/pallettes/video'));
+	}
+
 	public function action_a()
 	{
 		return Response::forge(View::forge('cms/pallettes/a'));
@@ -26,7 +31,7 @@ class Controller_Cms_Pallettes extends Controller
 	{
 		return Response::forge(View::forge('cms/pallettes/block'));
 	}
-	
+
 	public function action_source()
 	{
 		return Response::forge(View::forge('cms/pallettes/source'));

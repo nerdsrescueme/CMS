@@ -10,7 +10,7 @@ class Add_hidden_to_pages
 		'hidden' => array('constraint' => 1, 'type' => 'integer'),
     ));	
     
-    \DB::update('pages')->value('hidden' => 2)->execute();
+    \DB::update('pages')->value('hidden', 2)->execute();
 	}
 
 	public function down()

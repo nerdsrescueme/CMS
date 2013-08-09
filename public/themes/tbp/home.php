@@ -26,6 +26,18 @@
 	<!-- end why --></div>
 </section>
 
+<section class="row">
+	<div class="span4" id="row-2-1" data-editable="local"><!-- start row-2-1 -->
+		Content
+	<!-- end row-2-1 --></div>
+	<div class="span4" id="row-2-2" data-editable="local"><!-- start row-2-2 -->
+		Content
+	<!-- end row-2-2 --></div>
+	<div class="span4" id="row-2-3" data-editable="local"><!-- start row-2-3 -->
+		Content
+	<!-- end row-2-3 --></div>
+</section>
+
 <section id="choose" class="row">
 	<div class="span6">
 		<h4 class="underlined">Testimonials</h4>
@@ -51,7 +63,7 @@
 				<blockquote>" The group was overwhelmingly happy with the results of our event and talked about it for the next day and a half&hellip;"</blockquote>
 				<p>&mdash; Minerva Moriole, <b>Mars, Incorporated</b></p>
 			</div>
-			
+
 			<div class="item">
 				<img src="/assets/img/uploads/Logos/janssen.gif" class="bordered left">
 				<blockquote>"&hellip;The sessions were engaging (especially Team Samurai), with practical suggestions, and the right amount of humor thrown in. We would highly recommend TeamBuilders Plus for your corporate needs!"</blockquote>
@@ -78,10 +90,10 @@
 	<div class="span6">
 		<h4 class="underlined"><a href="http://twitter.com/TeamBuildrsPlus">Recent Tweets</a></h4>
 		<ol id="tweets">
-		<?php $twitter = CMS::twitter('TeamBuildrsPlus', 3); ?> 
-		<?php foreach($twitter as $tweet) : ?> 
+		<?php $twitter = CMS::twitter('TeamBuildrsPlus', 3); ?>
+		<?php foreach($twitter as $tweet) : ?>
 			<li><a href="#"><time><?php echo CMS::relative_date(strtotime($tweet['created_at'])) ?></time></a> <?php echo $tweet['text'] ?></li>
-		<?php endforeach ?> 
+		<?php endforeach ?>
 		</ol>
 	</div>
 </section>

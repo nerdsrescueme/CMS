@@ -9,6 +9,11 @@ class Controller_Pages extends Controller_Template
 	{
 		parent::before();
 
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+
 		$site = Model_Site::find_or_create_current();
 		$config = array(
 			'active' => $site->theme,
@@ -63,7 +68,7 @@ class Controller_Pages extends Controller_Template
 			$channel->appendChild($title);
 			$channel->appendChild($link);
 			$channel->appendChild($desc);
-		
+
 		$root->appendchild($channel);
 		$xml->appendChild($root);
 
@@ -105,10 +110,10 @@ class Controller_Pages extends Controller_Template
 			'priority' => 10,
 			'changes' => 3, // Daily
 		))) + $pages;
-		
+
 		$xml = new \DOMDocument();
 		$xml->formatOutput = true;
-		
+
 		// Setup root element
 		$root = $xml->createElement("urlset");
 			$attr = $xml->createAttribute('xmlns');
@@ -120,7 +125,7 @@ class Controller_Pages extends Controller_Template
 		{
 			$url = $xml->createElement('url');
 				$root->appendChild($url);
-				
+
 			// Loc
 			$loc = $xml->createElement('loc');
 			$txt = $xml->createTextNode(Uri::create($page->uri));
@@ -144,7 +149,7 @@ class Controller_Pages extends Controller_Template
 			$txt = $xml->createTextNode($page->sitemap_priority());
 				$priority->appendChild($txt);
 				$url->appendChild($priority);
-			
+
 			unset($loc, $lastmod, $changefreq, $priority);
 		}
 
@@ -166,7 +171,7 @@ class Controller_Pages extends Controller_Template
 		if (Input::method() == 'POST')
 		{
 			$val = Model_Page::validate('create');
-			
+
 			if ($val->run())
 			{
 				$page = Model_Page::forge(array(
@@ -182,7 +187,7 @@ class Controller_Pages extends Controller_Template
 					'hidden' => Input::post('hidden'),
 					'group_id' => Input::post('group_id'),
 				));
-				
+
 				if ($page and $page->save())
 				{
 					Session::set_flash('success', 'Added ' . $page->title . '.');
@@ -198,7 +203,7 @@ class Controller_Pages extends Controller_Template
 				Session::set_flash('error', $val->show_errors());
 			}
 		}
-		
+
 		$this->template->title   = 'New Page';
 		$this->template->content = View::forge('pages/create');
 	}
@@ -207,7 +212,7 @@ class Controller_Pages extends Controller_Template
 	{
 		$page = Model_Page::find($id);
 		$val  = Model_Page::validate('edit');
-		
+
 		if ($val->run())
 		{
 			$page->title       = Input::post('title');
@@ -247,10 +252,10 @@ class Controller_Pages extends Controller_Template
 				$page->group_id    = Input::post('group_id');
 				Session::set_flash('error', $val->show_errors());
 			}
-			
+
 			$this->template->set_global('page', $page, false);
 		}
-		
+
 		$this->template->title = "Pages";
 		$this->template->content = View::forge('pages/edit');
 	}
@@ -266,7 +271,7 @@ class Controller_Pages extends Controller_Template
 		{
 			Session::set_flash('error', 'Could not delete '.$page->title);
 		}
-		
+
 		Response::redirect('pages');
 	}
 }

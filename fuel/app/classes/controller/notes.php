@@ -2,6 +2,16 @@
 
 class Controller_Notes extends Controller_Rest
 {
+	public function before()
+	{
+		parent::before();
+
+		if (!Sentry::check())
+		{
+			Response::redirect("user/login");
+		}
+	}
+
 	public function post_note()
 	{
 		$val = Model_Note::validate('create');

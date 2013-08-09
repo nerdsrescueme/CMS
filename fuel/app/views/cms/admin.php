@@ -1,6 +1,6 @@
 
 
-<script type="text/javascript">	
+<script type="text/javascript">
 
 	// Only load jQuery if it's not included in the theme.
 	if (typeof(jQuery) == 'undefined')
@@ -17,7 +17,7 @@
 	echo Asset::js('bootstrap.js');
 	echo Asset::js('nerd.init.js');
 	echo Asset::js('json.js');
-	
+
 ?>
 
 <div id="nerd-toolbar">
@@ -28,6 +28,7 @@
 		<a href="/cms/panels/media" data-function="pallette" title="Media Inspector">Media Inspector</a>
 		<!--<a href="/cms/panels/snippets" data-function="panel">Snippets</a>-->
 		<a href="/cms/panels/notes" data-function="panel">Notes</a>
+		<a href="/user">Users</a>
 	</div>
     <div id="nerd-buttons">
 		<a href="#" class="icon-chevron-left icon-white" data-function="command" data-command="undo" title="Undo"></a>
@@ -41,6 +42,7 @@
 		<a href="/cms/pallettes/a" class="icon-share icon-white" data-function="pallette" data-command="link" title="Insert a link"></a>
 		<a href="#" class="icon-share icon-white" data-function="command" data-command="clearlink" title="Unlink"></a>
 		<a href="/cms/pallettes/image" class="icon-picture icon-white" data-function="pallette" title="Insert an image"></a>
+		<a href="/cms/pallettes/video" class="icon-picture" data-function="pallette" title="Insert an youtube video"></a>
 		<a href="#" class="icon-resize-horizontal icon-white" data-function="command" data-command="hr" title="Insert Horizontal Rule"></a>
 		<a href="#" class="icon-list icon-white" data-function="command" data-command="ol" title="Ordered List"></a>
 		<a href="#" class="icon-list icon-white" data-function="command" data-command="ul" title="Unordered List"></a>
@@ -52,7 +54,7 @@
 		<a href="/cms/pallettes/block" class="icon-list-alt icon-white" data-function="pallette" data-command="block" title="Format Block Element"></a>
 		<a href="/cms/pallettes/source" class="icon-fire icon-white" data-function="command" data-command="source" title="HTML Source"></a>
 		<a href="#" class="icon-remove icon-white" data-function="command" data-command="clearformat" title="Clear Formatting"></a>
-        
+
     </div>
 </body>
 </html>
