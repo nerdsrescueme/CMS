@@ -135,7 +135,7 @@ class Controller_User extends Controller_Base_Cms
 					$user = Sentry::user()->create(array(
 						'email' => Input::post('email'),
 						'password' => Input::post('password'),
-						'username' => Input::post('username'),
+						'username' => Input::post('email'),
 					));
 
 					if ($user)

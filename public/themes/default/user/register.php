@@ -12,12 +12,12 @@
 		?>
 		<form action="/user/register" method="post" class="form-horizontal">
 		<fieldset>
-			<div class="control-group">
+			<!--<div class="control-group">
 				<label class="control-label" for="username">Username</label>
 				<div class="controls">
 					<input type="text" name="username">
 				</div>
-			</div>
+			</div>-->
 			<div class="control-group">
 				<label class="control-label" for="email">Email</label>
 				<div class="controls">
