@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 {{Fuel_Cache_Properties}}{"created":1376061812,"expiration":1376062412,"dependencies":[],"content_handler":"serialized"}{{/Fuel_Cache_Properties}}b:0;
+=======
+{{Fuel_Cache_Properties}}{"created":1376061503,"expiration":1376062103,"dependencies":[],"content_handler":"serialized"}{{/Fuel_Cache_Properties}}b:0;
+>>>>>>> Stashed changes
 =======
 {{Fuel_Cache_Properties}}{"created":1376061503,"expiration":1376062103,"dependencies":[],"content_handler":"serialized"}{{/Fuel_Cache_Properties}}b:0;
 >>>>>>> Stashed changes
