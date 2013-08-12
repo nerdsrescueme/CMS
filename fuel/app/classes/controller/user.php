@@ -9,9 +9,34 @@ class Controller_User extends Controller_Base_Cms
 			Response::redirect("user/login");
 		}
 
-		$data['users'] = Model_User::find('all');
+		$data = array();
+
+		$users = Model_User::find('all');
 		$this->template->title = "Users";
 		$this->template->content = $this->theme->view('user/index', $data);
+
+		$page = Model_Page::forge();
+		$page->title = $this->theme->info('title');
+		$page->subtitle = $this->theme->info('subtitle');
+
+		$this->template->set_global('users', $users);
+		$this->template->set_global('page', $page);
+		$this->template->set_global('layout', 'users');
+		$this->template->set('content', $this->theme->view('user/index')->render(), false);
+
+		$content = $this->template->render();
+		$replacements = Model_Html::find_globals();
+
+		foreach($replacements as $block)
+		{
+			if (strpos($content, "<!-- start {$block->key} -->") === false) continue;
+
+			$start   = substr($content, 0, strpos($content, "<!-- start {$block->key} -->"));
+			$end     = substr($content, strpos($content, "<!-- end {$block->key} -->") + strlen("<!-- end {$block->key} -->"));
+			$content = $start.$block->data.$end;
+		}
+
+		return $content;
 	}
 
 	public function action_check()
@@ -229,8 +254,8 @@ class Controller_User extends Controller_Base_Cms
 		$page->subtitle = $this->theme->info('subtitle');
 
 		$this->template->set_global('page', $page);
-		$this->template->set_global('layout', 'login');
-		$this->template->set('content', $this->theme->view('user/login')->render(), false);
+		$this->template->set_global('layout', 'register');
+		$this->template->set('content', $this->theme->view('user/register')->render(), false);
 
 		$content = $this->template->render();
 		$replacements = Model_Html::find_globals();
