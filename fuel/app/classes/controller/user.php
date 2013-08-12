@@ -118,6 +118,7 @@ class Controller_User extends Controller_Base_Cms
 	{
 		$data = array();
 
+		// Attempt to perform login.
 		if (Input::method() == 'POST')
 		{
 			try
@@ -147,7 +148,27 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		$this->template->content = $this->theme->view('user/login', $data, false);
+		$page = Model_Page::forge();
+		$page->title = $this->theme->info('title');
+		$page->subtitle = $this->theme->info('subtitle');
+
+		$this->template->set_global('page', $page);
+		$this->template->set_global('layout', 'login');
+		$this->template->set('content', $this->theme->view('user/login')->render(), false);
+
+		$content = $this->template->render();
+		$replacements = Model_Html::find_globals();
+
+		foreach($replacements as $block)
+		{
+			if (strpos($content, "<!-- start {$block->key} -->") === false) continue;
+
+			$start   = substr($content, 0, strpos($content, "<!-- start {$block->key} -->"));
+			$end     = substr($content, strpos($content, "<!-- end {$block->key} -->") + strlen("<!-- end {$block->key} -->"));
+			$content = $start.$block->data.$end;
+		}
+
+		return $content;
 	}
 
 	public function action_logout()
@@ -203,6 +224,26 @@ class Controller_User extends Controller_Base_Cms
 			}
 		}
 
-		$this->template->content = $this->theme->view('user/register', $data, false);
+		$page = Model_Page::forge();
+		$page->title = $this->theme->info('title');
+		$page->subtitle = $this->theme->info('subtitle');
+
+		$this->template->set_global('page', $page);
+		$this->template->set_global('layout', 'login');
+		$this->template->set('content', $this->theme->view('user/login')->render(), false);
+
+		$content = $this->template->render();
+		$replacements = Model_Html::find_globals();
+
+		foreach($replacements as $block)
+		{
+			if (strpos($content, "<!-- start {$block->key} -->") === false) continue;
+
+			$start   = substr($content, 0, strpos($content, "<!-- start {$block->key} -->"));
+			$end     = substr($content, strpos($content, "<!-- end {$block->key} -->") + strlen("<!-- end {$block->key} -->"));
+			$content = $start.$block->data.$end;
+		}
+
+		return $content;
 	}
 }
